@@ -24,11 +24,20 @@
 <meta name="description" content="Branding, websites, decks and creative from a two-man agency in Amsterdam. Built so the brand reads real.">
 <meta name="theme-color" content="#EFEEEC">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:title" content="Fugaz — Creative agency">
 <meta property="og:description" content="Branding, websites, decks and creative. Built so the brand reads real.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/logo-tile.svg">
+<meta property="og:image" content="https://fugaz-agency.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:url" content="https://fugaz-agency.com/">
+<meta property="og:site_name" content="Fugaz Agency">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fugaz — Creative agency">
+<meta name="twitter:description" content="Branding, websites, decks and creative. Built so the brand reads real.">
+<meta name="twitter:image" content="https://fugaz-agency.com/assets/og-image.png">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="crossorigin">
 <link rel="stylesheet" href="_ds/fugaz-design-system-f1d90f04-22ad-4409-bd7b-b31bd03bc302/tokens/fonts.css">
 <script src="./ds-base.js"></script>
@@ -4427,15 +4436,29 @@ class Component extends DCLogic {
         };
         /* delivery hook: point window.FUGAZ_SCAN_ENDPOINT at a form endpoint before go-live
            and the scan posts straight to the studio — the UI does not wait on it */
-        const url = window.FUGAZ_SCAN_ENDPOINT;
-        if (url) {
-          try {
-            fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
-              .catch(() => {});
-          } catch (err) {}
-        } else if (window.console) {
-          console.info("[fugaz] scan captured", payload, sec("recognise", picks(0)));
-        }
+        const url = window.FUGAZ_SCAN_ENDPOINT || "https://api.web3forms.com/submit";
+        try {
+          const body = {
+            access_key: window.FUGAZ_ACCESS_KEY || "95c6157e-44aa-4dd7-9c81-a71e419856c0",
+            subject: "Nieuwe Fugaz scan: " + brand,
+            from_name: "Fugaz website",
+            replyto: mail,
+            Merk: brand,
+            Website: site || "-",
+            "E-mail": mail,
+            Herkenning: picks(0).join(", ") || "-",
+            Ambitie: picks(1).join(", ") || "-",
+            "Te bouwen": picks(2).join(", ") || "-",
+            Budget: payload.budget || "-",
+            Toelichting: msg || "-",
+            Verstuurd: payload.sentAt
+          };
+          fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(body)
+          }).catch(() => {});
+        } catch (err) {}
         this.scanSent(brief, {
           recognise: picks(0), ambition: picks(1), build: picks(2),
           budgetIndex: bud ? Math.round(+bud.value) : 1,
