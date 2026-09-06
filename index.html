@@ -4432,15 +4432,29 @@ class Component extends DCLogic {
         };
         /* delivery hook: point window.FUGAZ_SCAN_ENDPOINT at a form endpoint before go-live
            and the scan posts straight to the studio — the UI does not wait on it */
-        const url = window.FUGAZ_SCAN_ENDPOINT;
-        if (url) {
-          try {
-            fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
-              .catch(() => {});
-          } catch (err) {}
-        } else if (window.console) {
-          console.info("[fugaz] scan captured", payload, sec("recognise", picks(0)));
-        }
+        const url = window.FUGAZ_SCAN_ENDPOINT || "https://api.web3forms.com/submit";
+        try {
+          const body = {
+            access_key: window.FUGAZ_ACCESS_KEY || "95c6157e-44aa-4dd7-9c81-a71e419856c0",
+            subject: "Nieuwe Fugaz scan: " + brand,
+            from_name: "Fugaz website",
+            replyto: mail,
+            Merk: brand,
+            Website: site || "-",
+            "E-mail": mail,
+            Herkenning: picks(0).join(", ") || "-",
+            Ambitie: picks(1).join(", ") || "-",
+            "Te bouwen": picks(2).join(", ") || "-",
+            Budget: payload.budget || "-",
+            Toelichting: msg || "-",
+            Verstuurd: payload.sentAt
+          };
+          fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(body)
+          }).catch(() => {});
+        } catch (err) {}
         this.scanSent(brief, {
           recognise: picks(0), ambition: picks(1), build: picks(2),
           budgetIndex: bud ? Math.round(+bud.value) : 1,
