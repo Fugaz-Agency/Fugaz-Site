@@ -1,0 +1,19 @@
+a{color:var(--fugaz-blue);text-decoration:none;transition:opacity var(--dur-fast) var(--ease-fugaz)}
+a:hover{opacity:.6}
+
+/* Film grain. The blue is never flat — this sits on top of the hero gradient. */
+.fugaz-grain{position:absolute;inset:0;pointer-events:none;opacity:.34;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNjAnIGhlaWdodD0nMTYwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC45JyBudW1PY3RhdmVzPSczJyBzdGl0Y2hUaWxlcz0nc3RpdGNoJy8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9JzE2MCcgaGVpZ2h0PScxNjAnIGZpbHRlcj0ndXJsKCNuKScvPjwvc3ZnPg==");background-size:160px 160px}
+
+/* Type roles. One family, Medium 500, -0.020em, 0.909 leading. */
+.fugaz-hero{font-family:var(--font-core);font-weight:500;font-size:var(--size-hero);line-height:.909;letter-spacing:-.020em;margin:0;text-align:center;color:var(--white)}
+.fugaz-section{font-family:var(--font-core);font-weight:500;font-size:var(--size-section);line-height:.909;letter-spacing:-.020em;margin:0}
+.fugaz-lede{font-family:var(--font-core);font-weight:500;font-size:var(--size-lede);line-height:.909;letter-spacing:-.020em}
+.fugaz-meta{font-family:var(--font-core);font-weight:500;font-size:var(--size-meta);line-height:.909;letter-spacing:-.010em}
+
+/* Two-tone headline: the grey line sets up, the black line lands. */
+.fugaz-setup{color:#808080}
+.fugaz-point{color:var(--black)}
+
+/* Partner marquee: the row is masked out at both ends. */
+.fugaz-marquee-mask{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,0) -0.88%,#000 17.92%,#000 82.91%,rgba(0,0,0,0) 100.96%);mask-image:linear-gradient(90deg,rgba(0,0,0,0) -0.88%,#000 17.92%,#000 82.91%,rgba(0,0,0,0) 100.96%)}
+@keyframes fugaz-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
