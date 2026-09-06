@@ -375,6 +375,12 @@ input,textarea,button{font-family:inherit}
 ::selection{background:#0057FE;color:#FFFFFF;text-shadow:none}
 ::-moz-selection{background:#0057FE;color:#FFFFFF;text-shadow:none}
 #top ::selection,[data-r="footer"] ::selection,[data-contact] ::selection,[data-pin] ::selection{background:#FFFFFF;color:#0057FE}
+/* revealed copy: every word sits in its own mask box, and the space text between the boxes is
+   highlighted at the line's full height, poking out below them. The spaces paint no highlight;
+   the words keep theirs. */
+[data-lines]::selection,[data-lines] [data-line]::selection,#top [data-lines]::selection,#top [data-lines] [data-line]::selection,[data-r="footer"] [data-lines]::selection,[data-r="footer"] [data-lines] [data-line]::selection,[data-contact] [data-lines]::selection,[data-pin] [data-lines]::selection{background:transparent}
+[data-lines] [data-hw]::selection{background:#0057FE;color:#FFFFFF}
+#top [data-lines] [data-hw]::selection,[data-r="footer"] [data-lines] [data-hw]::selection,[data-contact] [data-lines] [data-hw]::selection,[data-pin] [data-lines] [data-hw]::selection{background:#FFFFFF;color:#0057FE}
 #top ::-moz-selection,[data-r="footer"] ::-moz-selection,[data-contact] ::-moz-selection{background:#FFFFFF;color:#0057FE}
 /* the last glyph of a word can sit past the mask's edge under the negative tracking — let the
    FAQ question masks breathe on the right (they are inline masks, so this shifts no layout) */
