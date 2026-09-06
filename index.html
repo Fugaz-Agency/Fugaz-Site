@@ -4463,6 +4463,12 @@ class Component extends DCLogic {
           resetWorkPages();
           if (scroller) scroller.scrollTop = 0;
           fillWorkPages();
+          if (scroller) {
+            scroller.scrollTop = 0;
+            requestAnimationFrame(() => { if (this.workOpen && scroller.scrollTop) scroller.scrollTop = 0; });
+            setTimeout(() => { if (this.workOpen && scroller.scrollTop) scroller.scrollTop = 0; }, 120);
+            setTimeout(() => { if (this.workOpen && scroller.scrollTop) scroller.scrollTop = 0; }, 420);
+          }
           fitBoards();
           setTimeout(fitBoards, 260);
           /* the grid assembles rather than appearing whole */
