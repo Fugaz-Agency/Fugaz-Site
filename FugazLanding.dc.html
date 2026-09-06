@@ -4,17 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="ext-resource-dependency" content="assets/logo-mark-black.svg" data-resource-id="markMask">
-<meta name="ext-resource-dependency" content="assets/hero-f1-car.svg" data-resource-id="heroCar">
-<meta name="ext-resource-dependency" content="assets/work/aion-mark.jpg" data-resource-id="workAionMark">
-<meta name="ext-resource-dependency" content="assets/work/aion-web.jpg" data-resource-id="workAionWeb">
-<meta name="ext-resource-dependency" content="assets/work/earbuds.jpg" data-resource-id="workEarbuds">
-<meta name="ext-resource-dependency" content="assets/work/ledger.jpg" data-resource-id="workLedger">
-<meta name="ext-resource-dependency" content="assets/work/lua-logo.jpg" data-resource-id="workLuaLogo">
-<meta name="ext-resource-dependency" content="assets/work/mfg.jpg" data-resource-id="workMfg">
-<meta name="ext-resource-dependency" content="assets/work/ocho.jpg" data-resource-id="workOcho">
-<meta name="ext-resource-dependency" content="assets/work/pegasus.jpg" data-resource-id="workPegasus">
-<meta name="ext-resource-dependency" content="assets/work/terra.jpg" data-resource-id="workTerra">
-<meta name="ext-resource-dependency" content="assets/work/transparency.jpg" data-resource-id="workTransparency">
 <meta name="ext-resource-dependency" content="assets/team-luka-v5.jpg" data-resource-id="photoLuka">
 <meta name="ext-resource-dependency" content="assets/team-diego-v5.jpg" data-resource-id="photoDiego">
 <meta name="ext-resource-dependency" content="assets/badge-diego.jpg" data-resource-id="badgeDiego">
@@ -42,11 +31,7 @@
 <meta property="og:image" content="assets/logo-tile.svg">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="crossorigin">
 <link rel="stylesheet" href="_ds/fugaz-design-system-f1d90f04-22ad-4409-bd7b-b31bd03bc302/tokens/fonts.css">
-<link rel="stylesheet" href="_ds/fugaz-design-system-f1d90f04-22ad-4409-bd7b-b31bd03bc302/tokens/colors.css">
-<link rel="stylesheet" href="_ds/fugaz-design-system-f1d90f04-22ad-4409-bd7b-b31bd03bc302/tokens/typography.css">
-<link rel="stylesheet" href="_ds/fugaz-design-system-f1d90f04-22ad-4409-bd7b-b31bd03bc302/tokens/layout.css">
-<link rel="stylesheet" href="_ds/fugaz-design-system-f1d90f04-22ad-4409-bd7b-b31bd03bc302/tokens/motion.css">
-<link rel="stylesheet" href="_ds/fugaz-design-system-f1d90f04-22ad-4409-bd7b-b31bd03bc302/tokens/base.css">
+<script src="./ds-base.js"></script>
 <style>
 html,body{margin:0;background:#EFEEEC}
 /* the page owns its own scroll feel — the native bar just breaks the frame */
@@ -329,7 +314,6 @@ html{scrollbar-width:none;-ms-overflow-style:none}
   [data-brief] input,[data-brief] textarea{font-size:16px !important;min-height:50px !important}
   [data-brief] textarea{min-height:110px !important}
   [data-scan-next],[data-scan-back],[data-brief-send]{height:50px !important;min-height:50px !important}
-  [data-scan-done]{padding-bottom:24px !important}
   [data-contact-grid="1"]{left:20px !important;right:20px !important;top:78px !important;bottom:16px !important;display:flex !important;flex-direction:column !important;overflow:hidden !important;padding-bottom:0 !important}
   [data-scan-step]:not([style*="display: none"]){display:flex !important;flex-direction:column !important;height:100% !important;gap:0 !important}
   [data-scan-q]{font-size:clamp(19px,4.6vh,26px) !important;line-height:1.06 !important;margin-bottom:0 !important}
@@ -343,7 +327,26 @@ html{scrollbar-width:none;-ms-overflow-style:none}
   [data-brief]{height:100% !important;min-height:0 !important}
   [data-brief] input,[data-brief] textarea{font-size:16px !important;min-height:0 !important;height:clamp(42px,6.4vh,50px) !important;padding:0 14px !important}
   [data-brief] textarea{height:clamp(58px,11vh,104px) !important;padding:12px 14px !important}
-  [data-scan-done]{padding:0 !important;height:100% !important;min-height:0 !important;justify-content:center !important;gap:clamp(8px,1.6vh,18px) !important}
+  [data-scan-budget]::-webkit-slider-thumb{transition:none !important;width:26px !important;height:26px !important;margin-top:-11.5px !important}
+  /* the scan's done state: a scrolling column, the car as a divider in flow, buttons reachable */
+  [data-scan-done]{padding:0 0 20px !important;height:auto !important;min-height:0 !important;justify-content:flex-start !important;gap:10px !important}
+  [data-scan-done] [data-scan-diag]{gap:12px !important;padding-top:0 !important}
+  [data-scan-done] [data-diag-lede="1"]{font-size:15px !important;line-height:1.35 !important}
+  [data-scan-done] [data-diag-foot="1"]{font-size:13px !important;line-height:1.35 !important}
+  [data-scan-done] [data-diag-now="1"] span,[data-scan-done] [data-diag-pot="1"] span{height:12px !important}
+  [data-scan-done] > div:last-child{gap:8px !important;margin-top:2px !important}
+  [data-scan-done] > div:last-child button{height:46px !important}
+  [data-contact-grid="1"]{overflow-y:auto !important}
+  [data-sent-car="1"]{height:44px !important}
+  [data-sent-car="1"] img{width:72px !important}
+  [data-scan-done] [data-diag-head="1"]{font-size:26px !important}
+  [data-scan-done] > div:last-child{flex-direction:column !important;align-items:stretch !important}
+  [data-scan-done] > div:last-child button{width:100% !important}
+  /* budget: the readout sits above a 44px band, the scale under it at 10px */
+  [data-scan-budout="1"]{font-size:36px !important;margin-bottom:22px !important}
+  [data-scan-budlbl="1"]{font-size:9.5px !important;margin-top:16px !important;letter-spacing:-0.020em !important}
+  /* footer WhatsApp: label clear of the disc */
+  [data-r="foot-wa"] [data-fl="1"]{margin-right:14px !important;min-width:0 !important}
 }
 
 /* touch devices: hover cannot exist, so a press is the acknowledgement */
@@ -407,6 +410,8 @@ a[href],a[href] *,button,button *,[role="button"],[role="button"] *,label,summar
 /* the work grid hides the system cursor: the floating "View all projects" label IS the cursor there */
 [data-r="work-grid"],[data-r="work-grid"] *{cursor:none !important}
 button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !important}
+html,a,button,[role="button"],[data-faq-q],[data-faq-row],[data-scan-opt],[data-step-item],[data-wtile],[data-allwork-card],label,summary{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="position:relative;width:100%;max-width:none;margin:0 auto;overflow-x:clip;background:#EFEEEC;font-family:Satoshi,'Satoshi Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:15px 15px 21px;box-sizing:border-box">
@@ -428,9 +433,15 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-mnav="1" style="display:none;position:fixed;left:50%;top:34px;z-index:58;transform:translateX(-50%);align-items:center;gap:11px;padding:7px 14px;border-radius:13px;background:#FFFFFF;box-shadow:0 1px 2px rgba(0,0,0,0.06),0 10px 30px rgba(0,0,0,0.10);box-sizing:border-box">
 <a href="#top" data-scroll-top="1" aria-label="Back to top" style="display:flex;align-items:center;flex-shrink:0"><img decoding="async" src="assets/logo-mark-black.svg" alt="Fugaz" style="height:20px;display:block"></a>
 <span aria-hidden="true" style="width:1px;height:16px;background:rgba(0,0,0,0.18);flex-shrink:0"></span>
-<span style="position:relative;width:54px;height:30px;flex-shrink:0;display:block;margin:0">
-<span style="position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(assets/avatar-luka-v6.jpg) center 22%/cover no-repeat"></span>
-<span style="position:absolute;left:24px;top:0;width:30px;height:30px;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(assets/avatar-diego-v8.png) center 42%/cover no-repeat"></span>
+<span data-avgroup="1" style="position:relative;width:54px;height:30px;flex-shrink:0;display:block;margin:0">
+<span data-tip="1" style="position:absolute;left:0;top:0;width:30px;height:30px;display:block;z-index:1">
+<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(assets/avatar-luka-v6.jpg) center 22%/cover no-repeat"></span>
+<span data-tipbubble="1" style="position:absolute;left:50%;top:calc(100% + 12px);display:block;padding:6px 13px 7px;border-radius:16px;background:#EFEEEC;color:#000000;font-weight:500;font-size:14px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(-50%,-8px,0) scale(0.8);transform-origin:50% 0;transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.62s cubic-bezier(0.16,1,0.3,1);pointer-events:none;z-index:6;box-shadow:0 6px 22px rgba(0,0,0,0.12)"><span aria-hidden="true" style="position:absolute;left:50%;top:-7px;width:16px;height:8px;margin-left:-8px;display:block;background:#EFEEEC;clip-path:polygon(50% 0,100% 100%,0 100%)"></span>@lukamilich</span>
+</span>
+<span data-tip="1" style="position:absolute;left:24px;top:0;width:30px;height:30px;display:block;z-index:2">
+<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(assets/avatar-diego-v8.png) center 42%/cover no-repeat"></span>
+<span data-tipbubble="1" style="position:absolute;left:50%;top:calc(100% + 12px);display:block;padding:6px 13px 7px;border-radius:16px;background:#EFEEEC;color:#000000;font-weight:500;font-size:14px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(-50%,-8px,0) scale(0.8);transform-origin:50% 0;transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.62s cubic-bezier(0.16,1,0.3,1);pointer-events:none;z-index:6;box-shadow:0 6px 22px rgba(0,0,0,0.12)"><span aria-hidden="true" style="position:absolute;left:50%;top:-7px;width:16px;height:8px;margin-left:-8px;display:block;background:#EFEEEC;clip-path:polygon(50% 0,100% 100%,0 100%)"></span>@drgomesfr</span>
+</span>
 </span>
 <span aria-hidden="true" style="width:1px;height:16px;background:rgba(0,0,0,0.18);flex-shrink:0"></span>
 <button type="button" data-menu-toggle="1" aria-label="Menu" aria-expanded="false" style="display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:18px;height:44px;margin:-7px 0;padding:0;border:none;border-radius:12px;background:none;cursor:pointer;flex-shrink:0">
@@ -684,7 +695,7 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-r="pin-grid" style="position:absolute;left:7vw;right:7vw;top:11vh;bottom:14vh;display:grid;grid-template-columns:minmax(230px,0.68fr) minmax(0,1fr);gap:6vw">
 <div style="display:flex;flex-direction:column;justify-content:space-between;min-width:0">
 <div>
-<span data-reveal="1" data-y="18" style="display:block;font-weight:500;font-size:17px;letter-spacing:-0.010em;color:rgba(255,255,255,0.62)">How it works</span>
+<span data-reveal="1" data-y="18" style="display:block;font-weight:500;font-size:17px;letter-spacing:-0.010em;color:rgba(255,255,255,0.62)">Process</span>
 <h2 data-lines="1" style="margin:2.4vh 0 0;font-weight:500;font-size:clamp(34px,3.9vw,50px);line-height:0.909;letter-spacing:-0.020em">
 <span style="display:block;overflow:hidden;padding-bottom:0.26em;margin-bottom:-0.2em"><span data-line="1" style="display:inline;color:#FFFFFF"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">How</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">it</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">works.</span></span></span>
 </h2>
@@ -1059,8 +1070,8 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 </span>
 <div data-r="foot-btns" data-reveal="1" data-y="20" data-delay="0.78" style="margin-top:44px;display:flex;align-items:center;gap:14.546px">
 <button type="button" data-open-contact="1" style="display:inline-flex;align-items:center;justify-content:center;width:157.092px;height:40.728px;padding:0;border:none;border-radius:20.36380px;background:#000000;color:#F5F3F3;font-family:inherit;font-weight:500;font-size:16px;line-height:1;letter-spacing:-0.020em;cursor:pointer;box-sizing:border-box">Start the scan</button>
-<a href="https://wa.me/31636361353" target="_blank" rel="noopener" data-open-wa="1" data-fl-host="1" data-r="foot-wa" style="position:relative;display:inline-flex;align-items:center;justify-content:space-between;width:150.333px;height:40.728px;padding:0 4.594px 0 14.63px;border-radius:40.32832px;background:#FFFFFF;box-sizing:border-box;text-decoration:none">
-<span data-fl="1" style="min-width:87.733px;white-space:nowrap;text-align:center;font-weight:500;font-size:15.97976px;line-height:1;letter-spacing:-0.040em;color:#000000"><span data-fl-in="1">WhatsApp us</span><span data-fl-out="1">WhatsApp us</span></span>
+<a href="https://wa.me/31636361353" target="_blank" rel="noopener" data-open-wa="1" data-fl-host="1" data-r="foot-wa" style="position:relative;display:inline-flex;align-items:center;justify-content:space-between;width:162px;height:40.728px;padding:0 4.594px 0 14.63px;border-radius:40.32832px;background:#FFFFFF;box-sizing:border-box;text-decoration:none">
+<span data-fl="1" style="min-width:87.733px;white-space:nowrap;text-align:center;font-weight:500;font-size:15.97976px;line-height:1;letter-spacing:-0.040em;color:#000000;margin-right:12px"><span data-fl-in="1">WhatsApp us</span><span data-fl-out="1">WhatsApp us</span></span>
 <span aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:33.54px;height:33.54px;border-radius:50%;background:#25CB64"><img loading="lazy" decoding="async" src="assets/wa-glyph.svg" alt="" style="width:17.8px;height:17.9px;display:block"></span>
 </a>
 </div>
@@ -1073,8 +1084,8 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <span style="font-weight:500;font-size:37.51839px;line-height:0.909;letter-spacing:-0.030em;color:#000000;white-space:nowrap">Fugaz Agency</span>
 <span style="margin-top:15.9px;max-width:24ch;opacity:0.5;font-weight:500;font-size:18.5px;line-height:1.25;letter-spacing:-0.020em;color:#000000;text-wrap:pretty">You built something real. We make it look that way.</span>
 <a href="mailto:info@fugaz-agency.com" data-fl="1" style="margin-top:14.2px;font-weight:500;font-size:15.44750px;line-height:1.29;letter-spacing:-0.020em;color:#000000;text-decoration:none"><span data-fl-in="1">info@fugaz-agency.com</span><span data-fl-out="1">info@fugaz-agency.com</span></a>
-<a href="tel:+31636361353" data-fl="1" style="margin-top:6px;display:flex;align-items:baseline;gap:9px;font-weight:500;font-size:15.44750px;line-height:1.29;letter-spacing:-0.020em;color:#000000;text-decoration:none"><span style="display:inline-flex;font-variant-numeric:tabular-nums"><span data-fl-in="1">+31 6 36361353</span><span data-fl-out="1">+31 6 36361353</span></span><span style="opacity:0.45;padding-left:14px">Luka</span></a>
-<a href="tel:+31683869007" data-fl="1" style="margin-top:6px;display:flex;align-items:baseline;gap:9px;font-weight:500;font-size:15.44750px;line-height:1.29;letter-spacing:-0.020em;color:#000000;text-decoration:none"><span style="display:inline-flex;font-variant-numeric:tabular-nums"><span data-fl-in="1">+31 6 83869007</span><span data-fl-out="1">+31 6 83869007</span></span><span style="opacity:0.45;padding-left:14px">Diego</span></a>
+<a href="tel:+31636361353" data-fl="1" style="margin-top:15px;display:flex;align-items:baseline;gap:9px;font-weight:500;font-size:15.44750px;line-height:1.29;letter-spacing:-0.020em;color:#000000;text-decoration:none"><span style="display:inline-flex;font-variant-numeric:tabular-nums"><span data-fl-in="1">+31 6 36361353</span><span data-fl-out="1">+31 6 36361353</span></span><span style="opacity:0.45;padding-left:22px">Luka</span></a>
+<a href="tel:+31638003224" data-fl="1" style="margin-top:9px;display:flex;align-items:baseline;gap:9px;font-weight:500;font-size:15.44750px;line-height:1.29;letter-spacing:-0.020em;color:#000000;text-decoration:none"><span style="display:inline-flex;font-variant-numeric:tabular-nums"><span data-fl-in="1">+31 6 38003224</span><span data-fl-out="1">+31 6 38003224</span></span><span style="opacity:0.45;padding-left:22px">Diego</span></a>
 </div>
 <div data-reveal="1" data-y="26" data-delay="0.10" data-delay-stacked="0.14" style="padding-top:7px;display:flex;flex-direction:column;align-items:flex-start;gap:31.21394px">
 <span style="opacity:0.5;font-weight:500;font-size:17.88423px;line-height:0.909;letter-spacing:-0.020em;color:#000000">Agency</span>
@@ -1224,11 +1235,11 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <button type="button" data-wa-close="1" aria-label="Close" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin:-7px -7px 0 0;padding:0;border:none;border-radius:50%;background:none;color:#000000;cursor:pointer;flex:none"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" style="display:block;pointer-events:none"><path d="M1 1L11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><path d="M11 1L1 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
 </div>
 <div style="display:flex;flex-direction:column;gap:8px">
-<a href="https://wa.me/31683869007" target="_blank" rel="noopener" data-wa-pick="1" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 16px;border-radius:19px;background:#FAFAFA;text-decoration:none;transition:background 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0.16,1,0.3,1)">
+<a href="https://wa.me/31638003224" target="_blank" rel="noopener" data-wa-pick="1" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 16px;border-radius:19px;background:#FAFAFA;text-decoration:none;transition:background 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0.16,1,0.3,1)">
 <span style="display:flex;flex-direction:column;gap:2px">
 <span style="font-weight:500;font-size:16.5px;letter-spacing:-0.020em;color:#000000">Diego</span>
 <span data-lbl="1" style="font-weight:500;font-size:13.5px;letter-spacing:-0.010em;color:rgba(0,0,0,0.38)">AI &amp; development lead</span>
-<span data-lbl="1" style="font-weight:500;font-size:13.5px;letter-spacing:-0.010em;color:#808080">+31 6 83 86 90 07</span>
+<span data-lbl="1" style="font-weight:500;font-size:13.5px;letter-spacing:-0.010em;color:#808080">+31 6 38 00 32 24</span>
 </span>
 <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;flex:none;border-radius:50%;background:#25D366;color:#FFFFFF"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg></span>
 </a>
@@ -1309,9 +1320,9 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <span style="display:block;font-weight:500;font-size:12px;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.7)">Budget</span>
 <span data-scan-q="1" style="display:block;font-weight:500;font-size:clamp(28px,2.6vw,38px);line-height:1.04;letter-spacing:-0.020em;color:#FFFFFF;text-wrap:pretty">What is it worth to you?</span>
 <span style="display:block;font-weight:500;font-size:16px;line-height:1.4;letter-spacing:-0.010em;color:rgba(255,255,255,0.78);text-wrap:pretty">Pick the range you are ready to put behind the brand.</span>
-<span data-scan-budout="1" style="display:block;margin-top:2px;font-weight:500;font-size:clamp(38px,3.4vw,52px);line-height:1;letter-spacing:-0.030em;color:#FFFFFF">€10–25K</span>
-<input data-scan-budget="1" type="range" min="0" max="4" step="0.01" value="1" aria-label="Budget range" style="width:100%;height:28px;background:transparent;margin:-14px 0;--f:25%">
-<div style="display:flex;justify-content:space-between;font-weight:500;font-size:12.5px;letter-spacing:-0.010em;color:rgba(255,255,255,0.65)">
+<span data-scan-budout="1" style="display:block;margin-top:2px;margin-bottom:18px;font-weight:500;font-size:clamp(38px,3.4vw,52px);line-height:1;letter-spacing:-0.030em;color:#FFFFFF">€10–25K</span>
+<input data-scan-budget="1" type="range" min="0" max="4" step="0.01" value="1" aria-label="Budget range" style="width:100%;height:44px;padding:0 14px;box-sizing:border-box;background:transparent;margin:-22px 0;--f:25%;touch-action:none;-webkit-tap-highlight-color:transparent">
+<div data-scan-budlbl="1" style="display:flex;justify-content:space-between;margin-top:14px;padding:0 2px;font-weight:500;font-size:11px;letter-spacing:0;color:rgba(255,255,255,0.6);font-variant-numeric:tabular-nums">
 <span>€5–10K</span><span>€10–25K</span><span>€25–50K</span><span>€50–100K</span><span>€100K+</span>
 </div>
 </div>
@@ -1352,7 +1363,7 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 </div>
 <span data-diag-foot="1" style="display:block;max-width:46ch;font-weight:500;font-size:15px;line-height:1.45;letter-spacing:-0.010em;color:rgba(255,255,255,0.7)"></span>
 </div>
-<div data-sent-car="1" style="position:relative;height:52px">
+<div data-sent-car="1" style="position:relative;height:52px;flex:none;margin:6px 0 4px">
 <img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="position:absolute;left:50%;top:4px;width:86px;height:auto;transform:translateX(-50%)">
 <span data-sent-line="1" style="position:absolute;left:0;top:50px;height:2px;width:100%;border-radius:2px;background:linear-gradient(to right,rgba(255,255,255,0.85),rgba(255,255,255,0))"></span>
 </div>
@@ -2391,12 +2402,16 @@ class Component extends DCLogic {
         }
         const tt = this.teamTiles;
         const nowT = performance.now();
-        const dtT = Math.max(1, nowT - (this.teamLastT || nowT));
+        const dtT = Math.min(100, Math.max(1, nowT - (this.teamLastT || nowT)));
         const dyT = window.scrollY - (this.teamPrevY == null ? window.scrollY : this.teamPrevY);
         this.teamPrevY = window.scrollY; this.teamLastT = nowT;
         /* smoothed scroll speed in px/frame; decays to zero when the reader stops */
-        this.teamVel = this.teamVel * 0.86 + (Math.abs(dyT) / dtT * 16) * 0.14;
+        const keep = Math.pow(0.86, dtT / 16);
+        this.teamVel = this.teamVel * keep + Math.min(40, Math.abs(dyT) / dtT * 16) * (1 - keep);
         const speed = Math.min(1, this.teamVel / 22);
+        /* "moving" is a clock, not a decayed number: the page moved within the last 160ms */
+        if (Math.abs(dyT) > 0.5) this.teamMoveT = nowT;
+        const movingNow = nowT - (this.teamMoveT || 0) < 240;
         for (let i = 0; i < tt.length; i++) {
           const el = tt[i], r = el.getBoundingClientRect();
           const nx = tt[i + 1];
@@ -2417,17 +2432,36 @@ class Component extends DCLogic {
             const onScreen = r.top < window.innerHeight * 0.9 && r.bottom > window.innerHeight * 0.1 && p < 0.75;
             if (onScreen) {
               if (v.preload === "none") { v.preload = "auto"; v.load(); }
-              if (v.style.opacity !== "1") { v.style.transition = "opacity 1.2s " + E; v.style.opacity = "1"; }
               v.__wanted = true;
-              /* the clip rides the scroll: quick while the thumb moves, idling at a crawl when it
-                 stops — it never fully pauses, so a still frame never reads as a broken video */
-              const rate = 0.35 + 1.15 * speed;
-              try { v.playbackRate = Math.max(0.35, Math.min(1.5, rate)); } catch (e) {}
-              if (v.paused && !v.__playing) {
-                v.__playing = true;
-                const pr = v.play();
-                if (pr && pr.then) pr.then(() => { v.__playing = false; }).catch(() => { v.__playing = false; v.__blocked = true; });
-                else v.__playing = false;
+              if (v.readyState === 0 && !v.__loadKick) { v.__loadKick = 1; try { v.load(); } catch (e) {} }
+              /* the clip is tied to the thumb: it plays while the page is moving and, once the
+                 reader stops, fades back to the still — scrolling is what animates the founder */
+              const moving = movingNow;
+              if (moving) {
+                v.__idleAt = 0;
+                try { v.playbackRate = Math.max(0.6, Math.min(1.6, 0.6 + 1.0 * speed)); } catch (e) {}
+                if (v.style.opacity !== "1") { v.style.transition = "opacity 0.5s " + E; v.style.opacity = "1"; }
+                if (v.paused && !v.__playing && !v.__blocked) {
+                  v.__playing = true;
+                  const pr = v.play();
+                  if (pr && pr.then) pr.then(() => { v.__playing = false; }).catch(() => { v.__playing = false; v.__blocked = true; });
+                  else v.__playing = false;
+                }
+                if (v.paused && v.readyState >= 2 && v.duration) {
+                  const stepS = Math.min(0.08, dtT / 1000) * (0.6 + 1.0 * speed);
+                  v.currentTime = (v.currentTime + stepS) % v.duration;
+                }
+              } else {
+                if (!v.__idleAt) v.__idleAt = nowT;
+                /* a short grace so a scroll that merely hesitates does not flicker the still */
+                if (nowT - v.__idleAt > 420 && v.style.opacity === "1") {
+                  v.style.transition = "opacity 0.9s " + E;
+                  v.style.opacity = "0";
+                  setTimeout(() => { if (v.style.opacity === "0") { try { v.pause(); } catch (e) {} } }, 900);
+                }
+              }
+              if ((moving || v.style.opacity === "1") && !this.teamRaf) {
+                this.teamRaf = requestAnimationFrame(() => { this.teamRaf = 0; safeFrame(); });
               }
             } else if (v.style.opacity === "1") {
               v.__wanted = false;
@@ -2979,6 +3013,7 @@ class Component extends DCLogic {
                 v.style.opacity = "1";
               }, 900);
             } else if (!en.isIntersecting) {
+              if (window.matchMedia("(max-width:700px)").matches) return;
               clearTimeout(v.__clipT);
               v.style.opacity = "0";
               setTimeout(() => { if (v.style.opacity === "0") { try { v.pause(); } catch (e) {} } }, 600);
@@ -3039,6 +3074,31 @@ class Component extends DCLogic {
     };
     /* a standing ticker: the smooth-scroll layer swallows window scroll events, so the
        frame work cannot depend on them */
+    if (window.matchMedia && window.matchMedia("(hover: none)").matches) {
+      let scrollRaf = 0;
+      const kickFrame = () => {
+        if (scrollRaf) return;
+        scrollRaf = requestAnimationFrame(() => { scrollRaf = 0; safeFrame(); });
+      };
+      this.on(window, "scroll", kickFrame, { passive: true });
+      const clipsOnScreen = () => Array.prototype.slice.call(document.querySelectorAll("[data-hover-clip]"))
+        .filter((v) => { const r = v.getBoundingClientRect(); return r.height > 0 && r.top < window.innerHeight * 0.9 && r.bottom > window.innerHeight * 0.1; });
+      const startVisible = () => {
+        clipsOnScreen().forEach((v) => {
+          v.__wanted = true;
+          if (v.preload === "none") { v.preload = "auto"; v.load(); }
+          if (v.paused && !v.__blocked) { const p = v.play(); if (p && p.catch) p.catch(() => { v.__blocked = true; }); }
+          if (v.style.opacity !== "1") { v.style.transition = "opacity 0.5s " + E; v.style.opacity = "1"; }
+        });
+      };
+      /* every touch counts as the gesture: the clips that are on screen start right there */
+      this.on(window, "touchstart", startVisible, { passive: true, capture: true });
+      this.on(window, "touchmove", () => {
+        this.teamMoveT = performance.now();
+        startVisible();
+        safeFrame();
+      }, { passive: true });
+    }
     let tickRaf = 0, lastTickY = -1;
     const tickBody = () => {
       const y = window.scrollY;
@@ -3274,24 +3334,9 @@ class Component extends DCLogic {
       /* bulk image trail: each shot wipes open from the direction of travel, the image inside counter-moves */
       let i = 0, lx = 0, ly = 0, armed = false, zi = 1;
       /* a trail entry is either a fig-asset class name or a real image path */
-      const trailIds = {
-        "assets/work/aion-mark.jpg": "workAionMark",
-        "assets/work/aion-web.jpg": "workAionWeb",
-        "assets/work/earbuds.jpg": "workEarbuds",
-        "assets/work/ledger.jpg": "workLedger",
-        "assets/work/lua-logo.jpg": "workLuaLogo",
-        "assets/work/mfg.jpg": "workMfg",
-        "assets/work/ocho.jpg": "workOcho",
-        "assets/work/pegasus.jpg": "workPegasus",
-        "assets/work/terra.jpg": "workTerra",
-        "assets/work/transparency.jpg": "workTransparency"
-      };
       const paint = (el, token) => {
-        if (/[./]/.test(token)) {
-          const rid = trailIds[token];
-          const src = (rid && window.__resources && window.__resources[rid]) || token;
-          el.style.backgroundImage = "url(" + src + ")";
-        } else el.className = token;
+        if (/[./]/.test(token)) el.style.backgroundImage = "url(" + token + ")";
+        else el.className = token;
       };
       rows.forEach((row) => {
         const shots = (row.getAttribute("data-trail") || "").split(",").filter(Boolean);
@@ -4232,9 +4277,11 @@ class Component extends DCLogic {
           window.removeEventListener("blur", endDrag);
           bud.dispatchEvent(new Event("change", { bubbles: true }));
         };
+        this.on(bud, "touchmove", (e) => { if (dragId !== null) e.preventDefault(); }, { passive: false });
         this.on(bud, "pointerdown", (e) => {
           if (dragId !== null) endDrag();
           dragId = e.pointerId;
+          try { bud.setPointerCapture(e.pointerId); } catch (err) {}
           bud.style.cursor = "grabbing";
           setFromX(e.clientX);
           window.addEventListener("pointermove", onMove, { passive: false });
@@ -4411,8 +4458,8 @@ class Component extends DCLogic {
         document.documentElement.style.overflow = open ? "hidden" : "";
         if (open) {
           resetWorkPages();
-          fillWorkPages();
           if (scroller) scroller.scrollTop = 0;
+          fillWorkPages();
           fitBoards();
           setTimeout(fitBoards, 260);
           /* the grid assembles rather than appearing whole */
@@ -4458,9 +4505,11 @@ class Component extends DCLogic {
         const setPills = (on) => {
           const n = pills.length;
           pills.forEach((p, i) => {
-            const d = (on ? i * 0.065 : (n - 1 - i) * 0.035).toFixed(3);
-            p.style.transition = "opacity 0.44s " + E + " " + d + "s,transform 0.68s " + E + " " + d +
-              "s,filter 0.6s " + E + " " + d + "s";
+            const touchT = window.matchMedia && window.matchMedia("(hover: none)").matches;
+            const d = (on ? (touchT ? 0.12 : 0) + i * (touchT ? 0.11 : 0.065) : (n - 1 - i) * 0.035).toFixed(3);
+            const k = touchT ? 1.6 : 1;
+            p.style.transition = "opacity " + (0.44 * k).toFixed(2) + "s " + E + " " + d + "s,transform " + (0.68 * k).toFixed(2) + "s " + E + " " + d +
+              "s,filter " + (0.6 * k).toFixed(2) + "s " + E + " " + d + "s";
             p.style.opacity = on ? "1" : "0";
             p.style.transform = on ? "none" : "translate3d(0,-10px,0) scale(0.94)";
             p.style.filter = on ? "blur(0px)" : "blur(10px)";
@@ -4488,15 +4537,16 @@ class Component extends DCLogic {
          bottoms out on a short roster. Clones are wired like originals and reset on open. */
       const wGrid = allWork.querySelector("[data-allwork-grid]");
       const wSeed = wTiles.slice();
-      const W_PAGES_MAX = 8;
-      let wPages = 1;
+      const W_KEEP_PAGES = 4;
+      let wPages = 1, wPageSeq = 0;
       const addWorkPage = (quiet) => {
-        if (!wGrid || wPages >= W_PAGES_MAX) return;
-        wPages++;
+        if (!wGrid) return;
+        wPages++; wPageSeq++;
         wSeed.forEach((src, i) => {
           const c = src.cloneNode(true);
           delete c.dataset.tileReady;
           c.dataset.wclone = "1";
+          c.dataset.wpage = String(wPageSeq);
           c.style.opacity = quiet ? "1" : "0";
           c.style.transform = quiet ? "none" : "translate3d(0,26px,0)";
           c.style.transition = quiet ? "none" : "opacity 0.7s " + E + " " + (i * 0.03).toFixed(3) + "s,transform 0.8s " + E + " " + (i * 0.03).toFixed(3) + "s";
@@ -4519,11 +4569,54 @@ class Component extends DCLogic {
       const resetWorkPages = () => {
         if (!wGrid) return;
         Array.prototype.forEach.call(wGrid.querySelectorAll("[data-wclone]"), (c) => c.remove());
-        wPages = 1;
+        wPages = 1; wPageSeq = 0;
       };
       /* built once, up front: appending as you reach the bottom kept growing the track and
          snapping the scrollbar thumb back — one long scroll instead */
-      const fillWorkPages = () => { while (wPages < W_PAGES_MAX) addWorkPage(true); };
+      const fillWorkPages = () => {
+        let n = 0;
+        while (n < 4 && (wPages < 2 || (scroller && scroller.scrollHeight < scroller.clientHeight * 2.6))) { addWorkPage(true); n++; }
+      };
+      /* pages that have passed fully above the viewport leave the DOM. Height arithmetic is
+         wrong here — a page spans several grid rows and each removal shifts the coordinate
+         space — so a surviving tile is used as the anchor: remove everything prunable in one
+         pass, then correct scrollTop by how far that one tile actually moved. */
+      const pruneWorkPages = () => {
+        if (!wGrid || !scroller || wPages <= W_KEEP_PAGES) return;
+        const tiles = Array.prototype.slice.call(wGrid.querySelectorAll("[data-wtile]"));
+        const anchor = tiles.find((t) => t.getBoundingClientRect().bottom > 0);
+        if (!anchor) return;
+        const topBefore = anchor.getBoundingClientRect().top;
+        let removed = 0;
+        while (wPages - removed > W_KEEP_PAGES) {
+          const first = wGrid.querySelector("[data-wpage]");
+          if (!first) break;
+          const group = Array.prototype.slice.call(wGrid.querySelectorAll('[data-wpage="' + first.dataset.wpage + '"]'));
+          if (!group.length || group.indexOf(anchor) > -1) break;
+          if (group[group.length - 1].getBoundingClientRect().bottom > 0) break;
+          group.forEach((el) => el.remove());
+          removed++;
+        }
+        if (!removed) return;
+        wPages -= removed;
+        scroller.scrollTop += anchor.getBoundingClientRect().top - topBefore;
+      };
+      /* infinite: the runway is topped up to two viewports on every scroll tick — at the very
+         bottom no further scroll event fires, so one append per event could dead-end */
+      let wFillRaf = 0;
+      const wOnScroll = () => {
+        if (wFillRaf) return;
+        wFillRaf = requestAnimationFrame(() => {
+          wFillRaf = 0;
+          if (!scroller) return;
+          let added = 0;
+          while (added < 4 && scroller.scrollHeight - scroller.scrollTop - scroller.clientHeight < scroller.clientHeight * 2) {
+            addWorkPage(true); added++;
+          }
+          pruneWorkPages();
+        });
+      };
+      if (scroller) this.on(scroller, "scroll", wOnScroll, { passive: true });
       this.on(window, "resize", fitBoards);
       /* a burst of race cars off the button — pure CSS animation per sprite, so the whole
          volley runs on the compositor and cleans itself up */
@@ -4554,7 +4647,7 @@ class Component extends DCLogic {
           const delay = k * 180;
           const wrap = mk(carLayer, "position:fixed;left:" + x.toFixed(0) + "px;top:0;display:block;will-change:transform;z-index:3;");
           const img = document.createElement("img");
-          img.src = (window.__resources && window.__resources.heroCar) || "assets/hero-f1-car.svg"; img.alt = "";
+          img.src = "assets/hero-f1-car.svg"; img.alt = "";
           img.style.cssText = "display:block;width:" + size + "px;height:auto;";
           wrap.appendChild(img);
           const from = -(size * 1.2), to = vh + size * 1.2;
@@ -4577,7 +4670,7 @@ class Component extends DCLogic {
           const x = Math.random() * (vw + size * 2) - size;
           const wrap = mk(carLayer, "position:fixed;left:" + x.toFixed(0) + "px;top:0;display:block;will-change:transform;");
           const img = document.createElement("img");
-          img.src = (window.__resources && window.__resources.heroCar) || "assets/hero-f1-car.svg"; img.alt = "";
+          img.src = "assets/hero-f1-car.svg"; img.alt = "";
           img.style.cssText = "display:block;width:" + size.toFixed(0) + "px;height:auto;opacity:" + (0.55 + depth * 0.45).toFixed(2) + ";";
           wrap.appendChild(img);
           const from = -(size * 1.6 + Math.random() * 220), to = vh + size * 1.6;
@@ -4947,6 +5040,23 @@ class Component extends DCLogic {
         tips.forEach((t) => show(t, t === near));
       });
       this.on(group, "mouseleave", () => { tips.forEach((t) => show(t, false)); });
+      if ((window.matchMedia && window.matchMedia("(hover: none)").matches) || navigator.maxTouchPoints > 0 || "ontouchstart" in window) {
+        const holdT = { id: 0 };
+        this.on(group, "click", (e) => {
+          let near = tips[0], best = Infinity;
+          const px = (e.touches && e.touches[0] ? e.touches[0].clientX : e.clientX);
+          const py = (e.touches && e.touches[0] ? e.touches[0].clientY : e.clientY);
+          tips.forEach((t) => {
+            const r = t.getBoundingClientRect();
+            const d = Math.hypot(px - (r.left + r.width / 2), py - (r.top + r.height / 2));
+            if (d < best) { best = d; near = t; }
+          });
+          tips.forEach((t) => show(t, t === near));
+          clearTimeout(holdT.id);
+          holdT.id = setTimeout(() => { tips.forEach((t) => show(t, false)); }, 800);
+        });
+        this.cleanup.push(() => clearTimeout(holdT.id));
+      }
     });
     this.on(document, "mouseover", (e) => {
       const b = e.target.closest && e.target.closest("button[data-btn-ready]");
@@ -5283,6 +5393,56 @@ class Component extends DCLogic {
       this.cleanup.push(() => clearInterval(fIdle));
     }
 
+    const mNav = root.querySelector("[data-mnav]");
+    const mMark = mNav ? mNav.querySelector('img[src*="logo-mark"]') : null;
+    if (mMark && !reduced) {
+      const mHost = sheenHost(mMark) || mMark;
+      const mw = document.createElement("span");
+      mw.setAttribute("aria-hidden", "true");
+      const mm = "url(" + R("markMask", "assets/logo-mark-black.svg") + ")";
+      mw.style.cssText =
+        "position:absolute;left:0;top:0;right:0;bottom:0;pointer-events:none;z-index:2;overflow:hidden;" +
+        "-webkit-mask-image:" + mm + ";mask-image:" + mm + ";-webkit-mask-size:contain;mask-size:contain;" +
+        "-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center";
+      const ms = document.createElement("span");
+      ms.style.cssText =
+        "position:absolute;left:0;top:-40%;width:26%;height:180%;" +
+        "background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.18) 26%," +
+        "rgba(255,255,255,0.95) 48%,rgba(255,255,255,1) 52%,rgba(255,255,255,0.22) 74%,rgba(255,255,255,0) 100%);" +
+        "filter:blur(0.6px);transform:translateX(-190%) rotate(18deg) scaleX(0.7);opacity:0;will-change:transform,opacity";
+      mw.appendChild(ms);
+      mHost.appendChild(mw);
+      const mSheen = () => {
+        ms.style.transition = "none";
+        ms.style.transform = "translateX(-190%) rotate(18deg) scaleX(0.7)";
+        ms.style.opacity = "0";
+        void ms.offsetHeight;
+        requestAnimationFrame(() => {
+          ms.style.transition = "transform 0.92s cubic-bezier(0.32,0.06,0.2,1), opacity 0.28s " + E;
+          ms.style.transform = "translateX(420%) rotate(18deg) scaleX(1.55)";
+          ms.style.opacity = "1";
+          setTimeout(() => { ms.style.transition = "opacity 0.44s " + E; ms.style.opacity = "0"; }, 480);
+        });
+      };
+      const mSpin = () => {
+        if (mMark.dataset.spinning || this.contactOpen || this.menuOpen) return;
+        const r = mNav.getBoundingClientRect();
+        if (!r.width || getComputedStyle(mNav).display === "none") return;
+        mMark.dataset.spinning = "1";
+        mMark.style.transition = "transform 0.7s " + E;
+        mMark.style.transform = "rotate(360deg)";
+        setTimeout(() => {
+          mMark.style.transition = "none";
+          mMark.style.transform = "none";
+          void mMark.offsetHeight;
+          delete mMark.dataset.spinning;
+          mSheen();
+        }, 740);
+      };
+      const mIdle = setInterval(mSpin, 5000);
+      this.cleanup.push(() => clearInterval(mIdle));
+    }
+
     this.enterHero = enterHero;
     if (!this.playIntro || this.introDone) {
       void root.offsetHeight; /* flush the hidden state so the transitions actually play */
@@ -5458,8 +5618,9 @@ class Component extends DCLogic {
       fl.forEach((el, i) => {
         const d = open ? 0.30 + i * 0.055 : (fl.length - 1 - i) * 0.02;
         const isCta = el.hasAttribute("data-mcta");
-        el.style.transition = "transform 0.7s " + E + " " + d.toFixed(3) + "s" + (isCta ? ", opacity 0.45s " + E + " " + d.toFixed(3) + "s" : "");
-        el.style.transform = open ? (isCta ? "translateY(0) scale(1)" : "translateY(0)") : (isCta ? "translateY(14px) scale(0.97)" : "translateY(110%)");
+        const dd = isCta ? d + 0.12 : d;
+        el.style.transition = "transform " + (isCta ? 0.95 : 0.7) + "s " + E + " " + dd.toFixed(3) + "s" + (isCta ? ", opacity 0.7s " + E + " " + dd.toFixed(3) + "s" : "");
+        el.style.transform = open ? (isCta ? "translateY(0) scale(1)" : "translateY(0)") : (isCta ? "translateY(26px) scale(0.96)" : "translateY(110%)");
         if (isCta) el.style.opacity = open ? "1" : "0";
       });
       const rule = foot.style;

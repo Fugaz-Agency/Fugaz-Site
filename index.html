@@ -1,161 +1,37 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="assets/7f701a9e-4fa1-4c61-b680-e5745771dcfa.js"></script>
+<meta name="ext-resource-dependency" content="assets/logo-mark-black.svg" data-resource-id="markMask">
+<meta name="ext-resource-dependency" content="assets/team-luka-v5.jpg" data-resource-id="photoLuka">
+<meta name="ext-resource-dependency" content="assets/team-diego-v5.jpg" data-resource-id="photoDiego">
+<meta name="ext-resource-dependency" content="assets/badge-diego.jpg" data-resource-id="badgeDiego">
+<meta name="ext-resource-dependency" content="assets/badge-luka.jpg" data-resource-id="badgeLuka">
+<script src="./support.js"></script>
 </head>
 <body>
-
+<template id="__bundler_thumbnail" data-bg-color="#EFEEEC">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#EFEEEC"/>
+    <rect x="360" y="240" width="480" height="320" rx="48" fill="#0057FE"/>
+    <text x="600" y="452" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-weight="500" font-size="180" letter-spacing="-8" fill="#FFFFFF">F</text>
+  </svg>
+</template>
 <x-dc>
 <helmet>
 <title>Fugaz Agency - Bringing brands to Life</title>
 <meta name="description" content="Branding, websites, decks and creative from a two-man agency in Amsterdam. Built so the brand reads real.">
 <meta name="theme-color" content="#EFEEEC">
-<link rel="icon" type="image/svg+xml" href="assets/ea7d3ccf-867c-4488-97fd-d9e361ceb40a.svg">
-<link rel="apple-touch-icon" href="assets/ea7d3ccf-867c-4488-97fd-d9e361ceb40a.svg">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
 <meta property="og:title" content="Fugaz — Creative agency">
 <meta property="og:description" content="Branding, websites, decks and creative. Built so the brand reads real.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/logo-tile.svg">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="crossorigin">
-<style>/* Satoshi — the one Fugaz typeface. Served from the Fontshare CDN because the
-   .fig ships no binaries. Swap these src URLs for local files if Fugaz licenses a cut. */
-@font-face{font-family:"Satoshi";font-style:normal;font-weight:400;font-display:swap;src:url("assets/9dd19ecf-2a27-498c-8ebe-a041fa72f8b3.woff2") format("woff2"),url("assets/d24b78c1-e31f-4338-8375-85236ca8e83c.woff") format("woff"),url("assets/d368b17e-75dc-4514-864f-67c33d747cf5.ttf") format("truetype")}
-@font-face{font-family:"Satoshi";font-style:normal;font-weight:500;font-display:swap;src:url("assets/52323b93-7af3-454a-b8ca-61e1d41c8f76.woff2") format("woff2"),url("assets/7ff94fb0-ec2e-4a67-a4cb-7ddfbcbf2437.woff") format("woff"),url("assets/f4d67b9c-86a7-499a-be28-0d3f417dc099.ttf") format("truetype")}
-@font-face{font-family:"Satoshi";font-style:normal;font-weight:700;font-display:swap;src:url("assets/b7752eb9-c1b0-4672-9696-59bc5fb0e910.woff2") format("woff2"),url("assets/9aae4f3e-7c0e-444b-a11c-1fcec082c5c9.woff") format("woff"),url("assets/8d926002-914a-4f36-8a92-c0262f573bc8.ttf") format("truetype")}
-</style>
-<style>:root{
-  /* Brand — the single accent. Figma Variable "Fugaz Blue". */
-  --fugaz-blue:#0057FE;
-
-  /* The hero gradient: black in the bottom-left corner, blue through the
-     middle, blowing out to white past the top-right. Never flat, always grained. */
-  --fugaz-hero-gradient:linear-gradient(52.426deg,rgb(0,0,0) 11.94%,rgba(0,87,254,0.97) 59.44%,rgba(14,96,254,0.97) 83.25%,rgba(48,119,255,0.96) 101.96%,rgba(115,163,255,0.89) 112.29%,rgb(255,255,255) 138.56%); /* @kind color */
-
-  /* Neutrals */
-  --page:#EFEEEC;          /* the warm off-white sheet every panel sits on */
-  --white:#FFFFFF;
-  --surface-soft:#FAFAFA;  /* work + team cards */
-  --placeholder:#D9D9D9;
-  --black:#000000;
-  --grey-marquee:#7A7A7A;  /* partner logo row */
-
-  /* Signals */
-  --dot-red:#CD2C2C;       /* the scarcity dot, and nothing else */
-  --scrim:rgba(0,0,0,0.43);/* secondary button over the gradient */
-
-  /* Semantic aliases */
-  --surface-page:var(--page);
-  --surface-panel:var(--white);
-  --surface-hero:var(--fugaz-hero-gradient);
-  --surface-card:var(--surface-soft);
-  --text-strong:var(--black);
-  --text-on-hero:var(--white);
-  --border-hairline:rgba(0,0,0,0.06);
-}
-</style>
-<style>:root{
-  /* One family. Satoshi — geometric grotesk, Medium 500, never bold-black. */
-  --font-core:"Satoshi","Satoshi Fallback",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  --font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
-
-  --weight-regular:400;
-  --weight-medium:500;
-
-  /* Exact values transcribed from "Web concept Fugaz OFFICIAL" (Desktop - 1) */
-  --tracking-display:-0.020em;  /* everything at display and UI sizes */
-  --tracking-meta:-0.010em;     /* header email + social line only */
-  --leading-core:0.909;
-
-  --size-hero:68.13986206054688px;      /* "The most exclusive / design studio." */
-  --size-section:50px;                  /* two-tone section headline */
-  --size-wordmark:42.996742248535156px; /* "Fugaz Agency" in the footer */
-  --size-name:25px;                     /* founder names */
-  --size-lede:21.51474380493164px;      /* "Our projects & clients speak for us." */
-  --size-badge:18.103315353393555px;    /* "0 spots left for Q3" */
-  --size-meta:17px;                     /* email + linkedin / X / instagram */
-  --size-button:14.9399995803833px;     /* pill labels */
-}
-</style>
-<style>:root{
-  /* Radii — nothing in this system has a square corner */
-  --radius-panel:29px;      /* every stacked panel, hero included */
-  --radius-card:31.26959228515625px;  /* work cards */
-  --radius-team:31px;       /* team cards and their photos */
-  --radius-logo-pill:9.678118705749512px; /* the header logo capsule */
-  --radius-button:28.12394905090332px;    /* pill buttons */
-  --radius-tile:18.932%;    /* app icon squircle: 58.497 on 309 */
-
-  /* Page frame */
-  --page-width:1440px;
-  --panel-x:15px;           /* panels are inset 15px from the page edge */
-  --panel-width:1411px;
-  --hero-height:987px;
-  --panel-gap:21px;         /* 1022 - (14 + 987) */
-
-  /* Shadow — the only one in the system, and it is almost invisible */
-  --shadow-panel:0px 0px 51.700px 0px rgba(0,0,0,0.03);
-
-  /* Spacing observed in the concept */
-  --header-x:102px;
-  --header-y:73px;
-  --content-x:73px;         /* copy inset inside a white panel */
-  --pad-button:7px 8.789px 8.789px 8.789px;
-  --pad-logo-pill:7.339px;
-}
-</style>
-<style>:root{
-  /* One easing curve everywhere. Nothing bounces, nothing springs. */
-  --ease-fugaz:cubic-bezier(0.16,1,0.3,1); /* @kind other */
-  --dur-fast:0.6s; /* @kind other */
-  --dur-base:0.9s; /* @kind other */
-  --dur-slow:1.4s; /* @kind other */
-  --marquee-duration:40s; /* @kind other */
-  --transition-core:all var(--dur-base) var(--ease-fugaz);
-}
-@media (prefers-reduced-motion:reduce){:root{
-  --dur-fast:0.01s; /* @kind other */
-  --dur-base:0.01s; /* @kind other */
-  --dur-slow:0.01s; /* @kind other */
-  --marquee-duration:0s; /* @kind other */
-}}
-</style>
-<style>a{color:var(--fugaz-blue);text-decoration:none;transition:opacity var(--dur-fast) var(--ease-fugaz)}
-a:hover{opacity:.6}
-
-/* Film grain. The blue is never flat — this sits on top of the hero gradient. */
-.fugaz-grain{position:absolute;inset:0;pointer-events:none;opacity:.34;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNjAnIGhlaWdodD0nMTYwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC45JyBudW1PY3RhdmVzPSczJyBzdGl0Y2hUaWxlcz0nc3RpdGNoJy8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9JzE2MCcgaGVpZ2h0PScxNjAnIGZpbHRlcj0ndXJsKCNuKScvPjwvc3ZnPg==");background-size:160px 160px}
-
-/* Type roles. One family, Medium 500, -0.020em, 0.909 leading. */
-.fugaz-hero{font-family:var(--font-core);font-weight:500;font-size:var(--size-hero);line-height:.909;letter-spacing:-.020em;margin:0;text-align:center;color:var(--white)}
-.fugaz-section{font-family:var(--font-core);font-weight:500;font-size:var(--size-section);line-height:.909;letter-spacing:-.020em;margin:0}
-.fugaz-lede{font-family:var(--font-core);font-weight:500;font-size:var(--size-lede);line-height:.909;letter-spacing:-.020em}
-.fugaz-meta{font-family:var(--font-core);font-weight:500;font-size:var(--size-meta);line-height:.909;letter-spacing:-.010em}
-
-/* Two-tone headline: the grey line sets up, the black line lands. */
-.fugaz-setup{color:#808080}
-.fugaz-point{color:var(--black)}
-
-/* Partner marquee: the row is masked out at both ends. */
-.fugaz-marquee-mask{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,0) -0.88%,#000 17.92%,#000 82.91%,rgba(0,0,0,0) 100.96%);mask-image:linear-gradient(90deg,rgba(0,0,0,0) -0.88%,#000 17.92%,#000 82.91%,rgba(0,0,0,0) 100.96%)}
-@keyframes fugaz-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-</style>
+<link rel="stylesheet" href="_ds/fugaz-design-system-f1d90f04-22ad-4409-bd7b-b31bd03bc302/tokens/fonts.css">
+<script src="./ds-base.js"></script>
 <style>
 html,body{margin:0;background:#EFEEEC}
 /* the page owns its own scroll feel — the native bar just breaks the frame */
@@ -438,7 +314,6 @@ html{scrollbar-width:none;-ms-overflow-style:none}
   [data-brief] input,[data-brief] textarea{font-size:16px !important;min-height:50px !important}
   [data-brief] textarea{min-height:110px !important}
   [data-scan-next],[data-scan-back],[data-brief-send]{height:50px !important;min-height:50px !important}
-  [data-scan-done]{padding-bottom:24px !important}
   [data-contact-grid="1"]{left:20px !important;right:20px !important;top:78px !important;bottom:16px !important;display:flex !important;flex-direction:column !important;overflow:hidden !important;padding-bottom:0 !important}
   [data-scan-step]:not([style*="display: none"]){display:flex !important;flex-direction:column !important;height:100% !important;gap:0 !important}
   [data-scan-q]{font-size:clamp(19px,4.6vh,26px) !important;line-height:1.06 !important;margin-bottom:0 !important}
@@ -452,7 +327,26 @@ html{scrollbar-width:none;-ms-overflow-style:none}
   [data-brief]{height:100% !important;min-height:0 !important}
   [data-brief] input,[data-brief] textarea{font-size:16px !important;min-height:0 !important;height:clamp(42px,6.4vh,50px) !important;padding:0 14px !important}
   [data-brief] textarea{height:clamp(58px,11vh,104px) !important;padding:12px 14px !important}
-  [data-scan-done]{padding:0 !important;height:100% !important;min-height:0 !important;justify-content:center !important;gap:clamp(8px,1.6vh,18px) !important}
+  [data-scan-budget]::-webkit-slider-thumb{transition:none !important;width:26px !important;height:26px !important;margin-top:-11.5px !important}
+  /* the scan's done state: a scrolling column, the car as a divider in flow, buttons reachable */
+  [data-scan-done]{padding:0 0 20px !important;height:auto !important;min-height:0 !important;justify-content:flex-start !important;gap:10px !important}
+  [data-scan-done] [data-scan-diag]{gap:12px !important;padding-top:0 !important}
+  [data-scan-done] [data-diag-lede="1"]{font-size:15px !important;line-height:1.35 !important}
+  [data-scan-done] [data-diag-foot="1"]{font-size:13px !important;line-height:1.35 !important}
+  [data-scan-done] [data-diag-now="1"] span,[data-scan-done] [data-diag-pot="1"] span{height:12px !important}
+  [data-scan-done] > div:last-child{gap:8px !important;margin-top:2px !important}
+  [data-scan-done] > div:last-child button{height:46px !important}
+  [data-contact-grid="1"]{overflow-y:auto !important}
+  [data-sent-car="1"]{height:44px !important}
+  [data-sent-car="1"] img{width:72px !important}
+  [data-scan-done] [data-diag-head="1"]{font-size:26px !important}
+  [data-scan-done] > div:last-child{flex-direction:column !important;align-items:stretch !important}
+  [data-scan-done] > div:last-child button{width:100% !important}
+  /* budget: the readout sits above a 44px band, the scale under it at 10px */
+  [data-scan-budout="1"]{font-size:36px !important;margin-bottom:22px !important}
+  [data-scan-budlbl="1"]{font-size:9.5px !important;margin-top:16px !important;letter-spacing:-0.020em !important}
+  /* footer WhatsApp: label clear of the disc */
+  [data-r="foot-wa"] [data-fl="1"]{margin-right:14px !important;min-width:0 !important}
 }
 
 /* touch devices: hover cannot exist, so a press is the acknowledgement */
@@ -516,6 +410,8 @@ a[href],a[href] *,button,button *,[role="button"],[role="button"] *,label,summar
 /* the work grid hides the system cursor: the floating "View all projects" label IS the cursor there */
 [data-r="work-grid"],[data-r="work-grid"] *{cursor:none !important}
 button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !important}
+html,a,button,[role="button"],[data-faq-q],[data-faq-row],[data-scan-opt],[data-step-item],[data-wtile],[data-allwork-card],label,summary{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="position:relative;width:100%;max-width:none;margin:0 auto;overflow-x:clip;background:#EFEEEC;font-family:Satoshi,'Satoshi Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:15px 15px 21px;box-sizing:border-box">
@@ -523,7 +419,7 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-progress="1" style="position:fixed;left:0;top:0;height:2px;width:0%;background:#0057FE;z-index:60;pointer-events:none"></div>
 
 <div data-nav="1" style="position:fixed;top:18px;left:50%;z-index:55;transform:translateX(-50%) translateY(-96px);opacity:0;pointer-events:none;box-sizing:border-box;display:flex;align-items:center;gap:14px;padding:9px 14px;border-radius:13px;background:rgba(255,255,255,0.84);backdrop-filter:blur(14px);box-shadow:0 1px 2px rgba(0,0,0,0.05),0 10px 34px rgba(0,0,0,0.07)">
-<a href="#top" data-scroll-top="1" aria-label="Back to top" style="display:flex;align-items:center;flex-shrink:0;cursor:pointer"><img decoding="async" data-nav-lead="1" src="assets/3f09bab5-8956-49fd-ae53-e50d9094b795.svg" alt="Fugaz" style="height:21px;display:block"></a>
+<a href="#top" data-scroll-top="1" aria-label="Back to top" style="display:flex;align-items:center;flex-shrink:0;cursor:pointer"><img decoding="async" data-nav-lead="1" src="assets/logo-mark-black.svg" alt="Fugaz" style="height:21px;display:block"></a>
 <span data-nav-rule="1" aria-hidden="true" style="width:1px;height:18px;background:rgba(0,0,0,0.16);flex-shrink:0;opacity:0;transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1)"></span>
 <div data-nav-rest="1" style="display:flex;align-items:center;gap:20px;max-width:0;overflow:hidden;opacity:0">
 <a href="#work" data-scroll-to="work" style="font-weight:500;font-size:15px;letter-spacing:-0.010em;color:#000000;white-space:nowrap" data-fl="1"><span data-fl-in="1">Work</span><span data-fl-out="1">Work</span></a>
@@ -535,11 +431,17 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 </div>
 
 <div data-mnav="1" style="display:none;position:fixed;left:50%;top:34px;z-index:58;transform:translateX(-50%);align-items:center;gap:11px;padding:7px 14px;border-radius:13px;background:#FFFFFF;box-shadow:0 1px 2px rgba(0,0,0,0.06),0 10px 30px rgba(0,0,0,0.10);box-sizing:border-box">
-<a href="#top" data-scroll-top="1" aria-label="Back to top" style="display:flex;align-items:center;flex-shrink:0"><img decoding="async" src="assets/3f09bab5-8956-49fd-ae53-e50d9094b795.svg" alt="Fugaz" style="height:20px;display:block"></a>
+<a href="#top" data-scroll-top="1" aria-label="Back to top" style="display:flex;align-items:center;flex-shrink:0"><img decoding="async" src="assets/logo-mark-black.svg" alt="Fugaz" style="height:20px;display:block"></a>
 <span aria-hidden="true" style="width:1px;height:16px;background:rgba(0,0,0,0.18);flex-shrink:0"></span>
-<span style="position:relative;width:54px;height:30px;flex-shrink:0;display:block;margin:0">
-<span style="position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(&quot;assets/900348f8-8534-4c22-af6e-1791b093b38b.png&quot;) center 22%/cover no-repeat"></span>
-<span style="position:absolute;left:24px;top:0;width:30px;height:30px;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(&quot;assets/9a396be8-b79c-4623-b330-6450d42e5faa.webp&quot;) center 42%/cover no-repeat"></span>
+<span data-avgroup="1" style="position:relative;width:54px;height:30px;flex-shrink:0;display:block;margin:0">
+<span data-tip="1" style="position:absolute;left:0;top:0;width:30px;height:30px;display:block;z-index:1">
+<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(assets/avatar-luka-v6.jpg) center 22%/cover no-repeat"></span>
+<span data-tipbubble="1" style="position:absolute;left:50%;top:calc(100% + 12px);display:block;padding:6px 13px 7px;border-radius:16px;background:#EFEEEC;color:#000000;font-weight:500;font-size:14px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(-50%,-8px,0) scale(0.8);transform-origin:50% 0;transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.62s cubic-bezier(0.16,1,0.3,1);pointer-events:none;z-index:6;box-shadow:0 6px 22px rgba(0,0,0,0.12)"><span aria-hidden="true" style="position:absolute;left:50%;top:-7px;width:16px;height:8px;margin-left:-8px;display:block;background:#EFEEEC;clip-path:polygon(50% 0,100% 100%,0 100%)"></span>@lukamilich</span>
+</span>
+<span data-tip="1" style="position:absolute;left:24px;top:0;width:30px;height:30px;display:block;z-index:2">
+<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(assets/avatar-diego-v8.png) center 42%/cover no-repeat"></span>
+<span data-tipbubble="1" style="position:absolute;left:50%;top:calc(100% + 12px);display:block;padding:6px 13px 7px;border-radius:16px;background:#EFEEEC;color:#000000;font-weight:500;font-size:14px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(-50%,-8px,0) scale(0.8);transform-origin:50% 0;transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.62s cubic-bezier(0.16,1,0.3,1);pointer-events:none;z-index:6;box-shadow:0 6px 22px rgba(0,0,0,0.12)"><span aria-hidden="true" style="position:absolute;left:50%;top:-7px;width:16px;height:8px;margin-left:-8px;display:block;background:#EFEEEC;clip-path:polygon(50% 0,100% 100%,0 100%)"></span>@drgomesfr</span>
+</span>
 </span>
 <span aria-hidden="true" style="width:1px;height:16px;background:rgba(0,0,0,0.18);flex-shrink:0"></span>
 <button type="button" data-menu-toggle="1" aria-label="Menu" aria-expanded="false" style="display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:18px;height:44px;margin:-7px 0;padding:0;border:none;border-radius:12px;background:none;cursor:pointer;flex-shrink:0">
@@ -595,17 +497,17 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-hero="1" data-r="hero-head" data-delay="0.08" style="position:absolute;left:92px;right:92px;top:73px;height:47.323px;display:flex;align-items:center;justify-content:space-between">
 <a href="mailto:info@fugaz-agency.com" data-fl="1" style="font-weight:500;font-size:17px;line-height:1.25;letter-spacing:-0.010em;color:#FFFFFF;text-decoration:none"><span data-fl-in="1">info@fugaz-agency.com</span><span data-fl-out="1">info@fugaz-agency.com</span></a>
 <span data-capsule="1" style="display:inline-flex;align-items:center;justify-content:center;gap:11.1125px;padding:7.339px 13.4px;border-radius:9.678px;background:#FFFFFF;box-sizing:border-box;transform-origin:center">
-<a href="#top" data-scroll-top="replay" aria-label="Back to top" style="display:flex;align-items:center;cursor:pointer"><img decoding="async" src="assets/3f09bab5-8956-49fd-ae53-e50d9094b795.svg" alt="Fugaz" style="height:21px;display:block"></a>
+<a href="#top" data-scroll-top="replay" aria-label="Back to top" style="display:flex;align-items:center;cursor:pointer"><img decoding="async" src="assets/logo-mark-black.svg" alt="Fugaz" style="height:21px;display:block"></a>
 <span aria-hidden="true" style="width:1px;height:16.322px;background:rgba(0,0,0,0.2);flex-shrink:0"></span>
 <span data-avgroup="1" style="position:relative;width:59.067px;height:32.645px;flex-shrink:0;display:block">
 <span data-tip="1" style="position:absolute;left:0;top:0;width:32.645px;height:32.645px;display:block;z-index:1">
-<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(&quot;assets/900348f8-8534-4c22-af6e-1791b093b38b.png&quot;) center 22%/cover no-repeat"></span>
+<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(assets/avatar-luka-v6.jpg) center 22%/cover no-repeat"></span>
 <span data-tipbubble="1" style="position:absolute;left:50%;top:calc(100% + 14px);display:block;padding:8px 17px 10px;border-radius:21px;background:#EFEEEC;color:#000000;font-weight:500;font-size:20px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(-50%,-8px,0) scale(0.8);transform-origin:50% 0;transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.62s cubic-bezier(0.16,1,0.3,1);pointer-events:none;z-index:6;box-shadow:0 6px 22px rgba(0,0,0,0.12)">
 <span aria-hidden="true" style="position:absolute;left:50%;top:-8px;width:18px;height:9px;margin-left:-9px;display:block;background:#EFEEEC;clip-path:polygon(50% 0,100% 100%,0 100%)"></span>@lukamilich
 </span>
 </span>
 <span data-tip="1" style="position:absolute;left:26.422px;top:0;width:32.645px;height:32.645px;display:block;z-index:2">
-<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(&quot;assets/9a396be8-b79c-4623-b330-6450d42e5faa.webp&quot;) center 42%/cover no-repeat"></span>
+<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(assets/avatar-diego-v8.png) center 42%/cover no-repeat"></span>
 <span data-tipbubble="1" style="position:absolute;left:50%;top:calc(100% + 14px);display:block;padding:8px 17px 10px;border-radius:21px;background:#EFEEEC;color:#000000;font-weight:500;font-size:20px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(-50%,-8px,0) scale(0.8);transform-origin:50% 0;transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.62s cubic-bezier(0.16,1,0.3,1);pointer-events:none;z-index:6;box-shadow:0 6px 22px rgba(0,0,0,0.12)">
 <span aria-hidden="true" style="position:absolute;left:50%;top:-8px;width:18px;height:9px;margin-left:-9px;display:block;background:#EFEEEC;clip-path:polygon(50% 0,100% 100%,0 100%)"></span>@drgomesfr
 </span>
@@ -617,7 +519,7 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 </span>
 </div>
 <div data-hero-shift="1" style="position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;padding-top:120px;box-sizing:border-box">
-<img decoding="async" data-hero="1" data-delay="0.22" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="width:74.701px;height:43.88px;display:block;pointer-events:auto">
+<img decoding="async" data-hero="1" data-delay="0.22" src="assets/hero-f1-car.svg" alt="" style="width:74.701px;height:43.88px;display:block;pointer-events:auto">
 <div data-hero="1" data-delay="0.3" style="display:flex;align-items:center;gap:5.686px;margin-top:16.12px;font-weight:400;font-size:18.103px;line-height:0.909;letter-spacing:-0.020em;color:#FFFFFF">
 <span data-spot-dot="1" data-live-dot="1" style="position:relative;width:6.823px;height:6.823px;border-radius:50%;background:#2CCD6B;display:block"></span><span data-spot-text="1" style="flex:none;white-space:nowrap">5 spots left for Q4</span>
 </div>
@@ -640,40 +542,40 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div class="fugaz-partner-drift" style="display:flex;align-items:center;width:max-content" data-marquee-anim="1">
 <div style="display:flex;align-items:center;width:max-content;will-change:transform" data-marquee="1">
 <div style="display:flex;align-items:center;gap:136px;padding-right:136px;flex:none" data-mq-group="1">
-<img loading="lazy" decoding="async" src="assets/b22a6d57-b154-41da-b93a-a57134538f77.png" alt="Pegasus" width="61" height="48" style="width:61px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/d9bd1cd9-7185-4c7d-a8e2-953e6604bf63.svg" alt="Bolenius" width="186" height="27" style="width:186px;height:27px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/09f74c53-4e9e-43da-af70-9b0b261dde3f.png" alt="Ocho" width="105" height="42" style="width:105px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/c17b89db-359c-4ebb-a2d1-9c2daf2b5bad.png" alt="MFG" width="55" height="56" style="width:55px;height:56px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/c0384699-353e-4aa4-bbd1-fe3400407bff.png" alt="Gouden Leeuw Bouwbedrijf" width="68" height="62" style="width:68px;height:62px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/b0a7cc23-90be-4f4e-ba67-b245ae7074f0.png" alt="International Real Estate" width="174" height="48" style="width:174px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/d4728465-a5cd-44aa-a7a3-50d422091d27.png" alt="Earbuds Restore" width="153" height="48" style="width:153px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/647bec91-20a9-41cc-bef6-cfba4ca0b7a2.png" alt="TrueBank" width="196" height="42" style="width:196px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/d633885d-32be-402d-ab19-cc21b0f71b30.png" alt="FreightFlow" width="236" height="36" style="width:236px;height:36px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/bde8048b-89b3-494a-a072-bd18f5af2168.png" alt="Aion" width="132" height="42" style="width:132px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-pegasus.png" alt="Pegasus" width="61" height="48" style="width:61px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-bolenius.svg" alt="Bolenius" width="186" height="27" style="width:186px;height:27px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-ocho.png" alt="Ocho" width="105" height="42" style="width:105px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-mfg.png" alt="MFG" width="55" height="56" style="width:55px;height:56px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-gouden-leeuw.png" alt="Gouden Leeuw Bouwbedrijf" width="68" height="62" style="width:68px;height:62px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-international.png" alt="International Real Estate" width="174" height="48" style="width:174px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-earbuds-restore.png" alt="Earbuds Restore" width="153" height="48" style="width:153px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-truebank.png" alt="TrueBank" width="196" height="42" style="width:196px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-freightflow-sm.png" alt="FreightFlow" width="236" height="36" style="width:236px;height:36px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-aion.png" alt="Aion" width="132" height="42" style="width:132px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
 </div>
 <div style="display:flex;align-items:center;gap:136px;padding-right:136px;flex:none" aria-hidden="true" data-html2canvas-ignore="true">
-<img loading="lazy" decoding="async" src="assets/b22a6d57-b154-41da-b93a-a57134538f77.png" alt="" width="61" height="48" style="width:61px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/d9bd1cd9-7185-4c7d-a8e2-953e6604bf63.svg" alt="" aria-hidden="true" width="186" height="27" style="width:186px;height:27px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/09f74c53-4e9e-43da-af70-9b0b261dde3f.png" alt="" width="105" height="42" style="width:105px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/c17b89db-359c-4ebb-a2d1-9c2daf2b5bad.png" alt="" width="55" height="56" style="width:55px;height:56px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/c0384699-353e-4aa4-bbd1-fe3400407bff.png" alt="" width="68" height="62" style="width:68px;height:62px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/b0a7cc23-90be-4f4e-ba67-b245ae7074f0.png" alt="" width="174" height="48" style="width:174px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/d4728465-a5cd-44aa-a7a3-50d422091d27.png" alt="" width="153" height="48" style="width:153px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/647bec91-20a9-41cc-bef6-cfba4ca0b7a2.png" alt="" width="196" height="42" style="width:196px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/d633885d-32be-402d-ab19-cc21b0f71b30.png" alt="" width="236" height="36" style="width:236px;height:36px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/bde8048b-89b3-494a-a072-bd18f5af2168.png" alt="" width="132" height="42" style="width:132px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-pegasus.png" alt="" width="61" height="48" style="width:61px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-bolenius.svg" alt="" aria-hidden="true" width="186" height="27" style="width:186px;height:27px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-ocho.png" alt="" width="105" height="42" style="width:105px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-mfg.png" alt="" width="55" height="56" style="width:55px;height:56px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-gouden-leeuw.png" alt="" width="68" height="62" style="width:68px;height:62px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-international.png" alt="" width="174" height="48" style="width:174px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-earbuds-restore.png" alt="" width="153" height="48" style="width:153px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-truebank.png" alt="" width="196" height="42" style="width:196px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-freightflow-sm.png" alt="" width="236" height="36" style="width:236px;height:36px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-aion.png" alt="" width="132" height="42" style="width:132px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
 </div>
 <div style="display:flex;align-items:center;gap:136px;padding-right:136px;flex:none" aria-hidden="true" data-html2canvas-ignore="true">
-<img loading="lazy" decoding="async" src="assets/b22a6d57-b154-41da-b93a-a57134538f77.png" alt="" width="61" height="48" style="width:61px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/d9bd1cd9-7185-4c7d-a8e2-953e6604bf63.svg" alt="" aria-hidden="true" width="186" height="27" style="width:186px;height:27px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/09f74c53-4e9e-43da-af70-9b0b261dde3f.png" alt="" width="105" height="42" style="width:105px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/c17b89db-359c-4ebb-a2d1-9c2daf2b5bad.png" alt="" width="55" height="56" style="width:55px;height:56px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/c0384699-353e-4aa4-bbd1-fe3400407bff.png" alt="" width="68" height="62" style="width:68px;height:62px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/b0a7cc23-90be-4f4e-ba67-b245ae7074f0.png" alt="" width="174" height="48" style="width:174px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/d4728465-a5cd-44aa-a7a3-50d422091d27.png" alt="" width="153" height="48" style="width:153px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/647bec91-20a9-41cc-bef6-cfba4ca0b7a2.png" alt="" width="196" height="42" style="width:196px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/d633885d-32be-402d-ab19-cc21b0f71b30.png" alt="" width="236" height="36" style="width:236px;height:36px;flex:none;opacity:0.4;filter:grayscale(1)">
-<img loading="lazy" decoding="async" src="assets/bde8048b-89b3-494a-a072-bd18f5af2168.png" alt="" width="132" height="42" style="width:132px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-pegasus.png" alt="" width="61" height="48" style="width:61px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-bolenius.svg" alt="" aria-hidden="true" width="186" height="27" style="width:186px;height:27px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-ocho.png" alt="" width="105" height="42" style="width:105px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-mfg.png" alt="" width="55" height="56" style="width:55px;height:56px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-gouden-leeuw.png" alt="" width="68" height="62" style="width:68px;height:62px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-international.png" alt="" width="174" height="48" style="width:174px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-earbuds-restore.png" alt="" width="153" height="48" style="width:153px;height:48px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-truebank.png" alt="" width="196" height="42" style="width:196px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-freightflow-sm.png" alt="" width="236" height="36" style="width:236px;height:36px;flex:none;opacity:0.4;filter:grayscale(1)">
+<img loading="lazy" decoding="async" src="assets/client-aion.png" alt="" width="132" height="42" style="width:132px;height:42px;flex:none;opacity:0.4;filter:grayscale(1)">
 </div>
 </div>
 </div>
@@ -686,12 +588,12 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div aria-hidden="true" style="position:absolute;left:0;top:0;right:0;bottom:0;z-index:3;background:radial-gradient(120% 88% at 50% 50%,rgba(5,7,12,0) 32%,rgba(5,7,12,0.58) 76%,rgba(5,7,12,0.9) 100%)"></div>
 <div data-grain="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live" style="inset:-25%;z-index:4"></div>
 <div data-r="s3-field" aria-hidden="true" style="position:absolute;left:0;top:0;right:0;bottom:0;z-index:1;pointer-events:none">
-<div data-atmo="1" data-d="0.95" style="position:absolute;left:14%;top:50%;width:23vw;aspect-ratio:4/5;z-index:4;opacity:0.92;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:22px;overflow:hidden;background:#080D18;transform:rotate(-1.6deg);filter:blur(1.6px) brightness(0.92);box-shadow:0 66px 132px rgba(0,0,0,0.64);"><img loading="lazy" decoding="async" src="assets/42fcb1ce-5c92-45e1-9a09-6551ad9dfee2.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:60% 22%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
-<div data-atmo="1" data-d="0.55" style="position:absolute;left:30%;top:14%;width:14vw;aspect-ratio:4/5;z-index:2;opacity:0.74;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#080D18;transform:rotate(1.8deg);filter:blur(3px) brightness(0.86);box-shadow:0 48px 96px rgba(0,0,0,0.52);will-change:filter"><img loading="lazy" decoding="async" src="assets/9d212435-649d-4e9e-b25e-15d5ca243ec8.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:46% 30%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
-<div data-atmo="1" data-d="0.22" style="position:absolute;left:7%;top:88%;width:11vw;aspect-ratio:4/5;z-index:1;opacity:0.46;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:16px;overflow:hidden;background:#080D18;transform:rotate(-1.2deg);filter:blur(5px) brightness(0.8);box-shadow:0 34px 68px rgba(0,0,0,0.42);will-change:filter"><img loading="lazy" decoding="async" src="assets/f56ece43-7858-492d-aa1c-e4a9f2fddca7.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:46% 45%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
-<div data-atmo="1" data-d="0.95" style="position:absolute;left:86%;top:50%;width:23vw;aspect-ratio:4/5;z-index:4;opacity:0.92;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:22px;overflow:hidden;background:#080D18;transform:rotate(1.6deg);filter:blur(1.6px) brightness(0.92);box-shadow:0 66px 132px rgba(0,0,0,0.64);will-change:filter"><img loading="lazy" decoding="async" src="assets/f25482be-181e-4d7b-854e-3f03b643a830.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 14%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
-<div data-atmo="1" data-d="0.55" style="position:absolute;left:69%;top:86%;width:14vw;aspect-ratio:4/5;z-index:2;opacity:0.74;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#080D18;transform:rotate(-1.8deg);filter:blur(3px) brightness(0.86);box-shadow:0 48px 96px rgba(0,0,0,0.52);will-change:filter"><img loading="lazy" decoding="async" src="assets/fad184b4-9045-4ef3-ac24-afd28dbcb841.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
-<div data-atmo="1" data-d="0.22" style="position:absolute;left:92%;top:12%;width:11vw;aspect-ratio:4/5;z-index:1;opacity:0.46;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:16px;overflow:hidden;background:#080D18;transform:rotate(1.2deg);filter:blur(5px) brightness(0.8);box-shadow:0 34px 68px rgba(0,0,0,0.42);will-change:filter"><img loading="lazy" decoding="async" src="assets/3fc432eb-e3fe-4e14-a180-5d6467e3612d.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
+<div data-atmo="1" data-d="0.95" style="position:absolute;left:14%;top:50%;width:23vw;aspect-ratio:4/5;z-index:4;opacity:0.92;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:22px;overflow:hidden;background:#080D18;transform:rotate(-1.6deg);filter:blur(1.6px) brightness(0.92);box-shadow:0 66px 132px rgba(0,0,0,0.64);"><img loading="lazy" decoding="async" src="assets/atmo-luka-couch.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:60% 22%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
+<div data-atmo="1" data-d="0.55" style="position:absolute;left:30%;top:14%;width:14vw;aspect-ratio:4/5;z-index:2;opacity:0.74;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#080D18;transform:rotate(1.8deg);filter:blur(3px) brightness(0.86);box-shadow:0 48px 96px rgba(0,0,0,0.52);will-change:filter"><img loading="lazy" decoding="async" src="assets/atmo-luka-street.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:46% 30%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
+<div data-atmo="1" data-d="0.22" style="position:absolute;left:7%;top:88%;width:11vw;aspect-ratio:4/5;z-index:1;opacity:0.46;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:16px;overflow:hidden;background:#080D18;transform:rotate(-1.2deg);filter:blur(5px) brightness(0.8);box-shadow:0 34px 68px rgba(0,0,0,0.42);will-change:filter"><img loading="lazy" decoding="async" src="assets/atmo-luka-sunset.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:46% 45%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
+<div data-atmo="1" data-d="0.95" style="position:absolute;left:86%;top:50%;width:23vw;aspect-ratio:4/5;z-index:4;opacity:0.92;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:22px;overflow:hidden;background:#080D18;transform:rotate(1.6deg);filter:blur(1.6px) brightness(0.92);box-shadow:0 66px 132px rgba(0,0,0,0.64);will-change:filter"><img loading="lazy" decoding="async" src="assets/atmo-diego-couch.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 14%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
+<div data-atmo="1" data-d="0.55" style="position:absolute;left:69%;top:86%;width:14vw;aspect-ratio:4/5;z-index:2;opacity:0.74;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#080D18;transform:rotate(-1.8deg);filter:blur(3px) brightness(0.86);box-shadow:0 48px 96px rgba(0,0,0,0.52);will-change:filter"><img loading="lazy" decoding="async" src="assets/atmo-diego-street.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
+<div data-atmo="1" data-d="0.22" style="position:absolute;left:92%;top:12%;width:11vw;aspect-ratio:4/5;z-index:1;opacity:0.46;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:16px;overflow:hidden;background:#080D18;transform:rotate(1.2deg);filter:blur(5px) brightness(0.8);box-shadow:0 34px 68px rgba(0,0,0,0.42);will-change:filter"><img loading="lazy" decoding="async" src="assets/atmo-diego-sunset.jpg" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
 </div>
 <div data-r="s3-beats" style="position:absolute;left:0;top:0;right:0;bottom:0;z-index:5;display:grid;align-items:center;justify-items:center;padding:0 73px;box-sizing:border-box;text-align:center;pointer-events:none">
 <div data-s3-beat="1" data-in="0.055,0.19" data-out="0.235,0.325" style="grid-area:1/1;width:100%;max-width:1080px">
@@ -732,22 +634,22 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-r="work-grid" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 39px;margin-top:64px;cursor:pointer">
 <div data-reveal="1" data-y="44" data-delay="0.10" data-delay-stacked="0" data-dur-stacked="1700" data-ease-stacked="cubic-bezier(0.33,0.02,0.2,1)" data-from-stacked="translate3d(0,64px,0) scale(0.955)" data-project="View all projects" style="position:relative;width:100%;aspect-ratio:644.154/446.113;border-radius:31.2696px;background:#FAFAFA;overflow:hidden;box-sizing:border-box;cursor:pointer">
 <div style="position:absolute;left:13px;top:13px;right:13px;bottom:13px;border-radius:24px;overflow:hidden;background:#FAFAFA">
-<span style="position:absolute;left:50%;top:50%;width:86%;transform:translate3d(-50%,-50%,0);display:block"><img decoding="async" src="assets/f2ab221c-a8de-4dd8-975c-a52d85d21fd7.jpg" alt="Earbuds Restore" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px"></span>
+<span style="position:absolute;left:50%;top:50%;width:86%;transform:translate3d(-50%,-50%,0);display:block"><img decoding="async" src="assets/work/earbuds.jpg" alt="Earbuds Restore" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px"></span>
 </div>
 </div>
 <div data-reveal="1" data-y="44" data-delay="0.22" data-delay-stacked="0" data-dur-stacked="1700" data-ease-stacked="cubic-bezier(0.33,0.02,0.2,1)" data-from-stacked="translate3d(0,64px,0) scale(0.955)" data-project="View all projects" style="position:relative;width:100%;aspect-ratio:644.154/446.113;border-radius:31.2696px;background:#FAFAFA;overflow:hidden;box-sizing:border-box;cursor:pointer">
 <div style="position:absolute;left:13px;top:13px;right:13px;bottom:13px;border-radius:24px;overflow:hidden;background:#FAFAFA">
-<span style="position:absolute;left:50%;top:50%;width:86%;transform:translate3d(-50%,-50%,0);display:block"><img decoding="async" src="assets/ee82da00-d9f1-4800-a977-029d4f53c009.jpg" alt="Pegasus Cyber Security" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px"></span>
+<span style="position:absolute;left:50%;top:50%;width:86%;transform:translate3d(-50%,-50%,0);display:block"><img decoding="async" src="assets/work/pegasus.jpg" alt="Pegasus Cyber Security" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px"></span>
 </div>
 </div>
 <div data-reveal="1" data-y="44" data-delay="0.34" data-delay-stacked="0" data-dur-stacked="1700" data-ease-stacked="cubic-bezier(0.33,0.02,0.2,1)" data-from-stacked="translate3d(0,64px,0) scale(0.955)" data-project="View all projects" style="position:relative;width:100%;aspect-ratio:644.154/446.113;border-radius:31.2696px;background:#FAFAFA;overflow:hidden;box-sizing:border-box;cursor:pointer">
 <div style="position:absolute;left:13px;top:13px;right:13px;bottom:13px;border-radius:24px;overflow:hidden;background:#FAFAFA">
-<span style="position:absolute;left:50%;top:50%;width:86%;transform:translate3d(-50%,-50%,0);display:block"><img decoding="async" src="assets/a0d46364-bc64-4d1c-9864-1add376f05f9.jpg" alt="Aion" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px"></span>
+<span style="position:absolute;left:50%;top:50%;width:86%;transform:translate3d(-50%,-50%,0);display:block"><img decoding="async" src="assets/work/aion-web.jpg" alt="Aion" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px"></span>
 </div>
 </div>
 <div data-reveal="1" data-y="44" data-delay="0.46" data-delay-stacked="0" data-dur-stacked="1700" data-ease-stacked="cubic-bezier(0.33,0.02,0.2,1)" data-from-stacked="translate3d(0,64px,0) scale(0.955)" data-project="View all projects" style="position:relative;width:100%;aspect-ratio:644.154/446.113;border-radius:31.2696px;background:#FAFAFA;overflow:hidden;box-sizing:border-box;cursor:pointer">
 <div style="position:absolute;left:13px;top:13px;right:13px;bottom:13px;border-radius:24px;overflow:hidden;background:#FAFAFA">
-<span style="position:absolute;left:50%;top:50%;width:86%;transform:translate3d(-50%,-50%,0);display:block"><img decoding="async" src="assets/2c9b0c02-7401-4960-a550-9d57d844efda.jpg" alt="OCHO" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px"></span>
+<span style="position:absolute;left:50%;top:50%;width:86%;transform:translate3d(-50%,-50%,0);display:block"><img decoding="async" src="assets/work/ocho.jpg" alt="OCHO" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px"></span>
 </div>
 </div>
 <div data-work-cta="1" data-reveal="1" data-y="24" data-delay="0.58" style="display:none;justify-content:center;margin-top:44px"><span style="display:inline-flex"><button type="button" data-open-work="1" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border:none;border-radius:28.12395px;background:#000000;color:#FFFFFF;font-family:inherit;font-weight:500;font-size:14.94px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer">View all projects</button></span></div>
@@ -793,7 +695,7 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-r="pin-grid" style="position:absolute;left:7vw;right:7vw;top:11vh;bottom:14vh;display:grid;grid-template-columns:minmax(230px,0.68fr) minmax(0,1fr);gap:6vw">
 <div style="display:flex;flex-direction:column;justify-content:space-between;min-width:0">
 <div>
-<span data-reveal="1" data-y="18" style="display:block;font-weight:500;font-size:17px;letter-spacing:-0.010em;color:rgba(255,255,255,0.62)">How it works</span>
+<span data-reveal="1" data-y="18" style="display:block;font-weight:500;font-size:17px;letter-spacing:-0.010em;color:rgba(255,255,255,0.62)">Process</span>
 <h2 data-lines="1" style="margin:2.4vh 0 0;font-weight:500;font-size:clamp(34px,3.9vw,50px);line-height:0.909;letter-spacing:-0.020em">
 <span style="display:block;overflow:hidden;padding-bottom:0.26em;margin-bottom:-0.2em"><span data-line="1" style="display:inline;color:#FFFFFF"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">How</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">it</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">works.</span></span></span>
 </h2>
@@ -995,8 +897,8 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-hanger-face="1" style="display:flex;flex-direction:column;transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1)">
 <div data-tilt="1" data-cap="@lukamilich" data-reveal="1" data-y="44" data-dur="1600" data-from="translateY(44px) scale(0.94)" data-team-card="1" style="position:relative;width:100%;aspect-ratio:4/5;perspective:800px">
 <div data-tilt-inner="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:22px;overflow:hidden;background:#F2F1EF;transform-style:preserve-3d;will-change:transform">
-<img loading="lazy" decoding="async" src="assets/f5e86542-5803-46a4-a67c-1a45079a8230.jpg" alt="Luka Milić" style="position:absolute;left:0;top:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:grayscale(1) contrast(1.06)">
-<video data-hover-clip="1" src="assets/058fe0af-6a6c-4840-a227-8837a8fcfe38.mp4" muted="muted" loop="loop" playsinline="playsinline" preload="none" aria-hidden="true" style="position:absolute;left:0;top:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:grayscale(1) contrast(1.06);opacity:0;transition:opacity 0.55s cubic-bezier(0.16,1,0.3,1);pointer-events:none"></video>
+<img loading="lazy" decoding="async" src="assets/team-luka-v5.jpg" alt="Luka Milić" style="position:absolute;left:0;top:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:grayscale(1) contrast(1.06)">
+<video data-hover-clip="1" src="assets/team-luka-clip.mp4" muted="muted" loop="loop" playsinline="playsinline" preload="none" aria-hidden="true" style="position:absolute;left:0;top:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:grayscale(1) contrast(1.06);opacity:0;transition:opacity 0.55s cubic-bezier(0.16,1,0.3,1);pointer-events:none"></video>
 </div>
 <span data-tilt-cap="1" aria-hidden="true" style="position:absolute;left:0;top:0;z-index:3;pointer-events:none;padding:5px 11px 6px;border-radius:14px;background:#FFFFFF;box-shadow:0 6px 20px rgba(0,0,0,0.14);color:#000000;font-weight:500;font-size:12px;letter-spacing:-0.010em;white-space:nowrap;opacity:0;will-change:transform,opacity">@lukamilich</span>
 </div>
@@ -1009,7 +911,7 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 </div>
 </div>
 <div data-hanger-stage="1" style="position:absolute;left:0;top:0;right:0;bottom:0;z-index:2;opacity:0;visibility:hidden;background:#FAFAFA;transition:opacity 0.75s cubic-bezier(0.16,1,0.3,1),visibility 0s linear 0.75s">
-<x-import component-from-global-scope="lanyard-card" from="assets/a7268b5a-fe78-42db-8c80-6e55ef038041.js#/lanyard.js" photo="{{ badgeLuka }}" photo-rotate="0" name="Luka Milić" role="Identity &amp; growth" handle="@lukamilich" accent="#0057FE" band-text="FUGAZ" mark="assets/logo-mark-black.svg" style="position:absolute;left:0;top:0;right:0;bottom:0" hint-size="100%,100%"></x-import>
+<x-import component-from-global-scope="lanyard-card" from="./lanyard.js" photo="{{ badgeLuka }}" photo-rotate="0" name="Luka Milić" role="Identity &amp; growth" handle="@lukamilich" accent="#0057FE" band-text="FUGAZ" mark="assets/logo-mark-black.svg" style="position:absolute;left:0;top:0;right:0;bottom:0" hint-size="100%,100%"></x-import>
 <div style="position:absolute;left:0;right:0;bottom:18px;display:flex;justify-content:center;pointer-events:none">
 <button type="button" data-gravity-toggle="1" aria-pressed="false" style="pointer-events:auto;display:inline-flex;align-items:center;gap:10px;height:32px;padding:0 8px 0 16px;border:1px solid rgba(0,0,0,0.10);border-radius:28.124px;background:rgba(255,255,255,0.86);backdrop-filter:blur(5.1px);-webkit-backdrop-filter:blur(5.1px);color:#000000;font-family:inherit;font-weight:500;font-size:13.5px;letter-spacing:-0.010em;cursor:pointer;transition:border-color 0.55s cubic-bezier(0.16,1,0.3,1)">
 <span data-gravity-label="1">Disable gravity</span>
@@ -1028,8 +930,8 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-hanger-face="1" style="display:flex;flex-direction:column;transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1)">
 <div data-tilt="1" data-cap="@drgomesfr" data-reveal="1" data-y="44" data-dur="1600" data-from="translateY(44px) scale(0.94)" data-team-card="1" style="position:relative;width:100%;aspect-ratio:4/5;perspective:800px">
 <div data-tilt-inner="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:22px;overflow:hidden;background:#F2F1EF;transform-style:preserve-3d;will-change:transform">
-<img loading="lazy" decoding="async" src="assets/abf2c9c6-c1f6-4de4-9e9a-fb57ee67147c.jpg" alt="Diego Gomes" style="position:absolute;left:0;top:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:grayscale(1) contrast(1.08) brightness(1.1)">
-<video data-hover-clip="1" src="assets/3d797e3e-118c-4804-8907-bc6b903ae3b0.mp4" muted="muted" loop="loop" playsinline="playsinline" preload="none" aria-hidden="true" style="position:absolute;left:0;top:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:grayscale(1) contrast(1.08) brightness(1.1);opacity:0;transition:opacity 0.55s cubic-bezier(0.16,1,0.3,1);pointer-events:none"></video>
+<img loading="lazy" decoding="async" src="assets/team-diego-v5.jpg" alt="Diego Gomes" style="position:absolute;left:0;top:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:grayscale(1) contrast(1.08) brightness(1.1)">
+<video data-hover-clip="1" src="assets/team-diego-clip.mp4" muted="muted" loop="loop" playsinline="playsinline" preload="none" aria-hidden="true" style="position:absolute;left:0;top:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:grayscale(1) contrast(1.08) brightness(1.1);opacity:0;transition:opacity 0.55s cubic-bezier(0.16,1,0.3,1);pointer-events:none"></video>
 </div>
 <span data-tilt-cap="1" aria-hidden="true" style="position:absolute;left:0;top:0;z-index:3;pointer-events:none;padding:5px 11px 6px;border-radius:14px;background:#FFFFFF;box-shadow:0 6px 20px rgba(0,0,0,0.14);color:#000000;font-weight:500;font-size:12px;letter-spacing:-0.010em;white-space:nowrap;opacity:0;will-change:transform,opacity">@drgomesfr</span>
 </div>
@@ -1042,7 +944,7 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 </div>
 </div>
 <div data-hanger-stage="1" style="position:absolute;left:0;top:0;right:0;bottom:0;z-index:2;opacity:0;visibility:hidden;background:#FAFAFA;transition:opacity 0.75s cubic-bezier(0.16,1,0.3,1),visibility 0s linear 0.75s">
-<x-import component-from-global-scope="lanyard-card" from="assets/a7268b5a-fe78-42db-8c80-6e55ef038041.js#/lanyard.js" photo="{{ badgeDiego }}" name="Diego Gomes" role="AI &amp; development lead" handle="@drgomesfr" accent="#0057FE" band-text="FUGAZ" mark="assets/logo-mark-black.svg" style="position:absolute;left:0;top:0;right:0;bottom:0" hint-size="100%,100%"></x-import>
+<x-import component-from-global-scope="lanyard-card" from="./lanyard.js" photo="{{ badgeDiego }}" name="Diego Gomes" role="AI &amp; development lead" handle="@drgomesfr" accent="#0057FE" band-text="FUGAZ" mark="assets/logo-mark-black.svg" style="position:absolute;left:0;top:0;right:0;bottom:0" hint-size="100%,100%"></x-import>
 <div style="position:absolute;left:0;right:0;bottom:18px;display:flex;justify-content:center;pointer-events:none">
 <button type="button" data-gravity-toggle="1" aria-pressed="false" style="pointer-events:auto;display:inline-flex;align-items:center;gap:10px;height:32px;padding:0 8px 0 16px;border:1px solid rgba(0,0,0,0.10);border-radius:28.124px;background:rgba(255,255,255,0.86);backdrop-filter:blur(5.1px);-webkit-backdrop-filter:blur(5.1px);color:#000000;font-family:inherit;font-weight:500;font-size:13.5px;letter-spacing:-0.010em;cursor:pointer;transition:border-color 0.55s cubic-bezier(0.16,1,0.3,1)">
 <span data-gravity-label="1">Disable gravity</span>
@@ -1097,16 +999,16 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div style="min-width:0">
 <h3 data-lines="1" data-lines-step="0.055" style="margin:0;font-weight:500;font-size:38px;line-height:0.909;letter-spacing:-0.020em;color:#000000;max-width:19ch;text-wrap:balance">
 <span style="display:block;overflow:hidden;padding-bottom:0.26em;margin-bottom:-0.2em"><span data-line="1" style="display:inline;color:#000000"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">Want</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">to</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">maximize</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">your</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">brands</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">online&nbsp;identity?</span></span>
-</span></h3>
+</h3>
 <p data-cta-lede="1" data-lines="1" data-lines-delay="0.16" data-lines-step="0.05" style="margin:20px 0 0;max-width:40ch;font-weight:500;font-size:clamp(18px,1.75vw,25px);line-height:1.4;letter-spacing:-0.020em;color:#808080;text-wrap:pretty">
 <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">Don’t</span></span> <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">sleep</span></span> <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">on</span></span> <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">online</span></span> <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">presence,</span></span> <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">its</span></span> <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">how</span></span> <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">the</span></span> <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">world</span></span> <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">sees</span></span> <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">your</span></span> <span style="display:inline-block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.18em"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">brand.</span></span>
 </p>
 <div data-reveal="1" data-y="16" data-delay="0.30" style="display:flex;margin-top:34px">
-<span style="display:inline-flex"><button type="button" style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:7px 19px 8.789px;border:none;border-radius:28.124px;background:#000000;color:#FFFFFF;font-family:inherit;font-weight:500;font-size:14.94px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer;box-sizing:border-box;height:42px;padding:0 22px 0 18px;gap:10px"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;flex:none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg>WhatsApp us</button></span>
+<span style="display:inline-flex"><button type="button" style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:7px 19px 8.789px;border:none;border-radius:28.124px;background:#000000;color:#FFFFFF;font-family:inherit;font-weight:500;font-size:14.94px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer;box-sizing:border-box;height:42px;padding:0 22px 0 18px;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;flex:none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg>WhatsApp us</button></span>
 </div>
 </div>
 <div data-r="ideas-media" data-reveal="1" data-y="26" data-delay="0.18" style="position:relative;width:100%;min-width:0;max-width:100%;aspect-ratio:1004/203;border-radius:22px;overflow:hidden">
-<img loading="lazy" decoding="async" data-reveal="1" data-delay="0.30" data-from="translateX(11%) scale(1.05)" src="assets/1ea4e4a7-1943-46e7-ac91-2318a914e17d.jpg" alt="" aria-hidden="true" width="1004" height="203" style="display:block;width:100%;height:100%;object-fit:cover;will-change:transform">
+<img loading="lazy" decoding="async" data-reveal="1" data-delay="0.30" data-from="translateX(11%) scale(1.05)" src="assets/ideas-car-strip-red.jpg" alt="" aria-hidden="true" width="1004" height="203" style="display:block;width:100%;height:100%;object-fit:cover;will-change:transform">
 </div>
 </div>
 </div>
@@ -1140,26 +1042,26 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-foot-car="1" aria-hidden="true" style="position:absolute;left:0;bottom:44px;z-index:2;pointer-events:none;will-change:transform;transform:translate3d(-140px,0,0)">
 <span data-car-line="1" style="position:absolute;right:96%;top:34%;width:150px;height:2px;border-radius:2px;background:linear-gradient(to left,rgba(255,255,255,0.8),rgba(255,255,255,0));opacity:0;transform-origin:100% 50%"></span>
 <span data-car-line="1" style="position:absolute;right:91%;top:62%;width:110px;height:1.5px;border-radius:2px;background:linear-gradient(to left,rgba(255,255,255,0.5),rgba(255,255,255,0));opacity:0;transform-origin:100% 50%"></span>
-<img src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="display:block;width:96px;height:auto">
+<img src="assets/hero-f1-car.svg" alt="" style="display:block;width:96px;height:auto">
 <span data-car-shadow="1" style="position:absolute;left:5%;right:5%;bottom:-10px;height:9px;background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,0.38),rgba(0,0,0,0));opacity:0.32"></span>
 </div>
 
-<div data-r="foot-cap" style="position:absolute;left:37px;top:45px;z-index:3"><span data-footcap="1" style="display:inline-flex;align-items:center;justify-content:center;gap:11.1125px;padding:7.339px 13.4px;border-radius:9.678px;background:#FFFFFF;box-sizing:border-box;transform-origin:center" data-comment-anchor="fd33d6a9b3-span">
-<img loading="lazy" decoding="async" src="assets/3f09bab5-8956-49fd-ae53-e50d9094b795.svg" alt="Fugaz" style="height:21px;display:block">
+<div data-r="foot-cap" style="position:absolute;left:37px;top:45px;z-index:3"><span data-footcap="1" style="display:inline-flex;align-items:center;justify-content:center;gap:11.1125px;padding:7.339px 13.4px;border-radius:9.678px;background:#FFFFFF;box-sizing:border-box;transform-origin:center">
+<img loading="lazy" decoding="async" src="assets/logo-mark-black.svg" alt="Fugaz" style="height:21px;display:block">
 <span aria-hidden="true" style="width:1px;height:16.322px;background:rgba(0,0,0,0.2);flex-shrink:0"></span>
 <span data-avgroup="1" style="position:relative;width:59.067px;height:32.645px;flex-shrink:0;display:block">
 <span data-tip="1" style="position:absolute;left:0;top:0;width:32.645px;height:32.645px;display:block;z-index:1">
-<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(&quot;assets/900348f8-8534-4c22-af6e-1791b093b38b.png&quot;) center 22%/cover no-repeat"></span>
+<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(assets/avatar-luka-v6.jpg) center 22%/cover no-repeat"></span>
 <span data-tipbubble="1" style="position:absolute;left:50%;top:calc(100% + 14px);display:block;padding:7px 15px 9px;border-radius:19px;background:#EFEEEC;color:#000000;font-weight:500;font-size:18px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(-50%,-8px,0) scale(0.8);transform-origin:50% 0;transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.62s cubic-bezier(0.16,1,0.3,1);pointer-events:none;z-index:6;box-shadow:0 6px 22px rgba(0,0,0,0.16)"><span aria-hidden="true" style="position:absolute;left:50%;top:-8px;width:18px;height:9px;margin-left:-9px;display:block;background:#EFEEEC;clip-path:polygon(50% 0,100% 100%,0 100%)"></span>@lukamilich</span>
 </span>
 <span data-tip="1" style="position:absolute;left:26.422px;top:0;width:32.645px;height:32.645px;display:block;z-index:2">
-<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(&quot;assets/9a396be8-b79c-4623-b330-6450d42e5faa.webp&quot;) center 42%/cover no-repeat"></span>
+<span data-av="1" style="position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(assets/avatar-diego-v8.png) center 42%/cover no-repeat"></span>
 <span data-tipbubble="1" style="position:absolute;left:50%;top:calc(100% + 14px);display:block;padding:7px 15px 9px;border-radius:19px;background:#EFEEEC;color:#000000;font-weight:500;font-size:18px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(-50%,-8px,0) scale(0.8);transform-origin:50% 0;transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.62s cubic-bezier(0.16,1,0.3,1);pointer-events:none;z-index:6;box-shadow:0 6px 22px rgba(0,0,0,0.16)"><span aria-hidden="true" style="position:absolute;left:50%;top:-8px;width:18px;height:9px;margin-left:-9px;display:block;background:#EFEEEC;clip-path:polygon(50% 0,100% 100%,0 100%)"></span>@drgomesfr</span>
 </span>
 </span>
 </span></div>
 
-<div data-r="foot-cta" style="position:absolute;left:0;right:0;top:70px;bottom:150px;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 24px;box-sizing:border-box" data-comment-anchor="e4a5cb5fbf-div">
+<div data-r="foot-cta" style="position:absolute;left:0;right:0;top:70px;bottom:150px;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 24px;box-sizing:border-box">
 <h2 data-lines="1" data-lines-delay="0.02" data-lines-step="0.062" data-r="foot-head" style="margin:0;width:min(760px,100%);max-width:100%;font-weight:500;font-size:clamp(34px,3.9vw,50px);line-height:1.0;letter-spacing:-0.026em;color:#FFFFFF;text-align:center;text-wrap:balance">
 <span style="display:block;overflow:hidden;padding-bottom:0.26em;margin-bottom:-0.2em"><span data-line="1" style="display:inline;color:#FFFFFF"><span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">Tell</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">us</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">what</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">you’re</span> <span data-hw="1" style="display:inline-block;transform:translate3d(0,112%,0);will-change:transform">building.</span></span></span>
 </h2>
@@ -1168,9 +1070,9 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 </span>
 <div data-r="foot-btns" data-reveal="1" data-y="20" data-delay="0.78" style="margin-top:44px;display:flex;align-items:center;gap:14.546px">
 <button type="button" data-open-contact="1" style="display:inline-flex;align-items:center;justify-content:center;width:157.092px;height:40.728px;padding:0;border:none;border-radius:20.36380px;background:#000000;color:#F5F3F3;font-family:inherit;font-weight:500;font-size:16px;line-height:1;letter-spacing:-0.020em;cursor:pointer;box-sizing:border-box">Start the scan</button>
-<a href="https://wa.me/31636361353" target="_blank" rel="noopener" data-open-wa="1" data-fl-host="1" data-r="foot-wa" style="position:relative;display:inline-flex;align-items:center;justify-content:space-between;width:150.333px;height:40.728px;padding:0 4.594px 0 14.63px;border-radius:40.32832px;background:#FFFFFF;box-sizing:border-box;text-decoration:none">
-<span data-fl="1" style="min-width:87.733px;white-space:nowrap;text-align:center;font-weight:500;font-size:15.97976px;line-height:1;letter-spacing:-0.040em;color:#000000"><span data-fl-in="1">WhatsApp us</span><span data-fl-out="1">WhatsApp us</span></span>
-<span aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:33.54px;height:33.54px;border-radius:50%;background:#25CB64"><img loading="lazy" decoding="async" src="assets/398371bf-5d46-4a08-b42f-f0fb977c9706.svg" alt="" style="width:17.8px;height:17.9px;display:block"></span>
+<a href="https://wa.me/31636361353" target="_blank" rel="noopener" data-open-wa="1" data-fl-host="1" data-r="foot-wa" style="position:relative;display:inline-flex;align-items:center;justify-content:space-between;width:162px;height:40.728px;padding:0 4.594px 0 14.63px;border-radius:40.32832px;background:#FFFFFF;box-sizing:border-box;text-decoration:none">
+<span data-fl="1" style="min-width:87.733px;white-space:nowrap;text-align:center;font-weight:500;font-size:15.97976px;line-height:1;letter-spacing:-0.040em;color:#000000;margin-right:12px"><span data-fl-in="1">WhatsApp us</span><span data-fl-out="1">WhatsApp us</span></span>
+<span aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:33.54px;height:33.54px;border-radius:50%;background:#25CB64"><img loading="lazy" decoding="async" src="assets/wa-glyph.svg" alt="" style="width:17.8px;height:17.9px;display:block"></span>
 </a>
 </div>
 </div>
@@ -1182,8 +1084,8 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <span style="font-weight:500;font-size:37.51839px;line-height:0.909;letter-spacing:-0.030em;color:#000000;white-space:nowrap">Fugaz Agency</span>
 <span style="margin-top:15.9px;max-width:24ch;opacity:0.5;font-weight:500;font-size:18.5px;line-height:1.25;letter-spacing:-0.020em;color:#000000;text-wrap:pretty">You built something real. We make it look that way.</span>
 <a href="mailto:info@fugaz-agency.com" data-fl="1" style="margin-top:14.2px;font-weight:500;font-size:15.44750px;line-height:1.29;letter-spacing:-0.020em;color:#000000;text-decoration:none"><span data-fl-in="1">info@fugaz-agency.com</span><span data-fl-out="1">info@fugaz-agency.com</span></a>
-<a href="tel:+31636361353" data-fl="1" style="margin-top:6px;display:flex;align-items:baseline;gap:9px;font-weight:500;font-size:15.44750px;line-height:1.29;letter-spacing:-0.020em;color:#000000;text-decoration:none"><span style="display:inline-flex;font-variant-numeric:tabular-nums"><span data-fl-in="1">+31 6 36361353</span><span data-fl-out="1">+31 6 36361353</span></span><span style="opacity:0.45;padding-left:14px">Luka</span></a>
-<a href="tel:+31683869007" data-fl="1" style="margin-top:6px;display:flex;align-items:baseline;gap:9px;font-weight:500;font-size:15.44750px;line-height:1.29;letter-spacing:-0.020em;color:#000000;text-decoration:none"><span style="display:inline-flex;font-variant-numeric:tabular-nums"><span data-fl-in="1">+31 6 83869007</span><span data-fl-out="1">+31 6 83869007</span></span><span style="opacity:0.45;padding-left:14px">Diego</span></a>
+<a href="tel:+31636361353" data-fl="1" style="margin-top:15px;display:flex;align-items:baseline;gap:9px;font-weight:500;font-size:15.44750px;line-height:1.29;letter-spacing:-0.020em;color:#000000;text-decoration:none"><span style="display:inline-flex;font-variant-numeric:tabular-nums"><span data-fl-in="1">+31 6 36361353</span><span data-fl-out="1">+31 6 36361353</span></span><span style="opacity:0.45;padding-left:22px">Luka</span></a>
+<a href="tel:+31638003224" data-fl="1" style="margin-top:9px;display:flex;align-items:baseline;gap:9px;font-weight:500;font-size:15.44750px;line-height:1.29;letter-spacing:-0.020em;color:#000000;text-decoration:none"><span style="display:inline-flex;font-variant-numeric:tabular-nums"><span data-fl-in="1">+31 6 38003224</span><span data-fl-out="1">+31 6 38003224</span></span><span style="opacity:0.45;padding-left:22px">Diego</span></a>
 </div>
 <div data-reveal="1" data-y="26" data-delay="0.10" data-delay-stacked="0.14" style="padding-top:7px;display:flex;flex-direction:column;align-items:flex-start;gap:31.21394px">
 <span style="opacity:0.5;font-weight:500;font-size:17.88423px;line-height:0.909;letter-spacing:-0.020em;color:#000000">Agency</span>
@@ -1258,7 +1160,7 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 </div>
 </div>
 <div style="position:absolute;right:37px;top:37px;z-index:6;display:flex;align-items:center;gap:10px">
-<button type="button" data-legal-close="1" aria-label="Close privacy policy" style="position:relative;flex:none;display:inline-flex;align-items:center;gap:10px;height:38px;padding:0 16px;border:none;border-radius:10px;background:#757575;color:#FFFFFF;font-family:inherit;font-weight:500;font-size:14.94px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer;transition:background 0.5s cubic-bezier(0.16,1,0.3,1)" style-hover="background:#5A5A5A">ESC<span aria-hidden="true" style="display:block;width:11px;height:11px;opacity:0.7"><svg width="11" height="11" sc-camel-view-box="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="display:block"><path d="M1 1l9 9M10 1l-9 9"></path></svg></span></button>
+<button type="button" data-legal-close="1" aria-label="Close privacy policy" style="position:relative;flex:none;display:inline-flex;align-items:center;gap:10px;height:38px;padding:0 16px;border:none;border-radius:10px;background:#757575;color:#FFFFFF;font-family:inherit;font-weight:500;font-size:14.94px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer;transition:background 0.5s cubic-bezier(0.16,1,0.3,1)" style-hover="background:#5A5A5A">ESC<span aria-hidden="true" style="display:block;width:11px;height:11px;opacity:0.7"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="display:block"><path d="M1 1l9 9M10 1l-9 9"></path></svg></span></button>
 </div>
 </div>
 
@@ -1290,56 +1192,56 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 </div>
 </div>
 <div style="position:absolute;right:37px;top:37px;z-index:6;display:flex;align-items:center;gap:10px">
-<button type="button" data-legal-close="1" aria-label="Close terms" style="position:relative;flex:none;display:inline-flex;align-items:center;gap:10px;height:38px;padding:0 16px;border:none;border-radius:10px;background:#757575;color:#FFFFFF;font-family:inherit;font-weight:500;font-size:14.94px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer;transition:background 0.5s cubic-bezier(0.16,1,0.3,1)" style-hover="background:#5A5A5A">ESC<span aria-hidden="true" style="display:block;width:11px;height:11px;opacity:0.7"><svg width="11" height="11" sc-camel-view-box="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="display:block"><path d="M1 1l9 9M10 1l-9 9"></path></svg></span></button>
+<button type="button" data-legal-close="1" aria-label="Close terms" style="position:relative;flex:none;display:inline-flex;align-items:center;gap:10px;height:38px;padding:0 16px;border:none;border-radius:10px;background:#757575;color:#FFFFFF;font-family:inherit;font-weight:500;font-size:14.94px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer;transition:background 0.5s cubic-bezier(0.16,1,0.3,1)" style-hover="background:#5A5A5A">ESC<span aria-hidden="true" style="display:block;width:11px;height:11px;opacity:0.7"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="display:block"><path d="M1 1l9 9M10 1l-9 9"></path></svg></span></button>
 </div>
 </div>
 
 <div data-allwork="1" role="dialog" aria-modal="true" aria-label="All projects" style="font-family:Satoshi,'Satoshi Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;position:fixed;left:0;top:0;right:0;bottom:0;z-index:80;background:#EFEEEC;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.62s cubic-bezier(0.16,1,0.3,1),visibility 0s linear 0.62s">
 <div data-allwork-scroll="1" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 150px;box-sizing:border-box">
 <div data-allwork-grid="1" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px">
-<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Branding</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:82%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/f2ab221c-a8de-4dd8-975c-a52d85d21fd7.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
-<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Branding</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:86%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/ee82da00-d9f1-4800-a977-029d4f53c009.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
+<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Branding</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:82%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/work/earbuds.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
+<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Branding</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:86%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/work/pegasus.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
 
 
-<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Logo design</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:88%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/a341c3a4-1ce7-400b-a50f-3e48098d18fb.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
-<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Branding</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:78%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/2c9b0c02-7401-4960-a550-9d57d844efda.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
-<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Logo design</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:64%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/668e1b0d-0065-43e1-9385-5f012589c0b2.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
-<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Logo design</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:58%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/d6b65811-5fe3-40ca-8879-cc8420a77a0d.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
-<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Web design</span><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Development</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:80%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/a0d46364-bc64-4d1c-9864-1add376f05f9.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
-<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Web design</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:84%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/708e45e4-8b7d-4c49-bc01-144e5fe67375.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
-<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Web design</span><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Development</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:84%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/45de5e61-8163-44e2-8e75-837b16ac6e32.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
-<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Product design</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:84%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/5e431bd7-9871-441e-b2cb-97b1680828d4.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
+<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Logo design</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:88%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/work/lua-logo.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
+<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Branding</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:78%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/work/ocho.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
+<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Logo design</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:64%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/work/aion-mark.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
+<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Logo design</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:58%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/work/mfg.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
+<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Web design</span><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Development</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:80%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/work/aion-web.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
+<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Web design</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:84%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/work/transparency.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
+<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Web design</span><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Development</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:84%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/work/terra.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
+<figure data-wtile="1" style="margin:0;position:relative;width:100%;aspect-ratio:1.42/1;border:none;padding:0;margin:0;border-radius:29px;background:#FFFFFF;overflow:hidden;cursor:pointer;font-family:inherit;display:block"><span data-wtags="1" aria-hidden="true" style="position:absolute;left:22px;top:22px;right:22px;z-index:3;display:flex;align-items:center;gap:8px;pointer-events:none"><span style="display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 19px;border-radius:28.12395px;background:#757575;color:#FFFFFF;font-weight:500;font-size:14.94px;line-height:1;letter-spacing:-0.020em;white-space:nowrap;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter">Product design</span><span data-carfx="1" role="button" tabindex="-1" aria-hidden="true" style="margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;min-width:34px;max-width:34px;height:34px;min-height:34px;max-height:34px;aspect-ratio:1/1;box-sizing:border-box;border-radius:50%;background:#757575;color:#FFFFFF;opacity:0;transform:translate3d(0,-10px,0) scale(0.94);filter:blur(10px);will-change:transform,opacity,filter;pointer-events:none"><img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="width:19px;height:auto;display:block"></span></span><span data-wshot="1" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:84%;transform:translate3d(-50%,-50%,0) scale(1);transition:transform 1.4s cubic-bezier(0.16,1,0.3,1)"><img decoding="async" src="assets/work/ledger.jpg" alt="" loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px"></span></figure>
 </div>
 </div>
 <div data-carfx-layer="1" aria-hidden="true" style="position:fixed;left:0;top:0;right:0;bottom:0;z-index:90;overflow:hidden;pointer-events:none"></div>
 <div data-allwork-tr="1" style="position:absolute;right:37px;top:37px;z-index:6;display:flex;align-items:center;gap:10px">
-<button type="button" data-allwork-close="1" aria-label="Close all projects" style="position:relative;flex:none;display:inline-flex;align-items:center;gap:10px;height:38px;padding:0 16px;border:none;border-radius:10px;background:#757575;color:#FFFFFF;font-family:inherit;font-weight:500;font-size:14.94px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer;transition:background 0.5s cubic-bezier(0.16,1,0.3,1)" style-hover="background:#5A5A5A">ESC<span aria-hidden="true" style="display:block;width:11px;height:11px;opacity:0.7"><svg width="11" height="11" sc-camel-view-box="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="display:block"><path d="M1 1l9 9M10 1l-9 9"></path></svg></span></button>
+<button type="button" data-allwork-close="1" aria-label="Close all projects" style="position:relative;flex:none;display:inline-flex;align-items:center;gap:10px;height:38px;padding:0 16px;border:none;border-radius:10px;background:#757575;color:#FFFFFF;font-family:inherit;font-weight:500;font-size:14.94px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer;transition:background 0.5s cubic-bezier(0.16,1,0.3,1)" style-hover="background:#5A5A5A">ESC<span aria-hidden="true" style="display:block;width:11px;height:11px;opacity:0.7"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="display:block"><path d="M1 1l9 9M10 1l-9 9"></path></svg></span></button>
 </div>
 <span data-allwork-cta="1" style="position:absolute;left:50%;bottom:30px;z-index:4;display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 8px 0 8px;border-radius:28.12395px;background:#000000;box-shadow:0 18px 40px -12px rgba(0,0,0,0.45);transform:translate3d(-50%,0,0)">
 <button type="button" data-allwork-book="1" style="display:inline-flex;align-items:center;height:36px;padding:0 14px 0 18px;border:none;border-radius:28.12395px;background:none;color:#FFFFFF;font-family:inherit;font-weight:500;font-size:14.94px;letter-spacing:-0.020em;cursor:pointer">Start the scan</button>
-<a href="https://wa.me/31636361353" target="_blank" rel="noopener" data-open-wa="1" aria-label="Message us on WhatsApp" style-hover="opacity:0.6" style="transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1);display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#25D366;color:#FFFFFF;text-decoration:none;flex:none"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg></a>
+<a href="https://wa.me/31636361353" target="_blank" rel="noopener" data-open-wa="1" aria-label="Message us on WhatsApp" style-hover="opacity:0.6" style="transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1);display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#25D366;color:#FFFFFF;text-decoration:none;flex:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg></a>
 </span>
 </div>
 <a href="https://wa.me/31636361353" target="_blank" rel="noopener" data-wa="1" aria-label="Message us on WhatsApp" style="position:fixed;right:33px;bottom:33px;z-index:58;display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;padding:0;border-radius:50%;background:#25D366;color:#FFFFFF;box-shadow:0 14px 34px -8px rgba(0,0,0,0.34);text-decoration:none;overflow:hidden;transition:padding 0.6s cubic-bezier(0.16,1,0.3,1),box-shadow 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1)">
 <span data-wa-glyph="1" aria-hidden="true" style="position:relative;display:block;width:24px;height:24px;flex:none;overflow:hidden">
-<span data-wa-out="1" style="position:absolute;left:0;top:0;display:block;transform:translateY(0);transition:transform 0.62s cubic-bezier(0.16,1,0.3,1);will-change:transform"><svg width="24" height="24" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg></span>
-<span data-wa-in="1" style="position:absolute;left:0;top:0;display:block;transform:translateY(100%);transition:transform 0.62s cubic-bezier(0.16,1,0.3,1);will-change:transform"><svg width="24" height="24" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg></span>
+<span data-wa-out="1" style="position:absolute;left:0;top:0;display:block;transform:translateY(0);transition:transform 0.62s cubic-bezier(0.16,1,0.3,1);will-change:transform"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg></span>
+<span data-wa-in="1" style="position:absolute;left:0;top:0;display:block;transform:translateY(100%);transition:transform 0.62s cubic-bezier(0.16,1,0.3,1);will-change:transform"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg></span>
 </span>
 </a>
 <div data-wa-scrim="1" aria-hidden="true" style="position:fixed;left:0;right:0;top:0;bottom:0;z-index:59;background:rgba(8,10,14,0.42);opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),visibility 0s linear 0.7s"></div>
 <div data-wa-pop="1" role="dialog" aria-modal="true" aria-label="Message us on WhatsApp" style="font-family:Satoshi,'Satoshi Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;position:fixed;right:33px;bottom:99px;z-index:74;width:302px;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;padding:20px;border-radius:29px;background:#FFFFFF;box-shadow:0 30px 70px -20px rgba(0,0,0,0.34);transform-origin:100% 100%;transform:translateY(12px) scale(0.94);opacity:0;visibility:hidden;pointer-events:none;transition:transform 0.75s cubic-bezier(0.16,1,0.3,1),opacity 0.45s cubic-bezier(0.16,1,0.3,1),visibility 0s linear 0.75s">
 <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
 <span style="font-weight:500;font-size:17.5px;line-height:1.2;letter-spacing:-0.020em;color:#000000;text-wrap:pretty">Who would you like to<br>send a message to?</span>
-<button type="button" data-wa-close="1" aria-label="Close" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin:-7px -7px 0 0;padding:0;border:none;border-radius:50%;background:none;color:#000000;cursor:pointer;flex:none"><svg width="12" height="12" sc-camel-view-box="0 0 12 12" fill="none" aria-hidden="true" style="display:block;pointer-events:none"><path d="M1 1L11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><path d="M11 1L1 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
+<button type="button" data-wa-close="1" aria-label="Close" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin:-7px -7px 0 0;padding:0;border:none;border-radius:50%;background:none;color:#000000;cursor:pointer;flex:none"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" style="display:block;pointer-events:none"><path d="M1 1L11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><path d="M11 1L1 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
 </div>
 <div style="display:flex;flex-direction:column;gap:8px">
-<a href="https://wa.me/31683869007" target="_blank" rel="noopener" data-wa-pick="1" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 16px;border-radius:19px;background:#FAFAFA;text-decoration:none;transition:background 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0.16,1,0.3,1)">
+<a href="https://wa.me/31638003224" target="_blank" rel="noopener" data-wa-pick="1" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 16px;border-radius:19px;background:#FAFAFA;text-decoration:none;transition:background 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0.16,1,0.3,1)">
 <span style="display:flex;flex-direction:column;gap:2px">
 <span style="font-weight:500;font-size:16.5px;letter-spacing:-0.020em;color:#000000">Diego</span>
 <span data-lbl="1" style="font-weight:500;font-size:13.5px;letter-spacing:-0.010em;color:rgba(0,0,0,0.38)">AI &amp; development lead</span>
-<span data-lbl="1" style="font-weight:500;font-size:13.5px;letter-spacing:-0.010em;color:#808080">+31 6 83 86 90 07</span>
+<span data-lbl="1" style="font-weight:500;font-size:13.5px;letter-spacing:-0.010em;color:#808080">+31 6 38 00 32 24</span>
 </span>
-<span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;flex:none;border-radius:50%;background:#25D366;color:#FFFFFF"><svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg></span>
+<span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;flex:none;border-radius:50%;background:#25D366;color:#FFFFFF"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg></span>
 </a>
 <a href="https://wa.me/31636361353" target="_blank" rel="noopener" data-wa-pick="1" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 16px;border-radius:19px;background:#FAFAFA;text-decoration:none;transition:background 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0.16,1,0.3,1)">
 <span style="display:flex;flex-direction:column;gap:2px">
@@ -1347,7 +1249,7 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <span data-lbl="1" style="font-weight:500;font-size:13.5px;letter-spacing:-0.010em;color:rgba(0,0,0,0.38)">Identity &amp; growth</span>
 <span data-lbl="1" style="font-weight:500;font-size:13.5px;letter-spacing:-0.010em;color:#808080">+31 6 36 36 13 53</span>
 </span>
-<span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;flex:none;border-radius:50%;background:#25D366;color:#FFFFFF"><svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg></span>
+<span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;flex:none;border-radius:50%;background:#25D366;color:#FFFFFF"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.21-8.23 8.21Zm4.52-6.15c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29Z"></path></svg></span>
 </a>
 </div>
 </div>
@@ -1355,9 +1257,9 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-contact-scrim="1" aria-hidden="true" style="position:fixed;left:0;right:0;top:0;bottom:0;z-index:69;background:rgba(8,10,14,0.66);opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),visibility 0s linear 0.9s"></div>
 <div data-contact="1" style="font-family:Satoshi,'Satoshi Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;position:fixed;left:15px;right:15px;top:15px;bottom:21px;z-index:70;border-radius:29px;overflow:hidden;background:linear-gradient(52.426deg,rgb(0,0,0) 11.94%,rgba(0,87,254,0.97) 59.44%,rgba(14,96,254,0.97) 83.25%,rgba(48,119,255,0.96) 101.96%,rgba(115,163,255,0.89) 112.29%,rgb(255,255,255) 138.56%);background-color:#0057FE;transform:translateY(calc(100% + 60px));pointer-events:none;visibility:hidden;transition:transform 1.4s cubic-bezier(0.16,1,0.3,1),visibility 0s linear 1.4s">
 <div data-grain="1" class="fugaz-grain fugaz-grain-live" style="inset:-25%"></div>
-<img loading="lazy" decoding="async" data-scan-mark="1" src="assets/ad910aa7-2d80-4af1-b8f4-859e8157076b.svg" alt="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:58%;max-width:760px;opacity:0.06;transform:translate(-50%,-50%);pointer-events:none">
+<img loading="lazy" decoding="async" data-scan-mark="1" src="assets/logo-mark-white.svg" alt="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:58%;max-width:760px;opacity:0.06;transform:translate(-50%,-50%);pointer-events:none">
 <div data-r="contact-head" style="position:absolute;left:73px;right:73px;top:60px;z-index:14;display:flex;align-items:center;justify-content:flex-end;gap:16px">
-<button type="button" data-close-contact="1" aria-label="Close" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:none;border-radius:50%;background:rgba(0,0,0,0.43);backdrop-filter:blur(5.1px);-webkit-backdrop-filter:blur(5.1px);color:#FFFFFF;cursor:pointer;box-sizing:border-box;transition:background 0.55s cubic-bezier(0.16,1,0.3,1),color 0.55s cubic-bezier(0.16,1,0.3,1),transform 0.55s cubic-bezier(0.16,1,0.3,1)" style-hover="background:#FFFFFF;color:#000000;transform:scale(1.08)"><svg width="12" height="12" sc-camel-view-box="0 0 12 12" fill="none" aria-hidden="true" style="display:block;pointer-events:none"><path d="M1 1L11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><path d="M11 1L1 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
+<button type="button" data-close-contact="1" aria-label="Close" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:none;border-radius:50%;background:rgba(0,0,0,0.43);backdrop-filter:blur(5.1px);-webkit-backdrop-filter:blur(5.1px);color:#FFFFFF;cursor:pointer;box-sizing:border-box;transition:background 0.55s cubic-bezier(0.16,1,0.3,1),color 0.55s cubic-bezier(0.16,1,0.3,1),transform 0.55s cubic-bezier(0.16,1,0.3,1)" style-hover="background:#FFFFFF;color:#000000;transform:scale(1.08)"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" style="display:block;pointer-events:none"><path d="M1 1L11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><path d="M11 1L1 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
 </div>
 <div data-contact-grid="1" style="position:absolute;left:73px;right:73px;top:116px;bottom:40px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);gap:70px;justify-items:center;align-items:safe center;overflow:hidden auto;overscroll-behavior:contain;scrollbar-width:none">
 <div data-contact-left="1" style="display:none;max-width:520px;flex-direction:column;min-height:0;height:100%;overflow:hidden">
@@ -1372,8 +1274,8 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-r="contact-review" data-mob-move="contact" style="position:relative;margin-top:auto;padding-top:36px;min-height:0;opacity:0;transform:translate3d(0,22px,0)">
 <span style="display:block;font-weight:500;font-size:12px;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.45)">What partners say</span>
 <figure data-r="review-card" style="position:relative;margin:18px 0 0;padding:26px 26px 22px;border-radius:24px;background:rgba(0,0,0,0.26);backdrop-filter:blur(5.1px);-webkit-backdrop-filter:blur(5.1px);box-sizing:border-box;overflow:hidden">
-<img loading="lazy" decoding="async" aria-hidden="true" src="assets/ad910aa7-2d80-4af1-b8f4-859e8157076b.svg" alt="" style="position:absolute;right:22px;top:22px;width:15px;height:auto;opacity:0.13">
-<div style="display:flex;align-items:center;gap:4px;color:rgba(255,255,255,0.9)"><svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.6l2.72 6.06 6.6.62-4.98 4.4 1.44 6.47L12 16.83l-5.78 3.32 1.44-6.47-4.98-4.4 6.6-.62L12 2.6Z"></path></svg><svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.6l2.72 6.06 6.6.62-4.98 4.4 1.44 6.47L12 16.83l-5.78 3.32 1.44-6.47-4.98-4.4 6.6-.62L12 2.6Z"></path></svg><svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.6l2.72 6.06 6.6.62-4.98 4.4 1.44 6.47L12 16.83l-5.78 3.32 1.44-6.47-4.98-4.4 6.6-.62L12 2.6Z"></path></svg><svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.6l2.72 6.06 6.6.62-4.98 4.4 1.44 6.47L12 16.83l-5.78 3.32 1.44-6.47-4.98-4.4 6.6-.62L12 2.6Z"></path></svg><svg width="12" height="12" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.6l2.72 6.06 6.6.62-4.98 4.4 1.44 6.47L12 16.83l-5.78 3.32 1.44-6.47-4.98-4.4 6.6-.62L12 2.6Z"></path></svg></div>
+<img loading="lazy" decoding="async" aria-hidden="true" src="assets/logo-mark-white.svg" alt="" style="position:absolute;right:22px;top:22px;width:15px;height:auto;opacity:0.13">
+<div style="display:flex;align-items:center;gap:4px;color:rgba(255,255,255,0.9)"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.6l2.72 6.06 6.6.62-4.98 4.4 1.44 6.47L12 16.83l-5.78 3.32 1.44-6.47-4.98-4.4 6.6-.62L12 2.6Z"></path></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.6l2.72 6.06 6.6.62-4.98 4.4 1.44 6.47L12 16.83l-5.78 3.32 1.44-6.47-4.98-4.4 6.6-.62L12 2.6Z"></path></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.6l2.72 6.06 6.6.62-4.98 4.4 1.44 6.47L12 16.83l-5.78 3.32 1.44-6.47-4.98-4.4 6.6-.62L12 2.6Z"></path></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.6l2.72 6.06 6.6.62-4.98 4.4 1.44 6.47L12 16.83l-5.78 3.32 1.44-6.47-4.98-4.4 6.6-.62L12 2.6Z"></path></svg><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.6l2.72 6.06 6.6.62-4.98 4.4 1.44 6.47L12 16.83l-5.78 3.32 1.44-6.47-4.98-4.4 6.6-.62L12 2.6Z"></path></svg></div>
 <blockquote style="margin:18px 0 0;font-weight:500;font-size:15px;line-height:1.5;letter-spacing:-0.010em;color:rgba(255,255,255,0.92);text-wrap:pretty">Rebranding done with the boys from Fugaz. They’re fast, have great communication and came with an amazing result. When they sent me the brand book i felt like i was opening a Apple presentation. Truly recommend if you want the best results for your brand.</blockquote>
 <figcaption style="display:flex;align-items:center;gap:11px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.16)">
 <span style="font-weight:500;font-size:14px;line-height:1.3;letter-spacing:-0.010em;color:#FFFFFF">Ibraheem Malik</span>
@@ -1418,9 +1320,9 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <span style="display:block;font-weight:500;font-size:12px;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.7)">Budget</span>
 <span data-scan-q="1" style="display:block;font-weight:500;font-size:clamp(28px,2.6vw,38px);line-height:1.04;letter-spacing:-0.020em;color:#FFFFFF;text-wrap:pretty">What is it worth to you?</span>
 <span style="display:block;font-weight:500;font-size:16px;line-height:1.4;letter-spacing:-0.010em;color:rgba(255,255,255,0.78);text-wrap:pretty">Pick the range you are ready to put behind the brand.</span>
-<span data-scan-budout="1" style="display:block;margin-top:2px;font-weight:500;font-size:clamp(38px,3.4vw,52px);line-height:1;letter-spacing:-0.030em;color:#FFFFFF">€10–25K</span>
-<input data-scan-budget="1" type="range" min="0" max="4" step="0.01" value="1" aria-label="Budget range" style="width:100%;height:28px;background:transparent;margin:-14px 0;--f:25%">
-<div style="display:flex;justify-content:space-between;font-weight:500;font-size:12.5px;letter-spacing:-0.010em;color:rgba(255,255,255,0.65)">
+<span data-scan-budout="1" style="display:block;margin-top:2px;margin-bottom:18px;font-weight:500;font-size:clamp(38px,3.4vw,52px);line-height:1;letter-spacing:-0.030em;color:#FFFFFF">€10–25K</span>
+<input data-scan-budget="1" type="range" min="0" max="4" step="0.01" value="1" aria-label="Budget range" style="width:100%;height:44px;padding:0 14px;box-sizing:border-box;background:transparent;margin:-22px 0;--f:25%;touch-action:none;-webkit-tap-highlight-color:transparent">
+<div data-scan-budlbl="1" style="display:flex;justify-content:space-between;margin-top:14px;padding:0 2px;font-weight:500;font-size:11px;letter-spacing:0;color:rgba(255,255,255,0.6);font-variant-numeric:tabular-nums">
 <span>€5–10K</span><span>€10–25K</span><span>€25–50K</span><span>€50–100K</span><span>€100K+</span>
 </div>
 </div>
@@ -1461,8 +1363,8 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 </div>
 <span data-diag-foot="1" style="display:block;max-width:46ch;font-weight:500;font-size:15px;line-height:1.45;letter-spacing:-0.010em;color:rgba(255,255,255,0.7)"></span>
 </div>
-<div data-sent-car="1" style="position:relative;height:52px">
-<img loading="lazy" decoding="async" src="assets/b8bc72bf-03ab-48a9-a846-4c641f79ad8a.svg" alt="" style="position:absolute;left:50%;top:4px;width:86px;height:auto;transform:translateX(-50%)">
+<div data-sent-car="1" style="position:relative;height:52px;flex:none;margin:6px 0 4px">
+<img loading="lazy" decoding="async" src="assets/hero-f1-car.svg" alt="" style="position:absolute;left:50%;top:4px;width:86px;height:auto;transform:translateX(-50%)">
 <span data-sent-line="1" style="position:absolute;left:0;top:50px;height:2px;width:100%;border-radius:2px;background:linear-gradient(to right,rgba(255,255,255,0.85),rgba(255,255,255,0))"></span>
 </div>
 <span style="display:block;font-weight:500;font-size:12px;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.7)">Scan received</span>
@@ -1479,7 +1381,7 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 <div data-preloader="1" style="position:fixed;inset:0;z-index:90;display:none;overflow:hidden;pointer-events:none">
 <div data-presheet="1" style="position:absolute;inset:0;background:#EFEEEC;will-change:clip-path"></div>
 <div data-prelockup="1" style="font-family:Satoshi,'Satoshi Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:13px;font-weight:500;font-size:clamp(38px,4.6vw,58px);line-height:0.909;letter-spacing:-0.020em;color:#000000">
-<img data-premark="1" src="assets/3f09bab5-8956-49fd-ae53-e50d9094b795.svg" alt="" style="display:block;height:clamp(38px,4.6vw,58px);width:auto;opacity:0;will-change:transform,clip-path">
+<img data-premark="1" src="assets/logo-mark-black.svg" alt="" style="display:block;height:clamp(38px,4.6vw,58px);width:auto;opacity:0;will-change:transform,clip-path">
 <span data-prewords="1" style="display:flex;align-items:baseline;gap:0.26em;letter-spacing:-0.020em">
 <span style="display:block;overflow:hidden;line-height:1.25;margin:-0.17em -0.06em;padding:0.17em 0.06em"><span data-pg="1" style="display:inline-block;transform:translateY(130%);will-change:transform">Fugaz</span></span>
 <span style="display:block;overflow:hidden;line-height:1.25;margin:-0.17em -0.06em;padding:0.17em 0.06em"><span data-pg="1" style="display:inline-block;transform:translateY(130%);will-change:transform">Agency</span></span>
@@ -1492,7 +1394,7 @@ button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !imp
 
 
 </x-dc>
-<script type="text/x-dc" data-dc-script="" data-props="{&quot;showPreloader&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;alwaysShowIntro&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;smoothScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;grainOpacity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.6,&quot;min&quot;:0,&quot;max&quot;:0.6,&quot;step&quot;:0.02,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;spots&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:0,&quot;min&quot;:0,&quot;max&quot;:12,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Availability&quot;},&quot;quarter&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Auto&quot;,&quot;options&quot;:[&quot;Auto&quot;,&quot;Q1&quot;,&quot;Q2&quot;,&quot;Q3&quot;,&quot;Q4&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Availability&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPreloader&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;alwaysShowIntro&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;smoothScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;grainOpacity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.6,&quot;min&quot;:0,&quot;max&quot;:0.6,&quot;step&quot;:0.02,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;spots&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:0,&quot;min&quot;:0,&quot;max&quot;:12,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Availability&quot;},&quot;quarter&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Auto&quot;,&quot;options&quot;:[&quot;Auto&quot;,&quot;Q1&quot;,&quot;Q2&quot;,&quot;Q3&quot;,&quot;Q4&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Availability&quot;}}">
 class Component extends DCLogic {
   rootRef = React.createRef();
   cleanup = [];
@@ -2500,12 +2402,16 @@ class Component extends DCLogic {
         }
         const tt = this.teamTiles;
         const nowT = performance.now();
-        const dtT = Math.max(1, nowT - (this.teamLastT || nowT));
+        const dtT = Math.min(100, Math.max(1, nowT - (this.teamLastT || nowT)));
         const dyT = window.scrollY - (this.teamPrevY == null ? window.scrollY : this.teamPrevY);
         this.teamPrevY = window.scrollY; this.teamLastT = nowT;
         /* smoothed scroll speed in px/frame; decays to zero when the reader stops */
-        this.teamVel = this.teamVel * 0.86 + (Math.abs(dyT) / dtT * 16) * 0.14;
+        const keep = Math.pow(0.86, dtT / 16);
+        this.teamVel = this.teamVel * keep + Math.min(40, Math.abs(dyT) / dtT * 16) * (1 - keep);
         const speed = Math.min(1, this.teamVel / 22);
+        /* "moving" is a clock, not a decayed number: the page moved within the last 160ms */
+        if (Math.abs(dyT) > 0.5) this.teamMoveT = nowT;
+        const movingNow = nowT - (this.teamMoveT || 0) < 240;
         for (let i = 0; i < tt.length; i++) {
           const el = tt[i], r = el.getBoundingClientRect();
           const nx = tt[i + 1];
@@ -2526,17 +2432,36 @@ class Component extends DCLogic {
             const onScreen = r.top < window.innerHeight * 0.9 && r.bottom > window.innerHeight * 0.1 && p < 0.75;
             if (onScreen) {
               if (v.preload === "none") { v.preload = "auto"; v.load(); }
-              if (v.style.opacity !== "1") { v.style.transition = "opacity 1.2s " + E; v.style.opacity = "1"; }
               v.__wanted = true;
-              /* the clip rides the scroll: quick while the thumb moves, idling at a crawl when it
-                 stops — it never fully pauses, so a still frame never reads as a broken video */
-              const rate = 0.35 + 1.15 * speed;
-              try { v.playbackRate = Math.max(0.35, Math.min(1.5, rate)); } catch (e) {}
-              if (v.paused && !v.__playing) {
-                v.__playing = true;
-                const pr = v.play();
-                if (pr && pr.then) pr.then(() => { v.__playing = false; }).catch(() => { v.__playing = false; v.__blocked = true; });
-                else v.__playing = false;
+              if (v.readyState === 0 && !v.__loadKick) { v.__loadKick = 1; try { v.load(); } catch (e) {} }
+              /* the clip is tied to the thumb: it plays while the page is moving and, once the
+                 reader stops, fades back to the still — scrolling is what animates the founder */
+              const moving = movingNow;
+              if (moving) {
+                v.__idleAt = 0;
+                try { v.playbackRate = Math.max(0.6, Math.min(1.6, 0.6 + 1.0 * speed)); } catch (e) {}
+                if (v.style.opacity !== "1") { v.style.transition = "opacity 0.5s " + E; v.style.opacity = "1"; }
+                if (v.paused && !v.__playing && !v.__blocked) {
+                  v.__playing = true;
+                  const pr = v.play();
+                  if (pr && pr.then) pr.then(() => { v.__playing = false; }).catch(() => { v.__playing = false; v.__blocked = true; });
+                  else v.__playing = false;
+                }
+                if (v.paused && v.readyState >= 2 && v.duration) {
+                  const stepS = Math.min(0.08, dtT / 1000) * (0.6 + 1.0 * speed);
+                  v.currentTime = (v.currentTime + stepS) % v.duration;
+                }
+              } else {
+                if (!v.__idleAt) v.__idleAt = nowT;
+                /* a short grace so a scroll that merely hesitates does not flicker the still */
+                if (nowT - v.__idleAt > 420 && v.style.opacity === "1") {
+                  v.style.transition = "opacity 0.9s " + E;
+                  v.style.opacity = "0";
+                  setTimeout(() => { if (v.style.opacity === "0") { try { v.pause(); } catch (e) {} } }, 900);
+                }
+              }
+              if ((moving || v.style.opacity === "1") && !this.teamRaf) {
+                this.teamRaf = requestAnimationFrame(() => { this.teamRaf = 0; safeFrame(); });
               }
             } else if (v.style.opacity === "1") {
               v.__wanted = false;
@@ -3088,6 +3013,7 @@ class Component extends DCLogic {
                 v.style.opacity = "1";
               }, 900);
             } else if (!en.isIntersecting) {
+              if (window.matchMedia("(max-width:700px)").matches) return;
               clearTimeout(v.__clipT);
               v.style.opacity = "0";
               setTimeout(() => { if (v.style.opacity === "0") { try { v.pause(); } catch (e) {} } }, 600);
@@ -3148,6 +3074,31 @@ class Component extends DCLogic {
     };
     /* a standing ticker: the smooth-scroll layer swallows window scroll events, so the
        frame work cannot depend on them */
+    if (window.matchMedia && window.matchMedia("(hover: none)").matches) {
+      let scrollRaf = 0;
+      const kickFrame = () => {
+        if (scrollRaf) return;
+        scrollRaf = requestAnimationFrame(() => { scrollRaf = 0; safeFrame(); });
+      };
+      this.on(window, "scroll", kickFrame, { passive: true });
+      const clipsOnScreen = () => Array.prototype.slice.call(document.querySelectorAll("[data-hover-clip]"))
+        .filter((v) => { const r = v.getBoundingClientRect(); return r.height > 0 && r.top < window.innerHeight * 0.9 && r.bottom > window.innerHeight * 0.1; });
+      const startVisible = () => {
+        clipsOnScreen().forEach((v) => {
+          v.__wanted = true;
+          if (v.preload === "none") { v.preload = "auto"; v.load(); }
+          if (v.paused && !v.__blocked) { const p = v.play(); if (p && p.catch) p.catch(() => { v.__blocked = true; }); }
+          if (v.style.opacity !== "1") { v.style.transition = "opacity 0.5s " + E; v.style.opacity = "1"; }
+        });
+      };
+      /* every touch counts as the gesture: the clips that are on screen start right there */
+      this.on(window, "touchstart", startVisible, { passive: true, capture: true });
+      this.on(window, "touchmove", () => {
+        this.teamMoveT = performance.now();
+        startVisible();
+        safeFrame();
+      }, { passive: true });
+    }
     let tickRaf = 0, lastTickY = -1;
     const tickBody = () => {
       const y = window.scrollY;
@@ -3383,24 +3334,9 @@ class Component extends DCLogic {
       /* bulk image trail: each shot wipes open from the direction of travel, the image inside counter-moves */
       let i = 0, lx = 0, ly = 0, armed = false, zi = 1;
       /* a trail entry is either a fig-asset class name or a real image path */
-      const trailIds = {
-        "assets/work/aion-mark.jpg": "workAionMark",
-        "assets/work/aion-web.jpg": "workAionWeb",
-        "assets/work/earbuds.jpg": "workEarbuds",
-        "assets/work/ledger.jpg": "workLedger",
-        "assets/work/lua-logo.jpg": "workLuaLogo",
-        "assets/work/mfg.jpg": "workMfg",
-        "assets/work/ocho.jpg": "workOcho",
-        "assets/work/pegasus.jpg": "workPegasus",
-        "assets/work/terra.jpg": "workTerra",
-        "assets/work/transparency.jpg": "workTransparency"
-      };
       const paint = (el, token) => {
-        if (/[./]/.test(token)) {
-          const rid = trailIds[token];
-          const src = (rid && window.__resources && window.__resources[rid]) || token;
-          el.style.backgroundImage = "url(" + src + ")";
-        } else el.className = token;
+        if (/[./]/.test(token)) el.style.backgroundImage = "url(" + token + ")";
+        else el.className = token;
       };
       rows.forEach((row) => {
         const shots = (row.getAttribute("data-trail") || "").split(",").filter(Boolean);
@@ -4341,9 +4277,11 @@ class Component extends DCLogic {
           window.removeEventListener("blur", endDrag);
           bud.dispatchEvent(new Event("change", { bubbles: true }));
         };
+        this.on(bud, "touchmove", (e) => { if (dragId !== null) e.preventDefault(); }, { passive: false });
         this.on(bud, "pointerdown", (e) => {
           if (dragId !== null) endDrag();
           dragId = e.pointerId;
+          try { bud.setPointerCapture(e.pointerId); } catch (err) {}
           bud.style.cursor = "grabbing";
           setFromX(e.clientX);
           window.addEventListener("pointermove", onMove, { passive: false });
@@ -4520,8 +4458,8 @@ class Component extends DCLogic {
         document.documentElement.style.overflow = open ? "hidden" : "";
         if (open) {
           resetWorkPages();
-          fillWorkPages();
           if (scroller) scroller.scrollTop = 0;
+          fillWorkPages();
           fitBoards();
           setTimeout(fitBoards, 260);
           /* the grid assembles rather than appearing whole */
@@ -4567,9 +4505,11 @@ class Component extends DCLogic {
         const setPills = (on) => {
           const n = pills.length;
           pills.forEach((p, i) => {
-            const d = (on ? i * 0.065 : (n - 1 - i) * 0.035).toFixed(3);
-            p.style.transition = "opacity 0.44s " + E + " " + d + "s,transform 0.68s " + E + " " + d +
-              "s,filter 0.6s " + E + " " + d + "s";
+            const touchT = window.matchMedia && window.matchMedia("(hover: none)").matches;
+            const d = (on ? (touchT ? 0.12 : 0) + i * (touchT ? 0.11 : 0.065) : (n - 1 - i) * 0.035).toFixed(3);
+            const k = touchT ? 1.6 : 1;
+            p.style.transition = "opacity " + (0.44 * k).toFixed(2) + "s " + E + " " + d + "s,transform " + (0.68 * k).toFixed(2) + "s " + E + " " + d +
+              "s,filter " + (0.6 * k).toFixed(2) + "s " + E + " " + d + "s";
             p.style.opacity = on ? "1" : "0";
             p.style.transform = on ? "none" : "translate3d(0,-10px,0) scale(0.94)";
             p.style.filter = on ? "blur(0px)" : "blur(10px)";
@@ -4597,15 +4537,16 @@ class Component extends DCLogic {
          bottoms out on a short roster. Clones are wired like originals and reset on open. */
       const wGrid = allWork.querySelector("[data-allwork-grid]");
       const wSeed = wTiles.slice();
-      const W_PAGES_MAX = 8;
-      let wPages = 1;
+      const W_KEEP_PAGES = 4;
+      let wPages = 1, wPageSeq = 0;
       const addWorkPage = (quiet) => {
-        if (!wGrid || wPages >= W_PAGES_MAX) return;
-        wPages++;
+        if (!wGrid) return;
+        wPages++; wPageSeq++;
         wSeed.forEach((src, i) => {
           const c = src.cloneNode(true);
           delete c.dataset.tileReady;
           c.dataset.wclone = "1";
+          c.dataset.wpage = String(wPageSeq);
           c.style.opacity = quiet ? "1" : "0";
           c.style.transform = quiet ? "none" : "translate3d(0,26px,0)";
           c.style.transition = quiet ? "none" : "opacity 0.7s " + E + " " + (i * 0.03).toFixed(3) + "s,transform 0.8s " + E + " " + (i * 0.03).toFixed(3) + "s";
@@ -4628,11 +4569,54 @@ class Component extends DCLogic {
       const resetWorkPages = () => {
         if (!wGrid) return;
         Array.prototype.forEach.call(wGrid.querySelectorAll("[data-wclone]"), (c) => c.remove());
-        wPages = 1;
+        wPages = 1; wPageSeq = 0;
       };
       /* built once, up front: appending as you reach the bottom kept growing the track and
          snapping the scrollbar thumb back — one long scroll instead */
-      const fillWorkPages = () => { while (wPages < W_PAGES_MAX) addWorkPage(true); };
+      const fillWorkPages = () => {
+        let n = 0;
+        while (n < 4 && (wPages < 2 || (scroller && scroller.scrollHeight < scroller.clientHeight * 2.6))) { addWorkPage(true); n++; }
+      };
+      /* pages that have passed fully above the viewport leave the DOM. Height arithmetic is
+         wrong here — a page spans several grid rows and each removal shifts the coordinate
+         space — so a surviving tile is used as the anchor: remove everything prunable in one
+         pass, then correct scrollTop by how far that one tile actually moved. */
+      const pruneWorkPages = () => {
+        if (!wGrid || !scroller || wPages <= W_KEEP_PAGES) return;
+        const tiles = Array.prototype.slice.call(wGrid.querySelectorAll("[data-wtile]"));
+        const anchor = tiles.find((t) => t.getBoundingClientRect().bottom > 0);
+        if (!anchor) return;
+        const topBefore = anchor.getBoundingClientRect().top;
+        let removed = 0;
+        while (wPages - removed > W_KEEP_PAGES) {
+          const first = wGrid.querySelector("[data-wpage]");
+          if (!first) break;
+          const group = Array.prototype.slice.call(wGrid.querySelectorAll('[data-wpage="' + first.dataset.wpage + '"]'));
+          if (!group.length || group.indexOf(anchor) > -1) break;
+          if (group[group.length - 1].getBoundingClientRect().bottom > 0) break;
+          group.forEach((el) => el.remove());
+          removed++;
+        }
+        if (!removed) return;
+        wPages -= removed;
+        scroller.scrollTop += anchor.getBoundingClientRect().top - topBefore;
+      };
+      /* infinite: the runway is topped up to two viewports on every scroll tick — at the very
+         bottom no further scroll event fires, so one append per event could dead-end */
+      let wFillRaf = 0;
+      const wOnScroll = () => {
+        if (wFillRaf) return;
+        wFillRaf = requestAnimationFrame(() => {
+          wFillRaf = 0;
+          if (!scroller) return;
+          let added = 0;
+          while (added < 4 && scroller.scrollHeight - scroller.scrollTop - scroller.clientHeight < scroller.clientHeight * 2) {
+            addWorkPage(true); added++;
+          }
+          pruneWorkPages();
+        });
+      };
+      if (scroller) this.on(scroller, "scroll", wOnScroll, { passive: true });
       this.on(window, "resize", fitBoards);
       /* a burst of race cars off the button — pure CSS animation per sprite, so the whole
          volley runs on the compositor and cleans itself up */
@@ -4663,7 +4647,7 @@ class Component extends DCLogic {
           const delay = k * 180;
           const wrap = mk(carLayer, "position:fixed;left:" + x.toFixed(0) + "px;top:0;display:block;will-change:transform;z-index:3;");
           const img = document.createElement("img");
-          img.src = (window.__resources && window.__resources.heroCar) || "assets/hero-f1-car.svg"; img.alt = "";
+          img.src = "assets/hero-f1-car.svg"; img.alt = "";
           img.style.cssText = "display:block;width:" + size + "px;height:auto;";
           wrap.appendChild(img);
           const from = -(size * 1.2), to = vh + size * 1.2;
@@ -4686,7 +4670,7 @@ class Component extends DCLogic {
           const x = Math.random() * (vw + size * 2) - size;
           const wrap = mk(carLayer, "position:fixed;left:" + x.toFixed(0) + "px;top:0;display:block;will-change:transform;");
           const img = document.createElement("img");
-          img.src = (window.__resources && window.__resources.heroCar) || "assets/hero-f1-car.svg"; img.alt = "";
+          img.src = "assets/hero-f1-car.svg"; img.alt = "";
           img.style.cssText = "display:block;width:" + size.toFixed(0) + "px;height:auto;opacity:" + (0.55 + depth * 0.45).toFixed(2) + ";";
           wrap.appendChild(img);
           const from = -(size * 1.6 + Math.random() * 220), to = vh + size * 1.6;
@@ -5056,6 +5040,23 @@ class Component extends DCLogic {
         tips.forEach((t) => show(t, t === near));
       });
       this.on(group, "mouseleave", () => { tips.forEach((t) => show(t, false)); });
+      if ((window.matchMedia && window.matchMedia("(hover: none)").matches) || navigator.maxTouchPoints > 0 || "ontouchstart" in window) {
+        const holdT = { id: 0 };
+        this.on(group, "click", (e) => {
+          let near = tips[0], best = Infinity;
+          const px = (e.touches && e.touches[0] ? e.touches[0].clientX : e.clientX);
+          const py = (e.touches && e.touches[0] ? e.touches[0].clientY : e.clientY);
+          tips.forEach((t) => {
+            const r = t.getBoundingClientRect();
+            const d = Math.hypot(px - (r.left + r.width / 2), py - (r.top + r.height / 2));
+            if (d < best) { best = d; near = t; }
+          });
+          tips.forEach((t) => show(t, t === near));
+          clearTimeout(holdT.id);
+          holdT.id = setTimeout(() => { tips.forEach((t) => show(t, false)); }, 800);
+        });
+        this.cleanup.push(() => clearTimeout(holdT.id));
+      }
     });
     this.on(document, "mouseover", (e) => {
       const b = e.target.closest && e.target.closest("button[data-btn-ready]");
@@ -5392,6 +5393,56 @@ class Component extends DCLogic {
       this.cleanup.push(() => clearInterval(fIdle));
     }
 
+    const mNav = root.querySelector("[data-mnav]");
+    const mMark = mNav ? mNav.querySelector('img[src*="logo-mark"]') : null;
+    if (mMark && !reduced) {
+      const mHost = sheenHost(mMark) || mMark;
+      const mw = document.createElement("span");
+      mw.setAttribute("aria-hidden", "true");
+      const mm = "url(" + R("markMask", "assets/logo-mark-black.svg") + ")";
+      mw.style.cssText =
+        "position:absolute;left:0;top:0;right:0;bottom:0;pointer-events:none;z-index:2;overflow:hidden;" +
+        "-webkit-mask-image:" + mm + ";mask-image:" + mm + ";-webkit-mask-size:contain;mask-size:contain;" +
+        "-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center";
+      const ms = document.createElement("span");
+      ms.style.cssText =
+        "position:absolute;left:0;top:-40%;width:26%;height:180%;" +
+        "background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.18) 26%," +
+        "rgba(255,255,255,0.95) 48%,rgba(255,255,255,1) 52%,rgba(255,255,255,0.22) 74%,rgba(255,255,255,0) 100%);" +
+        "filter:blur(0.6px);transform:translateX(-190%) rotate(18deg) scaleX(0.7);opacity:0;will-change:transform,opacity";
+      mw.appendChild(ms);
+      mHost.appendChild(mw);
+      const mSheen = () => {
+        ms.style.transition = "none";
+        ms.style.transform = "translateX(-190%) rotate(18deg) scaleX(0.7)";
+        ms.style.opacity = "0";
+        void ms.offsetHeight;
+        requestAnimationFrame(() => {
+          ms.style.transition = "transform 0.92s cubic-bezier(0.32,0.06,0.2,1), opacity 0.28s " + E;
+          ms.style.transform = "translateX(420%) rotate(18deg) scaleX(1.55)";
+          ms.style.opacity = "1";
+          setTimeout(() => { ms.style.transition = "opacity 0.44s " + E; ms.style.opacity = "0"; }, 480);
+        });
+      };
+      const mSpin = () => {
+        if (mMark.dataset.spinning || this.contactOpen || this.menuOpen) return;
+        const r = mNav.getBoundingClientRect();
+        if (!r.width || getComputedStyle(mNav).display === "none") return;
+        mMark.dataset.spinning = "1";
+        mMark.style.transition = "transform 0.7s " + E;
+        mMark.style.transform = "rotate(360deg)";
+        setTimeout(() => {
+          mMark.style.transition = "none";
+          mMark.style.transform = "none";
+          void mMark.offsetHeight;
+          delete mMark.dataset.spinning;
+          mSheen();
+        }, 740);
+      };
+      const mIdle = setInterval(mSpin, 5000);
+      this.cleanup.push(() => clearInterval(mIdle));
+    }
+
     this.enterHero = enterHero;
     if (!this.playIntro || this.introDone) {
       void root.offsetHeight; /* flush the hidden state so the transitions actually play */
@@ -5567,8 +5618,9 @@ class Component extends DCLogic {
       fl.forEach((el, i) => {
         const d = open ? 0.30 + i * 0.055 : (fl.length - 1 - i) * 0.02;
         const isCta = el.hasAttribute("data-mcta");
-        el.style.transition = "transform 0.7s " + E + " " + d.toFixed(3) + "s" + (isCta ? ", opacity 0.45s " + E + " " + d.toFixed(3) + "s" : "");
-        el.style.transform = open ? (isCta ? "translateY(0) scale(1)" : "translateY(0)") : (isCta ? "translateY(14px) scale(0.97)" : "translateY(110%)");
+        const dd = isCta ? d + 0.12 : d;
+        el.style.transition = "transform " + (isCta ? 0.95 : 0.7) + "s " + E + " " + dd.toFixed(3) + "s" + (isCta ? ", opacity 0.7s " + E + " " + dd.toFixed(3) + "s" : "");
+        el.style.transform = open ? (isCta ? "translateY(0) scale(1)" : "translateY(0)") : (isCta ? "translateY(26px) scale(0.96)" : "translateY(110%)");
         if (isCta) el.style.opacity = open ? "1" : "0";
       });
       const rule = foot.style;
@@ -5925,6 +5977,5 @@ class Component extends DCLogic {
   }
 }
 </script>
-
-
-</body></html>
+</body>
+</html>

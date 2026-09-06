@@ -1,0 +1,468 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/brand/**",
+              "components/site/**",
+              "figma/**",
+              "ui_kits/brand-book/**",
+              "ui_kits/fugaz-site/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Satoshi))/i]",
+        "message": "Font not provided by the design system. Available: Satoshi."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Frame12'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Frame12> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Frame44'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Frame44> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Frame45'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Frame45> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Frame46'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Frame46> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Frame47'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Frame47> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Frame49'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Frame49> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Frame54'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Frame54> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Frame58'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Frame58> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Frame59'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Frame59> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Frame60'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Frame60> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Frame61'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Frame61> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Group51332'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Group51332> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HeroPanel'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|width|height|radius|grain|style|className|key|ref|className|style|children)$/]",
+        "message": "<HeroPanel> doesn't accept that prop. Declared props: children, width, height, radius, grain, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HeroStatement'] > JSXAttribute > JSXIdentifier[name!=/^(?:graphic|badge|line1|line2|lede|primary|secondary|onPrimary|onSecondary|style|className|key|ref|className|style|children)$/]",
+        "message": "<HeroStatement> doesn't accept that prop. Declared props: graphic, badge, line1, line2, lede, primary, secondary, onPrimary, onSecondary, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LOGOBLACK'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<LOGOBLACK> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LOGOBLUE'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<LOGOBLUE> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LOGOBlueIcon'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<LOGOBlueIcon> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LogoCapsule'] > JSXAttribute > JSXIdentifier[name!=/^(?:avatars|style|className|key|ref|className|style|children)$/]",
+        "message": "<LogoCapsule> doesn't accept that prop. Declared props: avatars, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LOGOGRADIANT'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<LOGOGRADIANT> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LOGOHORIZONTAL'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<LOGOHORIZONTAL> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LogoLockup'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|color|tagline|style|className|key|ref|className|style|children)$/]",
+        "message": "<LogoLockup> doesn't accept that prop. Declared props: size, color, tagline, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LogoMark'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|height|color|title|style|className|key|ref|className|style|children)$/]",
+        "message": "<LogoMark> doesn't accept that prop. Declared props: size, height, color, title, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LOGOMARK'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<LOGOMARK> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LOGOMARKUNICOLOR'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<LOGOMARKUNICOLOR> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LogoTile'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|background|mark|style|className|key|ref|className|style|children)$/]",
+        "message": "<LogoTile> doesn't accept that prop. Declared props: size, background, mark, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LOGOVERTICAL'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<LOGOVERTICAL> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LOGOWHITE'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<LOGOWHITE> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LOGOWhiteBlueIcon'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<LOGOWhiteBlueIcon> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Panel'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|width|height|radius|background|style|className|key|ref|className|style|children)$/]",
+        "message": "<Panel> doesn't accept that prop. Declared props: children, width, height, radius, background, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PartnerLogo'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|alt|width|height|opacity|key|ref|className|style|children)$/]",
+        "message": "<PartnerLogo> doesn't accept that prop. Declared props: src, alt, width, height, opacity."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PillButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|href|onClick|disabled|style|className|key|ref|className|style|children)$/]",
+        "message": "<PillButton> doesn't accept that prop. Declared props: children, variant, href, onClick, disabled, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PillButton'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:light|scrim|dark|blue)$/]",
+        "message": "<PillButton> variant must be one of 'light' | 'scrim' | 'dark' | 'blue'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Preloader'] > JSXAttribute > JSXIdentifier[name!=/^(?:duration|onDone|autoStart|style|className|key|ref|className|style|children)$/]",
+        "message": "<Preloader> doesn't accept that prop. Declared props: duration, onDone, autoStart, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ScarcityBadge'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|color|style|className|key|ref|className|style|children)$/]",
+        "message": "<ScarcityBadge> doesn't accept that prop. Declared props: children, color, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeadline'] > JSXAttribute > JSXIdentifier[name!=/^(?:setup|point|size|style|className|key|ref|className|style|children)$/]",
+        "message": "<SectionHeadline> doesn't accept that prop. Declared props: setup, point, size, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SiteHeader'] > JSXAttribute > JSXIdentifier[name!=/^(?:email|socials|avatars|color|style|className|key|ref|className|style|children)$/]",
+        "message": "<SiteHeader> doesn't accept that prop. Declared props: email, socials, avatars, color, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TeamCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|photo|photoClass|flag|style|className|key|ref|className|style|children)$/]",
+        "message": "<TeamCard> doesn't accept that prop. Declared props: name, photo, photoClass, flag, style, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='WALLPAPERDARKMODEIOS'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<WALLPAPERDARKMODEIOS> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='WALLPAPERDARKMODEMACOS'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<WALLPAPERDARKMODEMACOS> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='WALLPAPERLIGHTMODEIOS'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<WALLPAPERLIGHTMODEIOS> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='WALLPAPERLIGHTMODEMACOS'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<WALLPAPERLIGHTMODEMACOS> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='WorkCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:media|mediaClass|label|width|height|style|className|key|ref|className|style|children)$/]",
+        "message": "<WorkCard> doesn't accept that prop. Declared props: media, mediaClass, label, width, height, style, className."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Frame12": {
+        "replaces": []
+      },
+      "Frame44": {
+        "replaces": []
+      },
+      "Frame45": {
+        "replaces": []
+      },
+      "Frame46": {
+        "replaces": []
+      },
+      "Frame47": {
+        "replaces": []
+      },
+      "Frame49": {
+        "replaces": []
+      },
+      "Frame54": {
+        "replaces": []
+      },
+      "Frame58": {
+        "replaces": []
+      },
+      "Frame59": {
+        "replaces": []
+      },
+      "Frame60": {
+        "replaces": []
+      },
+      "Frame61": {
+        "replaces": []
+      },
+      "Group51332": {
+        "replaces": []
+      },
+      "HeroPanel": {
+        "replaces": []
+      },
+      "HeroStatement": {
+        "replaces": []
+      },
+      "LOGOBLACK": {
+        "replaces": []
+      },
+      "LOGOBLUE": {
+        "replaces": []
+      },
+      "LOGOBlueIcon": {
+        "replaces": []
+      },
+      "LogoCapsule": {
+        "replaces": []
+      },
+      "LOGOGRADIANT": {
+        "replaces": []
+      },
+      "LOGOHORIZONTAL": {
+        "replaces": []
+      },
+      "LogoLockup": {
+        "replaces": []
+      },
+      "LogoMark": {
+        "replaces": []
+      },
+      "LOGOMARK": {
+        "replaces": []
+      },
+      "LOGOMARKUNICOLOR": {
+        "replaces": []
+      },
+      "LogoTile": {
+        "replaces": []
+      },
+      "LOGOVERTICAL": {
+        "replaces": []
+      },
+      "LOGOWHITE": {
+        "replaces": []
+      },
+      "LOGOWhiteBlueIcon": {
+        "replaces": []
+      },
+      "Panel": {
+        "replaces": []
+      },
+      "PartnerLogo": {
+        "replaces": []
+      },
+      "PillButton": {
+        "replaces": []
+      },
+      "Preloader": {
+        "replaces": []
+      },
+      "ScarcityBadge": {
+        "replaces": []
+      },
+      "SectionHeadline": {
+        "replaces": []
+      },
+      "SiteHeader": {
+        "replaces": []
+      },
+      "TeamCard": {
+        "replaces": []
+      },
+      "WALLPAPERDARKMODEIOS": {
+        "replaces": []
+      },
+      "WALLPAPERDARKMODEMACOS": {
+        "replaces": []
+      },
+      "WALLPAPERLIGHTMODEIOS": {
+        "replaces": []
+      },
+      "WALLPAPERLIGHTMODEMACOS": {
+        "replaces": []
+      },
+      "WorkCard": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--black",
+      "--border-hairline",
+      "--content-x",
+      "--dot-red",
+      "--dur-base",
+      "--dur-fast",
+      "--dur-slow",
+      "--ease-fugaz",
+      "--font-core",
+      "--font-mono",
+      "--fugaz-blue",
+      "--fugaz-hero-gradient",
+      "--grey-marquee",
+      "--header-x",
+      "--header-y",
+      "--hero-height",
+      "--leading-core",
+      "--marquee-duration",
+      "--pad-button",
+      "--pad-logo-pill",
+      "--page",
+      "--page-width",
+      "--panel-gap",
+      "--panel-width",
+      "--panel-x",
+      "--placeholder",
+      "--radius-button",
+      "--radius-card",
+      "--radius-logo-pill",
+      "--radius-panel",
+      "--radius-team",
+      "--radius-tile",
+      "--scrim",
+      "--shadow-panel",
+      "--size-badge",
+      "--size-button",
+      "--size-hero",
+      "--size-lede",
+      "--size-meta",
+      "--size-name",
+      "--size-section",
+      "--size-wordmark",
+      "--surface-card",
+      "--surface-hero",
+      "--surface-page",
+      "--surface-panel",
+      "--surface-soft",
+      "--text-on-hero",
+      "--text-strong",
+      "--tracking-display",
+      "--tracking-meta",
+      "--transition-core",
+      "--weight-medium",
+      "--weight-regular",
+      "--white"
+    ],
+    "tokenKinds": {
+      "--fugaz-blue": "color",
+      "--fugaz-hero-gradient": "color",
+      "--page": "color",
+      "--white": "color",
+      "--surface-soft": "color",
+      "--placeholder": "color",
+      "--black": "color",
+      "--grey-marquee": "color",
+      "--dot-red": "color",
+      "--scrim": "color",
+      "--surface-page": "color",
+      "--surface-panel": "color",
+      "--surface-hero": "color",
+      "--surface-card": "color",
+      "--text-strong": "font",
+      "--text-on-hero": "font",
+      "--border-hairline": "color",
+      "--font-core": "font",
+      "--font-mono": "font",
+      "--weight-regular": "font",
+      "--weight-medium": "font",
+      "--tracking-display": "font",
+      "--tracking-meta": "font",
+      "--leading-core": "font",
+      "--size-hero": "spacing",
+      "--size-section": "spacing",
+      "--size-wordmark": "spacing",
+      "--size-name": "spacing",
+      "--size-lede": "spacing",
+      "--size-badge": "spacing",
+      "--size-meta": "spacing",
+      "--size-button": "spacing",
+      "--radius-panel": "radius",
+      "--radius-card": "radius",
+      "--radius-team": "radius",
+      "--radius-logo-pill": "radius",
+      "--radius-button": "radius",
+      "--radius-tile": "radius",
+      "--page-width": "spacing",
+      "--panel-x": "spacing",
+      "--panel-width": "spacing",
+      "--hero-height": "spacing",
+      "--panel-gap": "spacing",
+      "--shadow-panel": "shadow",
+      "--header-x": "spacing",
+      "--header-y": "spacing",
+      "--content-x": "spacing",
+      "--pad-button": "spacing",
+      "--pad-logo-pill": "spacing",
+      "--ease-fugaz": "other",
+      "--dur-fast": "other",
+      "--dur-base": "other",
+      "--dur-slow": "other",
+      "--marquee-duration": "other",
+      "--transition-core": "color"
+    },
+    "fontFamilies": [
+      "Satoshi"
+    ]
+  }
+}

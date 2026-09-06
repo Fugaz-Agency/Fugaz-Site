@@ -1,19 +1,21 @@
-# Fugaz Agency — Website
+# Fugaz Agency — website export
 
-Statische site. `index.html` is de live pagina.
+Upload this whole folder. `index.html` is the entry point and is an exact copy of the site
+(byte-identical to `FugazLanding.dc.html`); nothing has been rewritten or stripped.
 
-## Lokaal bekijken
-```bash
-python3 -m http.server 8000
-# open http://localhost:8000
-```
+## What must travel together
 
-## Structuur
-- `index.html` — de pagina
-- `assets/` — afbeeldingen, video's, fonts en scripts
+- `index.html` (+ `FugazLanding.dc.html`, the same file under its working name)
+- `support.js`, `ds-base.js`, `lanyard.js`
+- `_ds/` — the design system (tokens, keyframes, bundle)
+- `assets/` — 32 files: founder stills + clips, avatars, badges, client marks, hero car, car strip, logo marks, favicon, WhatsApp glyph
+- `assets/work/` — 10 project images
 
-De originele export was een "bundle": alle assets zaten als base64 in de HTML,
-waardoor het bestand 17 MB was. Hier zijn ze uitgepakt naar losse bestanden.
+Every reference in the page resolves inside this folder; nothing points outside it except the
+Satoshi webfont (Fontshare CDN) and the social / WhatsApp / mail links.
 
-## Deploy
-Vercel: Framework Preset "Other", Output Directory leeg laten.
+## Notes
+
+- The two founder clips are fast-start H.264 MP4s. Serve them as files from the same folder —
+  iOS needs byte-range support on the host, which every mainstream host provides.
+- If the host shows an older version after upload, it is caching: hard-refresh or purge.
