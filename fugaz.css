@@ -73,7 +73,7 @@
 .fz-323c9dc.fz-323c9dc{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;padding-top:120px;box-sizing:border-box}
 .fz-32863b0.fz-32863b0{display:inline-flex;align-items:center;justify-content:center;height:34px;padding:7px 19px 8.789px;border:none;border-radius:28.124px;background:#FFFFFF;color:#000000;font-weight:500;font-size:14.94px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer;box-sizing:border-box;white-space:nowrap}
 .fz-33e7e85.fz-33e7e85{display:flex;align-items:center;gap:4px;color:rgba(255,255,255,0.9)}
-.fz-33f3e94.fz-33f3e94{position:sticky;top:0;height:100vh;overflow:hidden;background:#05070C;clip-path:inset(0px 15px 0px 15px round 29px)}
+.fz-33f3e94.fz-33f3e94{position:sticky;top:0;height:100vh;overflow:hidden;background:#05070C;clip-path:inset(0px 15px 0px 15px round 29px);will-change:clip-path}
 .fz-3518ada.fz-3518ada{display:flex;align-items:center;flex-shrink:0;cursor:pointer}
 .fz-3755bc4.fz-3755bc4{position:relative;width:100%;margin-top:21px;border-radius:29px;background:#FFFFFF;box-shadow:0px 0px 51.7px 0px rgba(0,0,0,0.03);padding:90px 73px 100px;box-sizing:border-box}
 .fz-37d517e.fz-37d517e{position:relative;display:flex;flex-direction:column;margin-top:4vh}
@@ -107,7 +107,7 @@
 .fz-4886734.fz-4886734{display:flex;flex-direction:column;gap:0;margin-top:56px;border-top:1px solid rgba(0,0,0,0.08)}
 .fz-49f2e50.fz-49f2e50{position:absolute;left:0;top:0;right:0;bottom:0;border-radius:50%;overflow:hidden;display:block;filter:grayscale(1);background:url(assets/avatar-luka-v6.webp) center 22%/cover no-repeat}
 .fz-4a815f4.fz-4a815f4{font-family:inherit;font-weight:500;font-size:17.40088px;line-height:0.909;letter-spacing:-0.020em;color:#000000;text-decoration:none}
-.fz-4acfdf0.fz-4acfdf0{display:block;height:clamp(38px,4.6vw,58px);width:auto;opacity:0}
+.fz-4acfdf0.fz-4acfdf0{display:block;height:clamp(38px,4.6vw,58px);width:auto;opacity:0;will-change:transform,clip-path}
 .fz-4b13e4e.fz-4b13e4e{position:absolute;left:24px;top:0;width:30px;height:30px;display:block;z-index:2}
 .fz-4b9525a.fz-4b9525a{display:block;max-width:44ch;font-weight:500;font-size:16px;line-height:1.4;letter-spacing:-0.010em;color:rgba(255,255,255,0.78);text-wrap:pretty}
 .fz-4c4e30a.fz-4c4e30a{padding-top:7px;display:flex;flex-direction:column;align-items:flex-start;gap:31.21394px}
@@ -178,7 +178,7 @@
 .fz-7dec55d.fz-7dec55d{display:inline-block;overflow:hidden;padding-bottom:0.22em;margin-bottom:-0.22em;vertical-align:bottom}
 .fz-7ecbcd2.fz-7ecbcd2{display:flex;flex-direction:column}
 .fz-82e1ce3.fz-82e1ce3{display:grid;grid-template-columns:1fr;gap:96px;min-width:0}
-.fz-8330b74.fz-8330b74{position:absolute;inset:0;background:#EFEEEC}
+.fz-8330b74.fz-8330b74{position:absolute;inset:0;background:#EFEEEC;will-change:clip-path}
 .fz-83e2019.fz-83e2019{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0.26;mix-blend-mode:overlay;image-rendering:pixelated;display:block}
 .fz-843e7e6.fz-843e7e6{display:flex;align-items:center;gap:5.686px;margin-top:16.12px;font-weight:400;font-size:18.103px;line-height:0.909;letter-spacing:-0.020em;color:#FFFFFF}
 .fz-84889c5.fz-84889c5{min-width:0;font-weight:500;font-size:25px;line-height:1;letter-spacing:-0.020em;color:#000000}
@@ -340,7 +340,7 @@
 .fz-fc447c4.fz-fc447c4{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px;margin-top:8px;padding:0 11px}
 .fz-fcb159b.fz-fcb159b{display:block;flex:none}
 .fz-fd82434.fz-fd82434{margin:0;max-width:56ch;font-weight:500;font-size:17px;line-height:1.55;letter-spacing:-0.010em;color:#4A4A4A;text-wrap:pretty}
-.fz-fe80340.fz-fe80340{position:sticky;left:0;top:0;width:100%;height:100vh;z-index:46;overflow:hidden;background:#000000;clip-path:inset(15px 15px 15px 15px round 29px)}
+.fz-fe80340.fz-fe80340{position:sticky;left:0;top:0;width:100%;height:100vh;z-index:46;overflow:hidden;background:#000000;clip-path:inset(15px 15px 15px 15px round 29px);will-change:clip-path}
 .fz-fee1fe3.fz-fee1fe3{position:absolute;left:50%;top:-7px;width:16px;height:8px;margin-left:-8px;display:block;background:#EFEEEC;clip-path:polygon(50% 0,100% 100%,0 100%)}
 .fz-ff262e7.fz-ff262e7{display:block;padding:15px 0;font-weight:500;font-size:17px;line-height:1.35;letter-spacing:-0.010em;color:#808080}
 .fz-ff2e247.fz-ff2e247{margin-top:44px;display:flex;align-items:center;gap:14.546px}
