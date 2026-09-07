@@ -363,6 +363,8 @@ html{scrollbar-width:none;-ms-overflow-style:none}
   [data-legal="careers"] div[style*="border-top"]{padding:26px 0 !important}
   [data-legal="careers"] [data-role-head="1"] > span:first-child{font-size:24px !important}
   [data-legal="careers"] [data-role-head="1"] > span:nth-child(2){font-size:12px !important}
+  [data-legal] p,[data-legal] span,[data-legal] a{overflow-wrap:anywhere}
+  [data-legal="careers"] [data-role-head="1"] > span:nth-child(2){white-space:nowrap}
 }
 
 /* touch devices: hover cannot exist, so a press is the acknowledgement */
@@ -1148,7 +1150,7 @@ button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 </div>
 
 <div data-legal="privacy" role="dialog" aria-modal="true" aria-label="Privacy policy" style="font-family:Satoshi,'Satoshi Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;position:fixed;left:0;top:0;right:0;bottom:0;z-index:82;background:#EFEEEC;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.62s cubic-bezier(0.16,1,0.3,1),visibility 0s linear 0.62s">
-<div style="position:absolute;left:0;top:0;right:0;bottom:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:96px 24px 120px;box-sizing:border-box">
+<div style="position:absolute;left:0;top:0;right:0;bottom:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:96px 24px 120px;box-sizing:border-box">
 <div style="width:100%;max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:34px">
 <h1 style="margin:0;font-weight:500;font-size:50px;line-height:0.95;letter-spacing:-0.020em;color:#000000">Privacy policy</h1>
 <p style="margin:0;font-weight:500;font-size:15px;line-height:1.5;letter-spacing:-0.010em;color:#A9A7A3">Last updated 1 September 2026</p>
@@ -1188,7 +1190,7 @@ button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 </div>
 
 <div data-legal="careers" role="dialog" aria-modal="true" aria-label="Careers" style="font-family:Satoshi,'Satoshi Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;position:fixed;left:0;top:0;right:0;bottom:0;z-index:82;background:#EFEEEC;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.62s cubic-bezier(0.16,1,0.3,1),visibility 0s linear 0.62s">
-<div style="position:absolute;left:0;top:0;right:0;bottom:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:96px 24px 120px;box-sizing:border-box">
+<div style="position:absolute;left:0;top:0;right:0;bottom:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:96px 24px 120px;box-sizing:border-box">
 <div style="width:100%;max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:34px">
 <h1 style="margin:0;font-weight:500;font-size:50px;line-height:0.95;letter-spacing:-0.020em;color:#000000">Careers</h1>
 <p style="margin:0;font-weight:500;font-size:15px;line-height:1.5;letter-spacing:-0.010em;color:#A9A7A3">Four roles open &nbsp;/&nbsp; all remote</p>
@@ -1239,7 +1241,7 @@ button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 </div>
 </div>
 <div data-legal="terms" role="dialog" aria-modal="true" aria-label="Terms" style="font-family:Satoshi,'Satoshi Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;position:fixed;left:0;top:0;right:0;bottom:0;z-index:82;background:#EFEEEC;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.62s cubic-bezier(0.16,1,0.3,1),visibility 0s linear 0.62s">
-<div style="position:absolute;left:0;top:0;right:0;bottom:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:96px 24px 120px;box-sizing:border-box">
+<div style="position:absolute;left:0;top:0;right:0;bottom:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:96px 24px 120px;box-sizing:border-box">
 <div style="width:100%;max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:34px">
 <h1 style="margin:0;font-weight:500;font-size:50px;line-height:0.95;letter-spacing:-0.020em;color:#000000">Terms</h1>
 <p style="margin:0;font-weight:500;font-size:15px;line-height:1.5;letter-spacing:-0.010em;color:#A9A7A3">Last updated 1 September 2026</p>
@@ -2518,27 +2520,33 @@ class Component extends DCLogic {
               /* the clip is a one-shot introduction: the first time a founder card comes into
                  view it plays through once, then settles back to the still and stays there —
                  tying it to the scroll made it stutter with the thumb */
-              if (!v.__once) {
-                v.__once = 1;
-                v.loop = false;
-                try { v.currentTime = 0; v.playbackRate = 1; } catch (err) {}
-                const start = () => {
+              if (!v.__done && !v.__playing) {
+                const nowT2 = performance.now();
+                if (!v.__try || nowT2 - v.__try > 700) {
+                  v.__try = nowT2;
+                  v.loop = false;
+                  if (!v.__armed) {
+                    v.__armed = 1;
+                    try { v.currentTime = 0; v.playbackRate = 1; } catch (err) {}
+                    const settle = () => {
+                      v.__done = 1;
+                      v.style.transition = "opacity 1.1s " + E;
+                      v.style.opacity = "0";
+                      setTimeout(() => { try { v.pause(); v.currentTime = 0; } catch (err) {} }, 1100);
+                    };
+                    v.addEventListener("ended", settle, { once: true });
+                    v.addEventListener("playing", () => {
+                      v.__playing = 1;
+                      v.style.transition = "opacity 0.75s " + E;
+                      v.style.opacity = "1";
+                      /* if the clip somehow never reports "ended", settle on its own length */
+                      const ms = (isFinite(v.duration) && v.duration > 0 ? v.duration * 1000 : 6000) + 900;
+                      setTimeout(() => { if (!v.__done) settle(); }, ms);
+                    }, { once: true });
+                  }
                   const pr = v.play();
-                  if (pr && pr.catch) pr.catch(() => { v.__blocked = 1; });
-                  v.style.transition = "opacity 0.75s " + E;
-                  v.style.opacity = "1";
-                };
-                if (v.readyState >= 2) start();
-                else v.addEventListener("loadeddata", start, { once: true });
-                const settle = () => {
-                  v.__done = 1;
-                  v.style.transition = "opacity 1.1s " + E;
-                  v.style.opacity = "0";
-                  setTimeout(() => { try { v.pause(); v.currentTime = 0; } catch (err) {} }, 1100);
-                };
-                v.addEventListener("ended", settle, { once: true });
-                /* a fallback in case the browser refuses the play and no "ended" ever fires */
-                setTimeout(() => { if (v.style.opacity === "1" && v.paused) settle(); }, 9000);
+                  if (pr && pr.catch) pr.catch(() => {});
+                }
               }
             } else if (v.style.opacity === "1") {
               v.__wanted = false;
@@ -3162,9 +3170,8 @@ class Component extends DCLogic {
         clipsOnScreen().forEach((v) => {
           v.__wanted = true;
           if (v.preload === "none") { v.preload = "auto"; v.load(); }
-          if (v.__done || (v.__once && v.style.opacity !== "1")) return;
-          if (v.paused && !v.__blocked) { const p = v.play(); if (p && p.catch) p.catch(() => { v.__blocked = true; }); }
-          if (v.style.opacity !== "1") { v.style.transition = "opacity 0.5s " + E; v.style.opacity = "1"; }
+          if (v.__done) return;
+          if (v.paused) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
         });
       };
       /* every touch counts as the gesture: the clips that are on screen start right there */
