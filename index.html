@@ -383,6 +383,9 @@ html{scrollbar-width:none;-ms-overflow-style:none}
 /* film grain, animated only where it is on screen */
 @keyframes fugaz-grain-play{0%,100%{transform:translate3d(0,0,0)}10%{transform:translate3d(-5%,-10%,0)}20%{transform:translate3d(-15%,5%,0)}30%{transform:translate3d(7%,-25%,0)}40%{transform:translate3d(-5%,25%,0)}50%{transform:translate3d(-15%,10%,0)}60%{transform:translate3d(15%,0,0)}70%{transform:translate3d(0,15%,0)}80%{transform:translate3d(3%,35%,0)}90%{transform:translate3d(-10%,10%,0)}}
 .fugaz-grain-live{animation:none;will-change:auto}
+  /* scroll-progressiebalk alleen op desktop: op mobiel leest die lijn
+     als een zwevend streepje zonder context */
+  @media (max-width:991px){ [data-progress]{display:none !important} }
 .fugaz-grain-live[data-grain-idle]{animation-play-state:paused}
 
 /* the partner row drifts forever and never pauses */
