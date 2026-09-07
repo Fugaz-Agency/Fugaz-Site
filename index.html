@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="fugaz.css">
 </head>
 <body>
-<div class="bg-grain" aria-hidden="true"></div>
 <template id="__bundler_thumbnail" data-bg-color="#EFEEEC">
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
     <rect width="1200" height="800" fill="#EFEEEC"/>
@@ -399,17 +398,20 @@ html{scrollbar-width:none;-ms-overflow-style:none}
 /* film grain, animated only where it is on screen */
 @keyframes fugaz-grain-play{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-10%)}20%{transform:translate(-15%,5%)}30%{transform:translate(7%,-25%)}40%{transform:translate(-5%,25%)}50%{transform:translate(-15%,10%)}60%{transform:translate(15%,0)}70%{transform:translate(0,15%)}80%{transform:translate(3%,35%)}90%{transform:translate(-10%,10%)}}
 .fugaz-grain-live{animation:none;will-change:auto}
-  /* globale filmkorrel over de hele pagina, alleen op desktop */
-  .bg-grain{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:95;pointer-events:none;overflow:hidden;display:none}
+  /* bewegende korrel, alleen in de process-sectie en alleen op desktop.
+     geen mix-blend-mode: dat gaf naden over het WebGL-canvas eronder.
+     de laag is 300% groot, dus verschuiven raakt nooit een rand. */
   @media (min-width:992px){
-    .bg-grain{display:block}
-    .bg-grain::after{content:"";position:fixed;top:-100%;left:-50%;width:300%;height:300%;
-      background-image:url("assets/noise.jpg");opacity:0.06;
+    .fugaz-grain-live[data-grain-drift]{inset:auto;top:-100%;left:-50%;width:300%;height:300%;
+      mix-blend-mode:normal;opacity:0.035;
       animation:fugaz-grain-play 8s steps(10) infinite}
   }
-  /* op mobiel geen enkele korrellaag */
+  /* op mobiel geen korrel, en de rook/glans in process gedempt.
+     het canvas tekent zelf de blauwe gradient met zwart erachter, dus een
+     lagere opacity maakt de beweging rustiger en het vlak iets dieper. */
   @media (max-width:991px){
-    .fugaz-grain,.bg-grain{display:none !important}
+    .fugaz-grain{display:none !important}
+    [data-liqgl]{opacity:0.82}
   }
   .fugaz-grain-live[data-grain-idle]{animation-play-state:paused}
 
@@ -749,7 +751,7 @@ button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 <div class="fz-e1f4e78" id="process" data-pin-wrap="1">
 <div class="fz-fe80340" data-pin="1">
 <canvas class="fz-5e593aa" data-liqgl="1" aria-hidden="true"></canvas>
-<div data-grain="1" data-grain-dark="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live fz-e807e08"></div>
+<div data-grain="1" data-grain-dark="1" data-grain-drift="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live fz-e807e08"></div>
 <div data-pin-zoom="1" style="position:absolute;left:0;top:0;right:0;bottom:0;transform:scale(0.965);transform-origin:50% 50%">
 <div class="fz-275b242" data-r="pin-grid">
 <div class="fz-5b927ea">
