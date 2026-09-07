@@ -6150,23 +6150,5 @@ class Component extends DCLogic {
   }
 }
 </script>
-<script>
-/* will-change alleen zolang een transitie loopt, daarna opruimen */
-(function () {
-  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  var LIFT = ["transform", "opacity", "filter", "clip-path"];
-  function lift(e) { var el = e.target;
-    if (!el || el.nodeType !== 1 || el.dataset.wcHeld) return;
-    if (LIFT.indexOf(e.propertyName) === -1) return;
-    el.dataset.wcHeld = "1"; el.style.willChange = e.propertyName; }
-  function drop(e) { var el = e.target;
-    if (!el || el.nodeType !== 1 || !el.dataset.wcHeld) return;
-    delete el.dataset.wcHeld; el.style.willChange = ""; }
-  var o = { capture: true, passive: true };
-  document.addEventListener("transitionrun", lift, o);
-  document.addEventListener("transitionend", drop, o);
-  document.addEventListener("transitioncancel", drop, o);
-})();
-</script>
 </body>
 </html>
