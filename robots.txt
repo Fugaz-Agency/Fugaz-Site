@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fugaz-agency.com/sitemap.xml
