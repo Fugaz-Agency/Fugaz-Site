@@ -1703,7 +1703,7 @@ class Component extends DCLogic {
         const d = parseFloat(el.dataset.omD || "0");
         /* data-dur / data-dur-stacked set an ABSOLUTE duration in ms — the global 0.7x
            shortening for small viewports is what made the work cards flash past on a phone */
-        const dur = parseFloat(el.dataset.omDur || "") || 900 * rQuick;
+        const dur = parseFloat(el.dataset.omDur || "") || 1450 * rQuick;
         el.animate([{ opacity: 0, transform: from }, { opacity: 1, transform: "none" }],
           { duration: dur, delay: d * 1000 * rQuick, easing: el.dataset.omEase || E, fill: "backwards" });
         if (el.hasAttribute("data-team-card")) {
