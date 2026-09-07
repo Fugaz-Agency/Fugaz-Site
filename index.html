@@ -397,8 +397,8 @@ html{scrollbar-width:none;-ms-overflow-style:none}
 
 /* film grain, animated only where it is on screen */
 @keyframes fugaz-grain-play{0%,100%{transform:translate3d(0,0,0)}10%{transform:translate3d(-5%,-10%,0)}20%{transform:translate3d(-15%,5%,0)}30%{transform:translate3d(7%,-25%,0)}40%{transform:translate3d(-5%,25%,0)}50%{transform:translate3d(-15%,10%,0)}60%{transform:translate3d(15%,0,0)}70%{transform:translate3d(0,15%,0)}80%{transform:translate3d(3%,35%,0)}90%{transform:translate3d(-10%,10%,0)}}
-.fugaz-grain-live{animation:none;will-change:auto}
-.fugaz-grain-live[data-grain-idle]{animation-play-state:paused}
+.fugaz-grain-live{animation:fugaz-grain-play 8s steps(10) infinite;will-change:transform}
+  .fugaz-grain-live[data-grain-idle]{animation-play-state:paused;will-change:auto}
 
 /* the partner row drifts forever and never pauses */
 @keyframes fugaz-partner-drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-33.3333%,0,0)}}
@@ -4238,18 +4238,13 @@ class Component extends DCLogic {
         if (liqArmed) return;
         liqArmed = true;
         const go = () => { try { startLiquid(); } catch (e) { console.error("[fugaz] liquid init failed", e); } };
-        if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 2600 });
-        else setTimeout(go, 1200);
+        if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 800 });
+        else setTimeout(go, 400);
       };
-      if (typeof IntersectionObserver === "function") {
-        const lio = new IntersectionObserver((es) => {
-          if (!es[0].isIntersecting) return;
-          lio.disconnect();
-          armLiquid();
-        }, { rootMargin: "400px" });
-        lio.observe(liqPin);
-        this.cleanup.push(() => lio.disconnect());
-      } else armLiquid();
+              /* de shader wordt meteen na het laden opgebouwd in idle-tijd, niet pas
+           bij het naderen van de sectie: op mobiel scroll je er sneller heen
+           dan de compilatie duurt, en dan zie je een zwart vlak. */
+        armLiquid();
     }
 
     /* ---- FAQ: one row open at a time, measured height so the ease is real ---- */
