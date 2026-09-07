@@ -397,8 +397,7 @@ html{scrollbar-width:none;-ms-overflow-style:none}
 
 /* film grain, animated only where it is on screen */
 @keyframes fugaz-grain-play{from{background-position:0px 0px}to{background-position:160px 160px}}
-.fugaz-grain-live{animation:none}
-  .fugaz-grain-live[data-grain-drift]{animation:fugaz-grain-play 6s linear infinite}
+.fugaz-grain-live{animation:none;will-change:auto}
   .fugaz-grain-live[data-grain-idle]{animation-play-state:paused}
 
 /* the partner row drifts forever and never pauses */
@@ -737,7 +736,7 @@ button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 <div class="fz-e1f4e78" id="process" data-pin-wrap="1">
 <div class="fz-fe80340" data-pin="1">
 <canvas class="fz-5e593aa" data-liqgl="1" aria-hidden="true"></canvas>
-<div data-grain="1" data-grain-dark="1" data-grain-drift="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live fz-e807e08"></div>
+<div data-grain="1" data-grain-dark="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live fz-e807e08"></div>
 <div data-pin-zoom="1" style="position:absolute;left:0;top:0;right:0;bottom:0;transform:scale(0.965);transform-origin:50% 50%">
 <div class="fz-275b242" data-r="pin-grid">
 <div class="fz-5b927ea">
