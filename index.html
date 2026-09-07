@@ -383,7 +383,6 @@ html{scrollbar-width:none;-ms-overflow-style:none}
 /* film grain, animated only where it is on screen */
 @keyframes fugaz-grain-play{0%,100%{transform:translate3d(0,0,0)}10%{transform:translate3d(-5%,-10%,0)}20%{transform:translate3d(-15%,5%,0)}30%{transform:translate3d(7%,-25%,0)}40%{transform:translate3d(-5%,25%,0)}50%{transform:translate3d(-15%,10%,0)}60%{transform:translate3d(15%,0,0)}70%{transform:translate3d(0,15%,0)}80%{transform:translate3d(3%,35%,0)}90%{transform:translate3d(-10%,10%,0)}}
 .fugaz-grain-live{animation:none;will-change:auto}
-.fugaz-grain-live[data-grain-anim]{animation:fugaz-grain-play 8s steps(10,end) infinite;will-change:transform}
 .fugaz-grain-live[data-grain-idle]{animation-play-state:paused}
 
 /* the partner row drifts forever and never pauses */
@@ -618,7 +617,7 @@ button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 <div class="fz-33f3e94" data-r="s3-stage">
 <div class="fz-6f4efa1" data-s3-bloom="1" aria-hidden="true"></div>
 <div class="fz-7cc933d" aria-hidden="true"></div>
-<div data-grain="1" data-grain-anim="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live fz-bcadbd7"></div>
+<div data-grain="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live fz-bcadbd7"></div>
 <div class="fz-73362e0" data-r="s3-field" aria-hidden="true">
 <div data-atmo="1" data-d="0.95" style="position:absolute;left:14%;top:50%;width:23vw;aspect-ratio:4/5;z-index:4;opacity:0.92;transform:translate3d(-50%,-50%,0)"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:22px;overflow:hidden;background:#080D18;transform:rotate(-1.6deg);filter:blur(1.6px) brightness(0.92);box-shadow:0 66px 132px rgba(0,0,0,0.64);"><img class="fz-a0c2275" loading="lazy" decoding="async" src="assets/atmo-luka-couch.webp" alt=""><div class="fz-659b482" aria-hidden="true"></div><div class="fz-b97b302" aria-hidden="true"></div></div></div>
 <div data-atmo="1" data-d="0.55" style="position:absolute;left:30%;top:14%;width:14vw;aspect-ratio:4/5;z-index:2;opacity:0.74;transform:translate3d(-50%,-50%,0)"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#080D18;transform:rotate(1.8deg);filter:blur(3px) brightness(0.86);box-shadow:0 48px 96px rgba(0,0,0,0.52)"><img class="fz-412d88c" loading="lazy" decoding="async" src="assets/atmo-luka-street.webp" alt=""><div class="fz-659b482" aria-hidden="true"></div><div class="fz-b97b302" aria-hidden="true"></div></div></div>
@@ -6149,8 +6148,7 @@ class Component extends DCLogic {
 }
 </script>
 <script>
-/* will-change alleen zolang een transitie loopt, daarna opruimen:
-   anders houdt de browser honderden GPU-lagen permanent vast */
+/* will-change alleen zolang een transitie loopt, daarna opruimen */
 (function () {
   if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var LIFT = ["transform", "opacity", "filter", "clip-path"];

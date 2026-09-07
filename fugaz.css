@@ -1,7 +1,5 @@
-/* Uit inline styles geextraheerd. De dubbele selector houdt de specificiteit
-   hoog, zodat de cascade zich net zo gedraagt als voorheen.
-   Elementen waarvan de JavaScript het style-attribuut uitleest zijn
-   bewust inline gelaten. */
+/* Uit inline styles geextraheerd. Dubbele selector houdt de specificiteit hoog.
+   Elementen waarvan de JS het style-attribuut uitleest blijven inline. */
 .fz-00e885b.fz-00e885b{display:flex;align-items:center;gap:11px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.16)}
 .fz-01a71f7.fz-01a71f7{display:block;width:100%;height:auto;border-radius:12px}
 .fz-01cddf4.fz-01cddf4{position:absolute;left:0;top:0;right:0;bottom:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 150px;box-sizing:border-box}
