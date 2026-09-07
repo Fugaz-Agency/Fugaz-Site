@@ -29,25 +29,6 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="canonical" href="https://fugaz-agency.com/">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Fugaz Agency",
-  "url": "https://fugaz-agency.com/",
-  "logo": "https://fugaz-agency.com/assets/favicon-512.png",
-  "image": "https://fugaz-agency.com/assets/og-image.png",
-  "description": "Branding, websites, decks and creative from a two-man agency in Amsterdam.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Amsterdam",
-    "addressCountry": "NL"
-  },
-  "areaServed": "NL",
-  "knowsAbout": ["Branding", "Web design", "Creative direction", "Presentation design"]
-}
-</script>
 <meta property="og:title" content="Fugaz - Creative Agency">
 <meta property="og:description" content="Branding, websites, decks and creative. Built so the brand reads real.">
 <meta property="og:type" content="website">
@@ -61,6 +42,10 @@
 <meta name="twitter:title" content="Fugaz - Creative Agency">
 <meta name="twitter:description" content="Branding, websites, decks and creative. Built so the brand reads real.">
 <meta name="twitter:image" content="https://fugaz-agency.com/assets/og-image.png">
+<link rel="canonical" href="https://fugaz-agency.com/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Fugaz Agency","url":"https://fugaz-agency.com/","logo":"https://fugaz-agency.com/assets/favicon-512.png","image":"https://fugaz-agency.com/assets/og-image.png","description":"Branding, websites, decks and creative from a two-man agency in Amsterdam.","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"},"areaServed":"NL","knowsAbout":["Branding","Web design","Creative direction","Presentation design"]}
+</script>
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="crossorigin">
 <link rel="dns-prefetch" href="https://cdn.fontshare.com">
 <link rel="preload" as="image" href="assets/hero-f1-car.svg" type="image/svg+xml" fetchpriority="high">
@@ -396,24 +381,10 @@ html{scrollbar-width:none;-ms-overflow-style:none}
 }
 
 /* film grain, animated only where it is on screen */
-@keyframes fugaz-grain-play{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-10%)}20%{transform:translate(-15%,5%)}30%{transform:translate(7%,-25%)}40%{transform:translate(-5%,25%)}50%{transform:translate(-15%,10%)}60%{transform:translate(15%,0)}70%{transform:translate(0,15%)}80%{transform:translate(3%,35%)}90%{transform:translate(-10%,10%)}}
+@keyframes fugaz-grain-play{0%,100%{transform:translate3d(0,0,0)}10%{transform:translate3d(-5%,-10%,0)}20%{transform:translate3d(-15%,5%,0)}30%{transform:translate3d(7%,-25%,0)}40%{transform:translate3d(-5%,25%,0)}50%{transform:translate3d(-15%,10%,0)}60%{transform:translate3d(15%,0,0)}70%{transform:translate3d(0,15%,0)}80%{transform:translate3d(3%,35%,0)}90%{transform:translate3d(-10%,10%,0)}}
 .fugaz-grain-live{animation:none;will-change:auto}
-  /* bewegende korrel, alleen in de process-sectie en alleen op desktop.
-     geen mix-blend-mode: dat gaf naden over het WebGL-canvas eronder.
-     de laag is 300% groot, dus verschuiven raakt nooit een rand. */
-  @media (min-width:992px){
-    .fugaz-grain-live[data-grain-drift]{inset:auto;top:-100%;left:-50%;width:300%;height:300%;
-      mix-blend-mode:normal;opacity:0.035;
-      animation:fugaz-grain-play 8s steps(10) infinite}
-  }
-  /* op mobiel geen korrel, en de rook/glans in process gedempt.
-     het canvas tekent zelf de blauwe gradient met zwart erachter, dus een
-     lagere opacity maakt de beweging rustiger en het vlak iets dieper. */
-  @media (max-width:991px){
-    .fugaz-grain{display:none !important}
-    [data-liqgl]{opacity:0.82}
-  }
-  .fugaz-grain-live[data-grain-idle]{animation-play-state:paused}
+.fugaz-grain-live[data-grain-anim]{animation:fugaz-grain-play 8s steps(10,end) infinite;will-change:transform}
+.fugaz-grain-live[data-grain-idle]{animation-play-state:paused}
 
 /* the partner row drifts forever and never pauses */
 @keyframes fugaz-partner-drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-33.3333%,0,0)}}
@@ -647,7 +618,7 @@ button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 <div class="fz-33f3e94" data-r="s3-stage">
 <div class="fz-6f4efa1" data-s3-bloom="1" aria-hidden="true"></div>
 <div class="fz-7cc933d" aria-hidden="true"></div>
-<div data-grain="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live fz-bcadbd7"></div>
+<div data-grain="1" data-grain-anim="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live fz-bcadbd7"></div>
 <div class="fz-73362e0" data-r="s3-field" aria-hidden="true">
 <div data-atmo="1" data-d="0.95" style="position:absolute;left:14%;top:50%;width:23vw;aspect-ratio:4/5;z-index:4;opacity:0.92;transform:translate3d(-50%,-50%,0)"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:22px;overflow:hidden;background:#080D18;transform:rotate(-1.6deg);filter:blur(1.6px) brightness(0.92);box-shadow:0 66px 132px rgba(0,0,0,0.64);"><img class="fz-a0c2275" loading="lazy" decoding="async" src="assets/atmo-luka-couch.webp" alt=""><div class="fz-659b482" aria-hidden="true"></div><div class="fz-b97b302" aria-hidden="true"></div></div></div>
 <div data-atmo="1" data-d="0.55" style="position:absolute;left:30%;top:14%;width:14vw;aspect-ratio:4/5;z-index:2;opacity:0.74;transform:translate3d(-50%,-50%,0)"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#080D18;transform:rotate(1.8deg);filter:blur(3px) brightness(0.86);box-shadow:0 48px 96px rgba(0,0,0,0.52)"><img class="fz-412d88c" loading="lazy" decoding="async" src="assets/atmo-luka-street.webp" alt=""><div class="fz-659b482" aria-hidden="true"></div><div class="fz-b97b302" aria-hidden="true"></div></div></div>
@@ -751,7 +722,7 @@ button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 <div class="fz-e1f4e78" id="process" data-pin-wrap="1">
 <div class="fz-fe80340" data-pin="1">
 <canvas class="fz-5e593aa" data-liqgl="1" aria-hidden="true"></canvas>
-<div data-grain="1" data-grain-dark="1" data-grain-drift="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live fz-e807e08"></div>
+<div data-grain="1" data-grain-dark="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live fz-e807e08"></div>
 <div data-pin-zoom="1" style="position:absolute;left:0;top:0;right:0;bottom:0;transform:scale(0.965);transform-origin:50% 50%">
 <div class="fz-275b242" data-r="pin-grid">
 <div class="fz-5b927ea">
@@ -1069,7 +1040,7 @@ button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 </div>
 </div>
 <div class="fz-1e5dcef" data-r="ideas-media" data-reveal="1" data-y="26" data-delay="0.18">
-<img class="fz-4867713" loading="lazy" decoding="async" data-reveal="1" data-delay="0.30" data-from="translateX(11%) scale(1.05)" src="assets/ideas-car-strip-red.jpg" alt="" aria-hidden="true" width="1004" height="203">
+<img class="fz-4867713" loading="lazy" decoding="async" data-reveal="1" data-delay="0.30" data-from="translateX(11%) scale(1.05)" src="assets/ideas-car-strip-red.webp" alt="" aria-hidden="true" width="1004" height="203">
 </div>
 </div>
 </div>
@@ -4068,8 +4039,8 @@ class Component extends DCLogic {
         " float sw=clamp(length(r)*0.9,0.,1.);",
         " vec3 c0=vec3(0.014,0.014,0.017);",
         " vec3 c1=vec3(0.046,0.046,0.052);",
-        " vec3 c2=vec3(0.120,0.120,0.132);",
-        " vec3 c3=vec3(0.250,0.252,0.268);",
+        " vec3 c2=vec3(0.086,0.086,0.096);",
+        " vec3 c3=vec3(0.180,0.182,0.196);",
         " vec3 col=mix(c0,c1,smoothstep(0.14,0.50,v));",
         " col=mix(col,c2,smoothstep(0.48,0.72,v));",
         " col=mix(col,c3,smoothstep(0.70,0.94,v)*0.85);",
@@ -4078,16 +4049,16 @@ class Component extends DCLogic {
         " float flank=smoothstep(0.56-0.34*nar,0.98-0.10*nar,sx);",
         " float pool=exp(-pow(sx/(0.11+0.22*nar),2.0))*(0.30+0.34*nar);",
         " float zone=clamp(flank+pool,0.0,1.0);",
-        " float lift=1.0+1.35*nar;",
+        " float lift=1.0+0.45*nar;",
         " float wet=crest*crest*zone;",
-        " col+=c3*wet*(0.020+0.030*wake)*lift;",
+        " col+=c3*wet*(0.011+0.017*wake)*lift;",
         /* a narrow specular sitting inside the wet edge — glass, not haze */
-        " col+=vec3(0.94,0.955,1.0)*pow(crest,7.0)*zone*(0.022+0.026*wake)*lift;",
+        " col+=vec3(0.94,0.955,1.0)*pow(crest,7.0)*zone*(0.012+0.015*wake)*lift;",
         /* the body cools slightly where it turns away, like the inside of black glass */
-        " col+=vec3(0.10,0.13,0.20)*smoothstep(0.30,0.85,v)*(0.03+0.06*zone)*(1.0+0.7*nar);",
+        " col+=vec3(0.10,0.13,0.20)*smoothstep(0.30,0.85,v)*(0.017+0.033*zone)*(1.0+0.25*nar);",
         /* and the shoulder past a fold catches the axis light faintly */
-        " col+=c3*smoothstep(0.55,1.0,dot(normalize(r+1e-4),ax)*0.5+0.5)*wet*0.028*lift;",
-        " col+=c3*sw*0.010*(0.30+0.70*zone)*lift;",
+        " col+=c3*smoothstep(0.55,1.0,dot(normalize(r+1e-4),ax)*0.5+0.5)*wet*0.015*lift;",
+        " col+=c3*sw*0.006*(0.30+0.70*zone)*lift;",
         /* the falloff follows the axis too, so the panel sinks into black at one corner */
         " col*=1.0-0.20*smoothstep(0.05,0.62,-dot(uv-0.5,ax));",
         " col*=1.0-0.08*smoothstep(0.40,1.20,length(uv-0.5));",
@@ -4256,10 +4227,7 @@ class Component extends DCLogic {
         if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 800 });
         else setTimeout(go, 400);
       };
-              /* de shader wordt meteen na het laden opgebouwd in idle-tijd, niet pas
-           bij het naderen van de sectie: op mobiel scroll je er sneller heen
-           dan de compilatie duurt, en dan zie je een zwart vlak. */
-        armLiquid();
+              armLiquid();
     }
 
     /* ---- FAQ: one row open at a time, measured height so the ease is real ---- */
@@ -4570,23 +4538,17 @@ class Component extends DCLogic {
           const body = {
             access_key: window.FUGAZ_ACCESS_KEY || "95c6157e-44aa-4dd7-9c81-a71e419856c0",
             subject: "Nieuwe Fugaz scan: " + brand,
-            from_name: "Fugaz website",
-            replyto: mail,
-            Merk: brand,
-            Website: site || "-",
-            "E-mail": mail,
+            from_name: "Fugaz website", replyto: mail,
+            Merk: brand, Website: site || "-", "E-mail": mail,
             Herkenning: picks(0).join(", ") || "-",
             Ambitie: picks(1).join(", ") || "-",
             "Te bouwen": picks(2).join(", ") || "-",
-            Budget: payload.budget || "-",
-            Toelichting: msg || "-",
+            Budget: payload.budget || "-", Toelichting: msg || "-",
             Verstuurd: payload.sentAt
           };
-          fetch(url, {
-            method: "POST",
+          fetch(url, { method: "POST",
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify(body)
-          }).catch(() => {});
+            body: JSON.stringify(body) }).catch(() => {});
         } catch (err) {}
         this.scanSent(brief, {
           recognise: picks(0), ambition: picks(1), build: picks(2),
@@ -6187,28 +6149,22 @@ class Component extends DCLogic {
 }
 </script>
 <script>
-/* will-change wordt alleen gezet tijdens een lopende transitie en daarna
-   direct opgeruimd, zodat de browser geen honderden GPU-lagen vasthoudt. */
+/* will-change alleen zolang een transitie loopt, daarna opruimen:
+   anders houdt de browser honderden GPU-lagen permanent vast */
 (function () {
   if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var LIFT = ["transform", "opacity", "filter", "clip-path"];
-  function lift(e) {
-    var el = e.target;
+  function lift(e) { var el = e.target;
     if (!el || el.nodeType !== 1 || el.dataset.wcHeld) return;
     if (LIFT.indexOf(e.propertyName) === -1) return;
-    el.dataset.wcHeld = "1";
-    el.style.willChange = e.propertyName;
-  }
-  function drop(e) {
-    var el = e.target;
+    el.dataset.wcHeld = "1"; el.style.willChange = e.propertyName; }
+  function drop(e) { var el = e.target;
     if (!el || el.nodeType !== 1 || !el.dataset.wcHeld) return;
-    delete el.dataset.wcHeld;
-    el.style.willChange = "";
-  }
-  var opt = { capture: true, passive: true };
-  document.addEventListener("transitionrun", lift, opt);
-  document.addEventListener("transitionend", drop, opt);
-  document.addEventListener("transitioncancel", drop, opt);
+    delete el.dataset.wcHeld; el.style.willChange = ""; }
+  var o = { capture: true, passive: true };
+  document.addEventListener("transitionrun", lift, o);
+  document.addEventListener("transitionend", drop, o);
+  document.addEventListener("transitioncancel", drop, o);
 })();
 </script>
 </body>
