@@ -2700,7 +2700,7 @@ class Component extends DCLogic {
         const kz = Math.min(ki, ko);
         const kze = kz < 0.5 ? 4 * kz * kz * kz : 1 - Math.pow(-2 * kz + 2, 3) / 2;
         const ins = (15 * (1 - kze)).toFixed(1);
-        const cp = "inset(" + ins + "px " + ins + "px " + ins + "px " + ins + "px round " + (29 * (1 - kze)).toFixed(1) + "px)";
+        const cp = "inset(" + ins + "px " + ins + "px " + ins + "px " + ins + "px round 29px)";
         if (pinInner.dataset.cp !== cp) { pinInner.dataset.cp = cp; pinInner.style.clipPath = cp; }
         if (pinZoom) {
           const zt = "scale(" + (0.965 + 0.035 * kze).toFixed(3) + ")";
