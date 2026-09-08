@@ -8,6 +8,12 @@
 <meta name="ext-resource-dependency" content="assets/team-diego-v5.webp" data-resource-id="photoDiego">
 <meta name="ext-resource-dependency" content="assets/badge-diego.webp" data-resource-id="badgeDiego">
 <meta name="ext-resource-dependency" content="assets/badge-luka.webp" data-resource-id="badgeLuka">
+<script>
+window.__resources = Object.assign(window.__resources || {}, {
+  "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "vendor/react.production.min.js",
+  "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "vendor/react-dom.production.min.js"
+});
+</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -382,13 +388,14 @@ html{scrollbar-width:none;-ms-overflow-style:none}
 /* film grain, animated only where it is on screen */
 @keyframes fugaz-grain-play{0%,100%{transform:translate3d(0,0,0)}10%{transform:translate3d(-5%,-10%,0)}20%{transform:translate3d(-15%,5%,0)}30%{transform:translate3d(7%,-25%,0)}40%{transform:translate3d(-5%,25%,0)}50%{transform:translate3d(-15%,10%,0)}60%{transform:translate3d(15%,0,0)}70%{transform:translate3d(0,15%,0)}80%{transform:translate3d(3%,35%,0)}90%{transform:translate3d(-10%,10%,0)}}
 .fugaz-grain-live{animation:none;will-change:auto}
-  /* grain is only shown in the section under the client logos. the other layers
-     stay in the DOM: their mix-blend-mode decides how the browser groups the
-     container, and removing them squares off the pinned panels. */
-  /* support.js writes an inline opacity onto every [data-grain] layer on boot,
-     so these need !important to win */
+  /* support.js writes an inline opacity onto every [data-grain] on boot, so these
+     need !important. the unused layers stay in the DOM: their mix-blend-mode
+     decides how the browser groups the container, and removing one squares off
+     the pinned panel corners. */
   .fugaz-grain{opacity:0 !important}
   .fugaz-grain[data-grain-show]{opacity:0.18 !important}
+  /* the flip links in the hero and footer wrap their text in spans */
+  [data-fl],[data-fl] *,[data-scroll-to] *,[data-menu-link] *{cursor:pointer !important}
   @media (max-width:991px){
     .fugaz-grain[data-grain-show]{opacity:0 !important}
     /* the scroll progress bar reads as a stray line without the desktop nav */
@@ -448,9 +455,13 @@ input,textarea,button{font-family:inherit}
 }
 
 /* anything clickable shows the hand: JS-wired rows, cards and pills are not <button>s */
-a[href],a[href] *,button,button *,[role="button"],[role="button"] *,label,summary,[data-scroll-to],[data-faq-row],[data-proj],[data-allwork-card],[data-scan-opt],[data-scan-next],[data-scan-back],[data-carfx],[data-wa-pop] a,[data-price-card] button,[onclick]{cursor:pointer !important}
+a[href],a[href] *,button,button *,[role="button"],[role="button"] *,label,summary,
+[data-scroll-to],[data-faq-row],[data-faq-q],[data-faq-q] *,[data-proj],[data-allwork-card],[data-allwork-close],[data-allwork-cta],
+[data-scan-opt],[data-scan-opt] *,[data-scan-next],[data-scan-back],[data-brief-send],[data-carfx],
+[data-wa-pop] a,[data-price-card] button,[data-open-contact],[data-open-work],[data-open-wa],[data-open-legal],[data-legal-close],[data-close-contact],
+[data-menu-toggle],[data-menu-toggle] *,[data-menu-link],[data-mdot],[data-step-item],[data-wtile],[data-hanger-toggle],[data-gravity-toggle],[data-scroll-top],[data-tilt],[onclick]{cursor:pointer !important}
 /* the work grid hides the system cursor: the floating "View all projects" label IS the cursor there */
-[data-r="work-grid"],[data-r="work-grid"] *{cursor:none !important}
+[data-r="work-grid"],[data-r="work-grid"] *{cursor:pointer !important}
 button:disabled,button:disabled *,[aria-disabled="true"]{cursor:not-allowed !important}
 html,a,button,[role="button"],[data-faq-q],[data-faq-row],[data-scan-opt],[data-step-item],[data-wtile],[data-allwork-card],label,summary{-webkit-tap-highlight-color:rgba(0,0,0,0)}
 button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
