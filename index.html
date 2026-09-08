@@ -2699,7 +2699,7 @@ class Component extends DCLogic {
         const ko = Math.max(0, Math.min(1, (wr.bottom - vh) / tail));
         const kz = Math.min(ki, ko);
         const kze = kz < 0.5 ? 4 * kz * kz * kz : 1 - Math.pow(-2 * kz + 2, 3) / 2;
-        const ins = (15 * (1 - kze)).toFixed(1);
+        const ins = "15";
         const cp = "inset(" + ins + "px " + ins + "px " + ins + "px " + ins + "px round 29px)";
         if (pinInner.dataset.cp !== cp) { pinInner.dataset.cp = cp; pinInner.style.clipPath = cp; }
         if (pinZoom) {
