@@ -1141,10 +1141,13 @@
 
   // src/cdn.ts
   var REACT_URL = "assets/vendor/react.production.min.js";
+  var REACT_CDN = "https://unpkg.com/react@18.3.1/umd/react.production.min.js";
   var REACT_SRI = "sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z";
   var REACT_DOM_URL = "assets/vendor/react-dom.production.min.js";
+  var REACT_DOM_CDN = "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js";
   var REACT_DOM_SRI = "sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1";
   var BABEL_URL = "assets/vendor/babel.min.js";
+  var BABEL_CDN = "https://unpkg.com/@babel/standalone@7.29.0/babel.min.js";
   var BABEL_SRI = "sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y";
   function cdnScriptFor(url, sri) {
     const res = window.__resources;
@@ -1835,14 +1838,20 @@
       document.head.appendChild(s);
     });
   }
+  function loadScriptOr(src, cdn, integrity) {
+    return loadScript(src, integrity).catch(() => {
+      console.warn("[fugaz-runtime] local vendor copy unavailable, using the CDN:", src);
+      return loadScript(cdn, integrity);
+    });
+  }
   function loadReactUmd() {
     const w = window;
     if (w.React && w.ReactDOM) return Promise.resolve();
     const react = cdnScriptFor(REACT_URL, REACT_SRI);
     const reactDom = cdnScriptFor(REACT_DOM_URL, REACT_DOM_SRI);
     return Promise.all([
-      loadScript(react.src, react.integrity),
-      loadScript(reactDom.src, reactDom.integrity)
+      loadScriptOr(react.src, REACT_CDN, react.integrity),
+      loadScriptOr(reactDom.src, REACT_DOM_CDN, reactDom.integrity)
     ]).then(() => void 0);
   }
   function init() {
