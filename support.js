@@ -1,4 +1,4 @@
-// GENERATED from dc-runtime/src/*.ts — do not edit. Rebuild with `cd dc-runtime && bun run build`.
+// Fugaz site runtime — generated bundle, do not edit by hand.
 "use strict";
 (() => {
   var __defProp = Object.defineProperty;
@@ -8,12 +8,12 @@
   // src/react.ts
   function getReact() {
     const R = window.React;
-    if (!R) throw new Error("dc-runtime: window.React is not available yet");
+    if (!R) throw new Error("fugaz-runtime: window.React is not available yet");
     return R;
   }
   function getReactDOM() {
     const RD = window.ReactDOM;
-    if (!RD) throw new Error("dc-runtime: window.ReactDOM is not available yet");
+    if (!RD) throw new Error("fugaz-runtime: window.ReactDOM is not available yet");
     return RD;
   }
   var h = ((...args) => getReact().createElement(
@@ -21,10 +21,10 @@
   ));
 
   // src/parse.ts
-  function parseDcDocument(doc) {
-    const dc = doc.querySelector("x-dc");
+  function parseSiteDocument(doc) {
+    const dc = doc.querySelector("fugaz-site");
     if (!dc) return null;
-    const scriptEl = doc.querySelector("script[data-dc-script]");
+    const scriptEl = doc.querySelector("script[data-site-script]");
     const { props, preview } = parseDataProps(
       scriptEl?.getAttribute("data-props") ?? null
     );
@@ -35,14 +35,14 @@
       preview
     };
   }
-  function parseDcText(src) {
-    const openMatch = /<x-dc(?:\s[^>]*)?>/.exec(src);
+  function parseSiteText(src) {
+    const openMatch = /<fugaz-site(?:\s[^>]*)?>/.exec(src);
     if (!openMatch) return null;
-    const close = src.lastIndexOf("</x-dc>");
+    const close = src.lastIndexOf("</fugaz-site>");
     if (close === -1 || close < openMatch.index) return null;
     const template = src.slice(openMatch.index + openMatch[0].length, close);
     const doc = new DOMParser().parseFromString(src, "text/html");
-    const scriptEl = doc.querySelector("script[data-dc-script]");
+    const scriptEl = doc.querySelector("script[data-site-script]");
     const { props, preview } = parseDataProps(
       scriptEl?.getAttribute("data-props") ?? null
     );
@@ -72,7 +72,7 @@
     }
     return { props: Object.keys(rest).length ? rest : null, preview };
   }
-  function dcNameFromPath(pathname) {
+  function siteNameFromPath(pathname) {
     let p = pathname || "";
     try {
       p = decodeURIComponent(p);
@@ -88,17 +88,17 @@
       border:1px solid color-mix(in srgb,currentColor 50%,transparent);
       border-radius:2px;box-sizing:border-box;overflow:hidden}
     @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
-    html.sc-dc-streaming .sc-placeholder,
-    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+    html.sc-site-streaming .sc-placeholder,
+    html.sc-site-streaming .sc-interp.sc-missing{position:relative;
       background:color-mix(in srgb,currentColor 5%,transparent);
       border-color:transparent}
-    html.sc-dc-streaming .sc-placeholder::before,
-    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+    html.sc-site-streaming .sc-placeholder::before,
+    html.sc-site-streaming .sc-interp.sc-missing::before{content:'';
       position:absolute;inset:0;pointer-events:none;
       background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
       background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
-    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
-    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+    html.sc-site-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-site-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
       background:color-mix(in srgb,currentColor 8%,transparent)}
     .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
       color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
@@ -115,11 +115,11 @@
       padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
       border-radius:4px;white-space:pre-wrap;pointer-events:none}
     /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts \u2014 keep both
-       in sync until dc-runtime regains a build step. */
+       in sync until the runtime regains a build step. */
     @media print {
       @page { margin: 0.5cm; }
       figure, table { break-inside: avoid; }
-      #dc-root, #dc-root > .sc-host { height: auto; }
+      #fugaz-root, #fugaz-root > .sc-host { height: auto; }
       *, *::before, *::after {
         print-color-adjust: exact; -webkit-print-color-adjust: exact;
         backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
@@ -129,7 +129,7 @@
       }
     }
   `;
-  var FULL_PAGE_CSS = "html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}";
+  var FULL_PAGE_CSS = "html,body{height:100%;margin:0}#fugaz-root,#fugaz-root>.sc-host{height:100%}";
   function rootNameForDocument(doc, loc) {
     let bootPath = loc.pathname || "";
     if (!/\.dc\.html?$/i.test(safeDecode(bootPath))) {
@@ -138,7 +138,7 @@
       } catch {
       }
     }
-    return dcNameFromPath(bootPath);
+    return siteNameFromPath(bootPath);
   }
   function safeDecode(s) {
     try {
@@ -148,7 +148,7 @@
     }
   }
   function boot(runtime, doc = document) {
-    const parsed = parseDcDocument(doc);
+    const parsed = parseSiteDocument(doc);
     if (!parsed) return null;
     const React = getReact();
     const rootName = rootNameForDocument(doc, location);
@@ -157,21 +157,21 @@
     runtime.adoptParsed(rootName, parsed);
     if (!window.__resources) {
       fetch(location.href).then((res) => res.ok ? res.text() : "").then((t) => {
-        const raw = t ? parseDcText(t) : null;
+        const raw = t ? parseSiteText(t) : null;
         if (raw?.template) runtime.updateHtml(rootName, raw.template);
       }).catch(() => {
       });
     }
-    const dc = doc.querySelector("x-dc");
+    const dc = doc.querySelector("fugaz-site");
     const hostEl = doc.createElement("div");
-    hostEl.id = "dc-root";
+    hostEl.id = "fugaz-root";
     dc.replaceWith(hostEl);
     if (!parsed.preview) {
       const s = doc.createElement("style");
       s.textContent = FULL_PAGE_CSS;
       doc.head.appendChild(s);
     }
-    const Root = runtime.getDC(rootName);
+    const Root = runtime.getComponent(rootName);
     const entry = runtime.registry.get(rootName);
     function StandaloneRoot() {
       const [, setTick] = React.useState(0);
@@ -374,8 +374,8 @@
       IMPORT_SELF_CLOSE_RE,
       (_, t, a) => "<" + t + a + "></" + t + ">"
     );
-    html = html.replace(/<helmet(\s|>)/gi, "<sc-helmet$1");
-    html = html.replace(/<\/helmet\s*>/gi, "</sc-helmet>");
+    html = html.replace(/<site-head(\s|>)/gi, "<sc-helmet$1");
+    html = html.replace(/<\/site-head\s*>/gi, "</sc-helmet>");
     html = encodeCamelAttrs(html);
     for (const [real, alias] of Object.entries(RAW_WRAP)) {
       html = html.replace(
@@ -417,7 +417,7 @@
     const pseudoClasses = [];
     let hintSize = null;
     for (const { name, value } of [...node.attributes]) {
-      if (name === "sc-name" || name === "data-dc-tpl") continue;
+      if (name === "sc-name" || name === "data-site-tpl") continue;
       let key = name;
       if (key.startsWith(CAMEL_ATTR))
         key = kebabToCamel(key.slice(CAMEL_ATTR.length));
@@ -471,7 +471,7 @@
     let tplN = 0;
     (function stamp(node) {
       if (node.nodeType === Node.ELEMENT_NODE) {
-        node.setAttribute("data-dc-tpl", String(tplN++));
+        node.setAttribute("data-site-tpl", String(tplN++));
       }
       for (const c of node.childNodes) stamp(c);
     })(tpl.content);
@@ -485,7 +485,7 @@
   }
   var SLIDE_ID_VALUE_RE = /^[0-9a-f]{8}$/;
   var DECK_CONTROL_FLOW_RE = /^(sc-if|sc-for|sc-else|dc-import|x-import)$/;
-  var DECK_AUX_RE = /^(template|script|style|sc-helmet|helmet)$/;
+  var DECK_AUX_RE = /^(template|script|style|sc-helmet|site-head)$/;
   function isDeckMountTag(el) {
     if (el.localName === "deck-stage") return true;
     return el.localName === "x-import" && (el.getAttribute("component-from-global-scope") || "") === "deck-stage";
@@ -564,7 +564,7 @@
     const key = (ctx?.__name || "?") + "\0" + what;
     if (warnedHoles.has(key)) return;
     warnedHoles.add(key);
-    console.warn("[dc-runtime] " + (ctx?.__name || "template") + ": " + what);
+    console.warn("[fugaz-runtime] " + (ctx?.__name || "template") + ": " + what);
   }
   function walkText(node) {
     const txt = node.nodeValue ?? "";
@@ -662,7 +662,7 @@
     const name = el.getAttribute("name") || el.getAttribute("component") || "";
     el.removeAttribute("name");
     el.removeAttribute("component");
-    const tplId = el.getAttribute("data-dc-tpl");
+    const tplId = el.getAttribute("data-site-tpl");
     const styleRaw = el.getAttribute("style");
     el.removeAttribute("style");
     const styleGet = styleRaw != null ? compileAttr(styleRaw) : null;
@@ -698,7 +698,7 @@
     const urls = fromRaw.trim() ? fromRaw.trim().split(/\s+/) : [];
     const url = urls.length ? urls[urls.length - 1] : "";
     const kindOf = (u) => /\.(jsx|tsx)(\?|#|$)/i.test(u) ? "jsx" : "js";
-    const tplId = el.getAttribute("data-dc-tpl");
+    const tplId = el.getAttribute("data-site-tpl");
     const styleRaw = el.getAttribute("style");
     el.removeAttribute("style");
     const styleGet = styleRaw != null ? compileAttr(styleRaw) : null;
@@ -726,7 +726,7 @@
       const wrapper = wrap ? {
         key,
         className: "sc-host-x",
-        "data-dc-tpl": tplId,
+        "data-site-tpl": tplId,
         style: hostStyle || { display: "contents" }
       } : null;
       if (!C) {
@@ -786,7 +786,7 @@
   var NOT_INLINE_SELECTOR = ":not(" + [...INLINE_TEXT_TAGS].join(",") + ")";
   function walkElement(el, host) {
     const realTag = RAW_UNWRAP[el.localName] || el.localName;
-    const tplId = el.getAttribute("data-dc-tpl");
+    const tplId = el.getAttribute("data-site-tpl");
     const inlineOnly = el.childNodes.length > 0 && !NEVER_CONTENT_KEYED.has(realTag) && el.querySelector(NOT_INLINE_SELECTOR) === null;
     const keySuffix = inlineOnly ? "|" + contentKey(el) : "";
     const { propGetters, pseudoClasses } = collectProps(el, "dom", host);
@@ -796,7 +796,7 @@
     return (vals, ctx, key) => {
       const props = {
         key: key + keySuffix,
-        "data-dc-tpl": tplId
+        "data-site-tpl": tplId
       };
       for (const [k, g] of propGetters) {
         let v = g(vals);
@@ -839,10 +839,10 @@
       return {};
     }
   };
-  function evalDcLogic(src) {
+  function evalSiteLogic(src) {
     //! nosemgrep: eval-and-function-constructor
     const fn = new Function(
-      "DCLogic",
+      "SiteLogic",
       "StreamableLogic",
       "React",
       src + '\n;return (typeof Component!=="undefined"&&Component)||undefined;'
@@ -930,7 +930,7 @@
       }
       componentDidCatch(e, info) {
         console.error(
-          "[dc-runtime] render error in <" + this.__name + ">:",
+          "[fugaz-runtime] render error in <" + this.__name + ">:",
           e,
           info?.componentStack || ""
         );
@@ -1035,7 +1035,7 @@
           className: cls,
           style: hostStyle,
           "data-sc-name": this.__name,
-          "data-dc-tpl": this.props.__tplId
+          "data-site-tpl": this.props.__tplId
         };
         const chain = Array.isArray(this.context) ? this.context : [];
         if (chain.includes(this.__name)) {
@@ -1107,7 +1107,7 @@
     }
     __publicField(StreamableComponent, "contextType", AncestorContext);
     const named = /* @__PURE__ */ new Map();
-    function getDC(name) {
+    function getComponent(name) {
       const hit = named.get(name);
       if (hit) return hit;
       function Dispatcher(p) {
@@ -1127,7 +1127,7 @@
       return Dispatcher;
     }
     return {
-      getDC,
+      getComponent,
       StreamableComponent
     };
   }
@@ -1140,11 +1140,11 @@
   }
 
   // src/cdn.ts
-  var REACT_URL = "https://unpkg.com/react@18.3.1/umd/react.production.min.js";
+  var REACT_URL = "assets/vendor/react.production.min.js";
   var REACT_SRI = "sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z";
-  var REACT_DOM_URL = "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js";
+  var REACT_DOM_URL = "assets/vendor/react-dom.production.min.js";
   var REACT_DOM_SRI = "sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1";
-  var BABEL_URL = "https://unpkg.com/@babel/standalone@7.29.0/babel.min.js";
+  var BABEL_URL = "assets/vendor/babel.min.js";
   var BABEL_SRI = "sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y";
   function cdnScriptFor(url, sri) {
     const res = window.__resources;
@@ -1180,7 +1180,7 @@
       babelLoading = new Promise((res, rej) => {
         const s = document.createElement("script");
         s.src = babel.src;
-        if (babel.integrity) {
+        if (babel.integrity && location.protocol !== "file:") {
           s.integrity = babel.integrity;
           s.crossOrigin = "anonymous";
         }
@@ -1195,7 +1195,7 @@
       const existing = pending.get(url);
       if (existing) return existing;
       cache.set(url, null);
-      console.info("[dc-runtime] x-import: loading", url, "(" + kind + ")");
+      console.info("[fugaz-runtime] x-import: loading", url, "(" + kind + ")");
       const ready = Promise.all([
         kind === "jsx" ? ensureBabel() : Promise.resolve(),
         after ?? Promise.resolve()
@@ -1229,7 +1229,7 @@
         }
         cache.set(url, { mod: module.exports, globals });
         console.info(
-          "[dc-runtime] x-import: loaded",
+          "[fugaz-runtime] x-import: loaded",
           url,
           "\u2014 exports:",
           Object.keys(module.exports),
@@ -1244,7 +1244,7 @@
           error: "failed to load: " + (e instanceof Error && e.message ? e.message : String(e))
         });
         console.error(
-          "[dc-runtime] x-import: FAILED to load",
+          "[fugaz-runtime] x-import: FAILED to load",
           url,
           "(" + kind + ")",
           e
@@ -1267,7 +1267,7 @@
           entry.error || 'no export named "' + name + '" (has: ' + Object.keys(mod).join(", ") + ")"
         );
         console.error(
-          "[dc-runtime] x-import: module",
+          "[fugaz-runtime] x-import: module",
           url,
           "loaded but has no component named",
           JSON.stringify(name),
@@ -1294,7 +1294,7 @@
         }
         if (Date.now() - started >= GLOBAL_POLL_TIMEOUT_MS) {
           console.warn(
-            "[dc-runtime] x-import: global",
+            "[fugaz-runtime] x-import: global",
             JSON.stringify(name),
             "never appeared on window after " + GLOBAL_POLL_TIMEOUT_MS + "ms"
           );
@@ -1328,7 +1328,7 @@
         reportedMissing.set(key, null);
         if (isCE && !customElements.get(name)) {
           console.warn(
-            "[dc-runtime] x-import:",
+            "[fugaz-runtime] x-import:",
             url,
             "loaded but no custom element",
             JSON.stringify(name),
@@ -1379,12 +1379,12 @@
     function applyCanvasBg() {
       if (!canvasStyleEl) return;
       const bg = appTheme === "dark" ? CANVAS_BG_DARK : CANVAS_BG_LIGHT;
-      canvasStyleEl.textContent = `html,body{background:${bg}}#dc-root>.sc-host{position:relative}`;
+      canvasStyleEl.textContent = `html,body{background:${bg}}#fugaz-root>.sc-host{position:relative}`;
     }
     function postDesignMode(mode) {
       if (window.parent === window) return;
       try {
-        window.parent.postMessage({ type: "__dc_design_mode", mode }, "*");
+        window.parent.postMessage({ type: "__fugaz_design_mode", mode }, "*");
       } catch {
       }
     }
@@ -1393,20 +1393,20 @@
       designDocMode = mode;
       postDesignMode(mode);
       if (mode === "canvas") {
-        doc.documentElement.setAttribute("data-dc-canvas", "");
+        doc.documentElement.setAttribute("data-fugaz-canvas", "");
         canvasStyleEl = doc.createElement("style");
-        canvasStyleEl.setAttribute("data-dc-canvas", "");
+        canvasStyleEl.setAttribute("data-fugaz-canvas", "");
         applyCanvasBg();
         doc.head.appendChild(canvasStyleEl);
       } else {
-        doc.documentElement.removeAttribute("data-dc-canvas");
+        doc.documentElement.removeAttribute("data-fugaz-canvas");
         canvasStyleEl?.remove();
         canvasStyleEl = null;
       }
     }
     window.addEventListener("message", (e) => {
       const type = e.data && e.data.type;
-      if (type === "__dc_theme") {
+      if (type === "__fugaz_theme") {
         const t = e.data.theme;
         if (t === "light" || t === "dark") {
           appTheme = t;
@@ -1414,16 +1414,16 @@
         }
         return;
       }
-      if (!designDocMode || type !== "__dc_probe") return;
+      if (!designDocMode || type !== "__fugaz_probe") return;
       postDesignMode(designDocMode);
     });
     function compile(node) {
       const raw = [...node.children];
       const helmetClosed = node.nextSibling != null || node.parentNode?.nextSibling != null;
-      if (node.hasAttribute("data-dc-atomics") && !mounted.has("__dc-atomics")) {
-        mounted.add("__dc-atomics");
+      if (node.hasAttribute("data-dc-atomics") && !mounted.has("__fugaz-atomics")) {
+        mounted.add("__fugaz-atomics");
         const el = doc.createElement("style");
-        el.id = "__dc-atomics";
+        el.id = "__fugaz-atomics";
         el.textContent = ATOMIC_CSS;
         doc.head.appendChild(el);
       }
@@ -1630,7 +1630,7 @@
     const external = createExternalModules(() => registry.bumpAll());
     const factory = createComponentFactory(registry, ensureFetched);
     const host = {
-      component: (name) => factory.getDC(name),
+      component: (name) => factory.getComponent(name),
       placeholder: (props) => h(Placeholder, props),
       helmet: (node) => helmet.compile(node),
       loadExternal: (kind, url, after) => external.load(kind, url, after),
@@ -1643,7 +1643,7 @@
       const r = registry.get(name);
       if (r.fetched) return;
       r.fetched = true;
-      const url = COMPONENT_DIR + "/" + encodeURIComponent(name) + ".dc.html";
+      const url = COMPONENT_DIR + "/" + encodeURIComponent(name) + ".html";
       const res = window.__resources;
       const pre = res ? res[url] : void 0;
       const target = typeof pre === "string" && pre ? pre : url;
@@ -1651,7 +1651,7 @@
       (blob ? blob.text() : fetch(target).then((res2) => {
         if (!res2.ok) {
           console.error(
-            '[dc-runtime] sibling fetch for "' + name + '" failed:',
+            '[fugaz-runtime] sibling fetch for "' + name + '" failed:',
             url,
             "returned",
             res2.status,
@@ -1662,12 +1662,12 @@
         return res2.text();
       })).then((t) => {
         if (!t) return;
-        const parsed = parseDcText(t);
+        const parsed = parseSiteText(t);
         if (!parsed) {
           console.error(
-            '[dc-runtime] sibling fetch for "' + name + '":',
+            '[fugaz-runtime] sibling fetch for "' + name + '":',
             url,
-            "has no <x-dc> block \u2014 not a Design Component."
+            "has no <fugaz-site> block \u2014 not a Design Component."
           );
           return;
         }
@@ -1677,7 +1677,7 @@
         if (parsed.js && !r.Logic) updateJs(name, parsed.js);
       }).catch(
         (e) => console.error(
-          '[dc-runtime] sibling fetch for "' + name + '" threw:',
+          '[fugaz-runtime] sibling fetch for "' + name + '" threw:',
           url,
           e
         )
@@ -1694,7 +1694,7 @@
       try {
         r.tpl = compileTemplate(html, host);
       } catch (e) {
-        console.error("[dc-runtime] template compile FAILED for", name, e);
+        console.error("[fugaz-runtime] template compile FAILED for", name, e);
       }
       registry.bump(name);
     }
@@ -1702,10 +1702,10 @@
       const r = registry.get(name);
       const seq = r.jsSeq = (r.jsSeq || 0) + 1;
       try {
-        const Cls = evalDcLogic(src);
+        const Cls = evalSiteLogic(src);
         if (r.jsSeq !== seq) return;
         if (typeof Cls !== "function") {
-          r.logicError = name + ".dc.html: <script data-dc-script> must define `class Component extends DCLogic`";
+          r.logicError = name + ".html: <script data-site-script> must define `class Component extends SiteLogic`";
         } else {
           r.logicError = null;
           r.Logic = Cls;
@@ -1713,7 +1713,7 @@
       } catch (e) {
         if (r.jsSeq !== seq) return;
         console.error(
-          "[dc-runtime] logic class eval FAILED for",
+          "[fugaz-runtime] logic class eval FAILED for",
           name,
           "\u2014 the template renders with props only.",
           e
@@ -1734,10 +1734,10 @@
           break;
         }
       }
-      doc.documentElement.classList.toggle("sc-dc-streaming", any);
+      doc.documentElement.classList.toggle("sc-site-streaming", any);
       registry.bump(name);
     }
-    function dcUpdate(name, kind, content, streaming) {
+    function siteUpdate(name, kind, content, streaming) {
       if (streaming) registry.get(name).fetched = true;
       if (kind === "html") {
         setStreaming(name, "html", !!streaming);
@@ -1767,10 +1767,10 @@
     }
     return {
       registry,
-      getDC: factory.getDC,
+      getComponent: factory.getComponent,
       updateHtml,
       updateJs,
-      dcUpdate,
+      siteUpdate,
       setProps,
       adoptParsed,
       setRootName: (name) => {
@@ -1817,7 +1817,7 @@
   // src/index.ts
   function hideRawTemplate() {
     const s = document.createElement("style");
-    s.textContent = "x-dc{display:none!important}";
+    s.textContent = "fugaz-site{display:none!important}";
     document.head.appendChild(s);
   }
   function loadScript(src, integrity) {
@@ -1825,7 +1825,7 @@
       //! nosemgrep: create-script-element
       const s = document.createElement("script");
       s.src = src;
-      if (integrity) {
+      if (integrity && location.protocol !== "file:") {
         s.integrity = integrity;
         s.crossOrigin = "anonymous";
       }
@@ -1857,7 +1857,7 @@
       try {
         window.parent.postMessage(
           {
-            type: "__dc_booted",
+            type: "__fugaz_booted",
             rootName,
             propsMeta: r && r.propsMeta || null,
             preview: r && r.preview || null
@@ -1869,43 +1869,43 @@
     };
     const streams = createStreamTracker();
     const api = {
-      __dcUpdate: (name, kind, content, streaming, viewportKey) => {
+      __siteUpdate: (name, kind, content, streaming, viewportKey) => {
         streams.push(name, streaming, viewportKey);
-        runtime.dcUpdate(name, kind, content, streaming);
+        runtime.siteUpdate(name, kind, content, streaming);
         if (name === rootName && !streaming && kind === "props") notifyHost();
       },
-      __dcStreaming: (name) => streams.live(name),
-      __dcSetProps: (name, overrides) => runtime.setProps(name, overrides),
+      __fugazStreaming: (name) => streams.live(name),
+      __fugazSetProps: (name, overrides) => runtime.setProps(name, overrides),
       /** Name of the component currently mounted as the page root — DC tools
        *  push their template-stream here when targeting "the open page". */
-      __dcRootName: () => rootName,
-      /** Editor bridge — the encoded, `data-dc-tpl`-annotated template source.
+      __fugazRootName: () => rootName,
+      /** Editor bridge — the encoded, `data-site-tpl`-annotated template source.
        *  The host editor parses this into its own template DOM so it can map a
-       *  rendered node (carrying the same `data-dc-tpl`) back to the source
+       *  rendered node (carrying the same `data-site-tpl`) back to the source
        *  node that emitted it. Returns the encoded form (`sc-camel-*` attrs,
        *  `<sc-raw-*>`/`<sc-helmet>` tags); the editor decodes on serialize. */
-      __dcAnnotatedTemplate: (name) => runtime.annotatedTemplate(name),
+      __fugazAnnotatedTemplate: (name) => runtime.annotatedTemplate(name),
       /** Editor bridge — the *original* (decoded) template source. */
-      __dcTemplateSource: (name) => runtime.templateSource(name),
-      __dcBoot: () => {
+      __fugazTemplateSource: (name) => runtime.templateSource(name),
+      __fugazBoot: () => {
         rootName = boot(runtime, document) ?? rootName;
         notifyHost();
       },
-      __dcRegistry: runtime.registry.entries,
-      getDC: (name) => runtime.getDC(name),
-      // `DCLogic` is the documented base class name; `StreamableLogic` is the
+      __fugazRegistry: runtime.registry.entries,
+      getComponent: (name) => runtime.getComponent(name),
+      // `SiteLogic` is the documented base class name; `StreamableLogic` is the
       // implementation alias kept for any project that already references it.
-      DCLogic: runtime.StreamableLogic,
+      SiteLogic: runtime.StreamableLogic,
       StreamableLogic: runtime.StreamableLogic
     };
     Object.assign(window, api);
-    window.__dcContentKeyed = true;
-    if (document.readyState !== "loading") api.__dcBoot();
-    else document.addEventListener("DOMContentLoaded", () => api.__dcBoot());
+    window.__fugazContentKeyed = true;
+    if (document.readyState !== "loading") api.__fugazBoot();
+    else document.addEventListener("DOMContentLoaded", () => api.__fugazBoot());
   }
   hideRawTemplate();
   loadReactUmd().then(init).catch((err) => {
-    console.error("[dc] failed to load React or boot:", err);
+    console.error("[fugaz] failed to load React or boot:", err);
     throw err;
   });
 })();
