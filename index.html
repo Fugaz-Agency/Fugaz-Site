@@ -385,10 +385,12 @@ html{scrollbar-width:none;-ms-overflow-style:none}
   /* grain is only shown in the section under the client logos. the other layers
      stay in the DOM: their mix-blend-mode decides how the browser groups the
      container, and removing them squares off the pinned panels. */
-  .fugaz-grain{opacity:0}
-  .fugaz-grain[data-grain-show]{opacity:0.18}
+  /* support.js writes an inline opacity onto every [data-grain] layer on boot,
+     so these need !important to win */
+  .fugaz-grain{opacity:0 !important}
+  .fugaz-grain[data-grain-show]{opacity:0.18 !important}
   @media (max-width:991px){
-    .fugaz-grain[data-grain-show]{opacity:0}
+    .fugaz-grain[data-grain-show]{opacity:0 !important}
     /* the scroll progress bar reads as a stray line without the desktop nav */
     [data-progress]{display:none !important}
   }
