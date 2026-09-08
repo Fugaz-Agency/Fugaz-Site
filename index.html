@@ -382,13 +382,14 @@ html{scrollbar-width:none;-ms-overflow-style:none}
 /* film grain, animated only where it is on screen */
 @keyframes fugaz-grain-play{0%,100%{transform:translate3d(0,0,0)}10%{transform:translate3d(-5%,-10%,0)}20%{transform:translate3d(-15%,5%,0)}30%{transform:translate3d(7%,-25%,0)}40%{transform:translate3d(-5%,25%,0)}50%{transform:translate3d(-15%,10%,0)}60%{transform:translate3d(15%,0,0)}70%{transform:translate3d(0,15%,0)}80%{transform:translate3d(3%,35%,0)}90%{transform:translate3d(-10%,10%,0)}}
 .fugaz-grain-live{animation:none;will-change:auto}
-  /* korrel alleen zichtbaar in de sectie onder de clients, en subtieler.
-     de overige lagen blijven in de DOM staan: hun mix-blend-mode bepaalt hoe
-     de browser de container rendert, en weghalen breekt de ronde hoeken. */
+  /* grain is only shown in the section under the client logos. the other layers
+     stay in the DOM: their mix-blend-mode decides how the browser groups the
+     container, and removing them squares off the pinned panels. */
   .fugaz-grain{opacity:0}
   .fugaz-grain[data-grain-show]{opacity:0.18}
   @media (max-width:991px){
     .fugaz-grain[data-grain-show]{opacity:0}
+    /* the scroll progress bar reads as a stray line without the desktop nav */
     [data-progress]{display:none !important}
   }
 .fugaz-grain-live[data-grain-idle]{animation-play-state:paused}
@@ -625,7 +626,7 @@ button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 <div data-r="s3-stage" style="position:sticky;top:0;height:100vh;overflow:hidden;background:#05070C;clip-path:inset(0px 15px 0px 15px round 29px);will-change:clip-path">
 <div data-s3-bloom="1" aria-hidden="true" style="position:absolute;left:0;top:0;right:0;bottom:0;z-index:2;background:radial-gradient(52% 42% at 50% 52%,rgba(0,87,254,0.55) 0%,rgba(0,87,254,0.18) 46%,rgba(0,87,254,0) 74%);opacity:0.28;will-change:opacity,transform"></div>
 <div aria-hidden="true" style="position:absolute;left:0;top:0;right:0;bottom:0;z-index:3;background:radial-gradient(120% 88% at 50% 50%,rgba(5,7,12,0) 32%,rgba(5,7,12,0.58) 76%,rgba(5,7,12,0.9) 100%)"></div>
-<div data-grain="1" data-grain-show="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live" style="inset:-25%;z-index:4"></div>
+<div data-grain-show="1" data-grain="1" aria-hidden="true" class="fugaz-grain fugaz-grain-live" style="inset:-25%;z-index:4"></div>
 <div data-r="s3-field" aria-hidden="true" style="position:absolute;left:0;top:0;right:0;bottom:0;z-index:1;pointer-events:none">
 <div data-atmo="1" data-d="0.95" style="position:absolute;left:14%;top:50%;width:23vw;aspect-ratio:4/5;z-index:4;opacity:0.92;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:22px;overflow:hidden;background:#080D18;transform:rotate(-1.6deg);filter:blur(1.6px) brightness(0.92);box-shadow:0 66px 132px rgba(0,0,0,0.64);"><img loading="lazy" decoding="async" src="assets/atmo-luka-couch.webp" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:60% 22%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
 <div data-atmo="1" data-d="0.55" style="position:absolute;left:30%;top:14%;width:14vw;aspect-ratio:4/5;z-index:2;opacity:0.74;transform:translate3d(-50%,-50%,0);will-change:transform,opacity"><div data-atmo-card="1" style="position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#080D18;transform:rotate(1.8deg);filter:blur(3px) brightness(0.86);box-shadow:0 48px 96px rgba(0,0,0,0.52);will-change:filter"><img loading="lazy" decoding="async" src="assets/atmo-luka-street.webp" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:46% 30%;filter:grayscale(1) contrast(1.18) brightness(1.06)"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,87,254,0.22);mix-blend-mode:color"></div><div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,12,0) 62%,rgba(5,7,12,0.32) 100%)"></div></div></div>
@@ -1419,10 +1420,10 @@ button,[role="button"],[data-faq-q]{-webkit-touch-callout:none}
 </div>
 <div data-scan-step="4" style="display:none;flex-direction:column;gap:13px;margin-top:4px;will-change:transform,opacity"><span style="display:block;font-weight:500;font-size:12px;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.7)">Details</span><span data-scan-q="1" style="display:block;font-weight:500;font-size:clamp(28px,2.6vw,38px);line-height:1.04;letter-spacing:-0.020em;color:#FFFFFF;text-wrap:pretty">Where can we reach you?</span><span style="display:block;font-weight:500;font-size:16px;line-height:1.4;letter-spacing:-0.010em;color:rgba(255,255,255,0.78);text-wrap:pretty">It comes straight to us. We read it and reach out within a day.</span><div style="display:flex;flex-direction:column;gap:11px;margin-top:5px"><input data-brief-brand="1" type="text" name="brand" placeholder="Your brand name" autocomplete="organization" style="width:100%;box-sizing:border-box;padding:17px 20px;border:none;border-radius:16px;background:rgba(255,255,255,0.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.30);color:#FFFFFF;font-family:inherit;font-weight:500;font-size:17px;letter-spacing:-0.010em;outline:none;transition:box-shadow 0.5s cubic-bezier(0.16,1,0.3,1),background 0.5s cubic-bezier(0.16,1,0.3,1)"><input data-brief-site="1" type="text" inputmode="url" name="website" placeholder="Your website or handle" autocomplete="url" style="width:100%;box-sizing:border-box;padding:17px 20px;border:none;border-radius:16px;background:rgba(255,255,255,0.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.30);color:#FFFFFF;font-family:inherit;font-weight:500;font-size:17px;letter-spacing:-0.010em;outline:none;transition:box-shadow 0.5s cubic-bezier(0.16,1,0.3,1),background 0.5s cubic-bezier(0.16,1,0.3,1)"><input data-brief-mail="1" type="email" name="email" placeholder="Your email" autocomplete="email" style="width:100%;box-sizing:border-box;padding:17px 20px;border:none;border-radius:16px;background:rgba(255,255,255,0.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.30);color:#FFFFFF;font-family:inherit;font-weight:500;font-size:17px;letter-spacing:-0.010em;outline:none;transition:box-shadow 0.5s cubic-bezier(0.16,1,0.3,1),background 0.5s cubic-bezier(0.16,1,0.3,1)"><textarea data-brief-msg="1" name="brief" rows="2" placeholder="Anything else we should know. (optional)" style="width:100%;box-sizing:border-box;padding:17px 20px;border:none;border-radius:16px;background:rgba(255,255,255,0.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.30);color:#FFFFFF;font-family:inherit;font-weight:500;font-size:17px;letter-spacing:-0.010em;outline:none;transition:box-shadow 0.5s cubic-bezier(0.16,1,0.3,1),background 0.5s cubic-bezier(0.16,1,0.3,1);resize:none;line-height:1.45"></textarea></div></div>
 <div data-scan-nav="1" style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:2px">
-<button type="button" data-scan-back="1" style="display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 6px;border:none;background:none;color:rgba(255,255,255,0.7);font-family:inherit;font-weight:500;font-size:14.94px;letter-spacing:-0.020em;cursor:pointer;visibility:hidden">← Back</button>
+<button type="button" data-scan-back="1" style="display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 6px;border:none;background:none;color:#FFFFFF;opacity:0.6;font-family:inherit;font-weight:500;font-size:14.94px;letter-spacing:-0.020em;cursor:pointer;visibility:hidden;transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1)" style-hover="opacity:1">← Back</button>
 <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
-<button type="button" data-scan-next="1" style="display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 30px;border:none;border-radius:28.12395px;background:#FFFFFF;color:#000000;font-family:inherit;font-weight:500;font-size:15.5px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer">Next →</button>
-<button type="submit" data-brief-send="1" style="display:none;align-items:center;justify-content:center;height:50px;padding:0 28px;border:none;border-radius:28.12395px;background:#FFFFFF;color:#000000;font-family:inherit;font-weight:500;font-size:15.5px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer">Send the scan</button>
+<button type="button" data-scan-next="1" style="display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 30px;border:none;border-radius:28.12395px;background:#FFFFFF;color:#000000;font-family:inherit;font-weight:500;font-size:15.5px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer;transition:background 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.4s cubic-bezier(0.16,1,0.3,1),box-shadow 0.4s cubic-bezier(0.16,1,0.3,1)" style-hover="background:#F0EFEC;transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,0.16)">Next →</button>
+<button type="submit" data-brief-send="1" style="display:none;align-items:center;justify-content:center;height:50px;padding:0 28px;border:none;border-radius:28.12395px;background:#FFFFFF;color:#000000;font-family:inherit;font-weight:500;font-size:15.5px;line-height:0.909;letter-spacing:-0.020em;cursor:pointer;transition:background 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.4s cubic-bezier(0.16,1,0.3,1),box-shadow 0.4s cubic-bezier(0.16,1,0.3,1)" style-hover="background:#F0EFEC;transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,0.16)">Send the scan</button>
 </div>
 </div>
 <span data-brief-note="1" role="status" style="display:block;min-height:19px;font-weight:500;font-size:14.5px;letter-spacing:-0.010em;color:rgba(255,255,255,0.75)"></span>
@@ -4981,7 +4982,7 @@ class Component extends DCLogic {
 
     /* ---- pill hover: the fill wipes up, the label inverts ---- */
     /* the step rows are buttons too, but they are not pills — the label engine must skip them */
-    const wireButtons = () => Array.prototype.slice.call(document.querySelectorAll("button:not([data-step-item]):not([data-gravity-toggle]):not([data-hanger-toggle]):not([data-menu-toggle]):not([data-mdot]):not([data-faq-q]):not([data-open-wa]):not([data-fl])")).forEach((b) => {
+    const wireButtons = () => Array.prototype.slice.call(document.querySelectorAll("button:not([data-step-item]):not([data-gravity-toggle]):not([data-hanger-toggle]):not([data-menu-toggle]):not([data-mdot]):not([data-faq-q]):not([data-open-wa]):not([data-fl]):not([data-scan-back]):not([data-scan-next]):not([data-brief-send])")).forEach((b) => {
       if (b.dataset.btnReady) return;
       /* the engine flattens a button to one text stack, so anything with structured content —
          an icon, a numbered chip — has to stay out of it */
@@ -5987,7 +5988,7 @@ class Component extends DCLogic {
       const fill = analyse.querySelector("[data-scan-fill]");
       const stage = analyse.querySelector("[data-scan-stage]");
       const STAGES = ["Weighing what you recognise", "Placing it against your ambition", "Sizing the build", "Writing the read"];
-      const t0 = performance.now(), DUR = 2200;
+      const t0 = performance.now(), DUR = 1450;
       const tick = (t) => {
         const p = Math.min(1, (t - t0) / DUR);
         const eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
@@ -6051,10 +6052,10 @@ class Component extends DCLogic {
     };
     const liveAn = document.querySelector("[data-scan-analyse]") || analyse;
     const out = liveAn.animate([{ opacity: 1 }, { opacity: 0, transform: "translate3d(0,-10px,0)" }],
-      { duration: 340, easing: E2, fill: "forwards" });
+      { duration: 240, easing: E2, fill: "forwards" });
     out.onfinish = finish;
     /* a detached node's animation never finishes — the timer is the guarantee */
-    setTimeout(finish, 420);
+    setTimeout(finish, 300);
   }
   revealBody(done, diag, after, d, E2) {
     {
@@ -6064,7 +6065,7 @@ class Component extends DCLogic {
       set("[data-diag-foot]", d.foot);
       set("[data-diag-delta]", "+" + d.delta + "%");
       diag.animate([{ opacity: 0, transform: "translate3d(0,16px,0)" }, { opacity: 1, transform: "none" }],
-        { duration: 640, easing: E2, fill: "backwards" });
+        { duration: 480, easing: E2, fill: "backwards" });
       /* the two meters fill left to right, the second one running past the first */
       /* today's reading lights in the signal red, the upside in white — the gap between the
          two bars is the whole argument, so it has to be a colour difference, not a length one */
@@ -6078,25 +6079,25 @@ class Component extends DCLogic {
           s.style.background = i < on && col ? col : "#FFFFFF";
           s.style.opacity = "0.14";
           if (i >= on) return;
-          setTimeout(() => { s.style.opacity = String(lit); }, delay + i * 26);
+          setTimeout(() => { s.style.opacity = String(lit); }, delay + i * 17);
         });
       };
-      paint("[data-diag-now]", d.now, 240, 0.95, "#CD2C2C");
-      paint("[data-diag-pot]", d.pot, 620, 1, null);
+      paint("[data-diag-now]", d.now, 160, 0.95, "#CD2C2C");
+      paint("[data-diag-pot]", d.pot, 420, 1, null);
       /* and once the meters have run, freeze the result as inline state so a later re-render
          has something to preserve instead of a spent animation */
-      setTimeout(() => this.applyDiag(d), 240 + 30 * 26 + 400);
+      setTimeout(() => this.applyDiag(d), 160 + 30 * 17 + 300);
       after.forEach((c, i) => {
         c.style.opacity = "";
         c.animate([{ opacity: 0, transform: "translate3d(0,12px,0)" }, { opacity: 1, transform: "none" }],
-          { duration: 620, delay: 1500 + i * 70, easing: E2, fill: "backwards" });
+          { duration: 480, delay: 980 + i * 50, easing: E2, fill: "backwards" });
       });
       const car = done.querySelector("[data-sent-car] img");
       const line = done.querySelector("[data-sent-line]");
-      this.driveSentCar(car, line, 1600);
+      this.driveSentCar(car, line, 1050);
       Array.prototype.forEach.call(done.querySelectorAll("[data-sent-w]"), (w, i) => {
         w.animate([{ transform: "translate3d(0,112%,0)" }, { transform: "translate3d(0,0,0)" }],
-          { duration: 1000, delay: 1740 + i * 40, easing: E2, fill: "both" });
+          { duration: 760, delay: 1140 + i * 30, easing: E2, fill: "both" });
       });
     };
   }
