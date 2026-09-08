@@ -1180,17 +1180,8 @@
       if (window.Babel) return Promise.resolve();
       if (babelLoading) return babelLoading;
       const babel = cdnScriptFor(BABEL_URL, BABEL_SRI);
-      babelLoading = new Promise((res, rej) => {
-        const s = document.createElement("script");
-        s.src = babel.src;
-        if (babel.integrity && location.protocol !== "file:") {
-          s.integrity = babel.integrity;
-          s.crossOrigin = "anonymous";
-        }
-        s.onload = () => res();
-        s.onerror = rej;
-        document.head.appendChild(s);
-      });
+      babelLoading = loadScriptOr(babel.src, BABEL_CDN, babel.integrity)
+        .catch((error) => { babelLoading = null; throw error; });
       return babelLoading;
     }
     const pending = /* @__PURE__ */ new Map();
@@ -1849,10 +1840,9 @@
     if (w.React && w.ReactDOM) return Promise.resolve();
     const react = cdnScriptFor(REACT_URL, REACT_SRI);
     const reactDom = cdnScriptFor(REACT_DOM_URL, REACT_DOM_SRI);
-    return Promise.all([
-      loadScriptOr(react.src, REACT_CDN, react.integrity),
-      loadScriptOr(reactDom.src, REACT_DOM_CDN, reactDom.integrity)
-    ]).then(() => void 0);
+    return loadScriptOr(react.src, REACT_CDN, react.integrity)
+      .then(() => loadScriptOr(reactDom.src, REACT_DOM_CDN, reactDom.integrity))
+      .then(() => void 0);
   }
   function init() {
     const runtime = createRuntime(document);
