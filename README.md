@@ -37,3 +37,9 @@ Submissions still go directly to Web3Forms using the supplied public access key.
 After deployment, submit a real scan and confirm inbox receipt. No real messages were sent during this revision's tests. Provider activation and delivery to the inbox cannot be confirmed from local checks.
 
 Vendor license notices remain intact. This is a code-maintenance refactor, not a claim of human-only authorship.
+
+## Scroll blur repair — September 9
+
+The previous refactor left the photo-section text blurred: clearing the runtime filter exposed the CSS entry blur again. The controller now explicitly writes `filter: none` at the clear state. The same reset is explicit in the reduced-motion settlement and the small section labels. Blur amounts, word staggering, scroll thresholds, opacity and movement formulas remain unchanged.
+
+This release retains the mobile scan dismissal repair, extracted CSS and split controllers.

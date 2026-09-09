@@ -1,3 +1,21 @@
+# Scroll blur correction — September 9
+
+The September 8 validation below missed a scroll-driven CSS reset regression. Matching Web Animations API calls and static computed styles was not sufficient to verify this section, which writes its filters directly while scrolling.
+
+Moving the entry blur into a CSS class meant `style.filter = ""` restored `blur(13px)` instead of producing the original unfiltered state. Three reset values now explicitly use `none`: the text-word clear state, section-label clear state, and reduced-motion word settlement. No blur curve, opacity, movement, scroll boundary, stagger or easing value was changed.
+
+The page script has a new content-derived filename. The production manifest and HTML reference it together. All other production files are unchanged from the previous ZIP.
+
+## Verification of this correction
+
+The original release and corrected release were run in Chromium at a 1280 × 800 viewport. Seventeen rendered scroll samples covered entry, sharp holds, exit, all four text beats and reverse scrolling. Every sampled word's computed filter, opacity and transform matched the original exactly at the matching scroll position. The corrected Realism hold was also checked visually.
+
+A syntax-tree comparison confirms that the only page-controller behavior changes are the three filter-reset values. A regression check covers all 27 blur levels from 0 to 13px. The reduced-motion settlement explicitly clears the word filter as well.
+
+All other production content and assets match the previous ZIP, apart from the HTML reference and deployment manifest needed for the new script filename. These checks do not claim performance parity on every physical device.
+
+---
+
 # Validation notes — mobile scan and code cleanup
 
 ## Fixed
