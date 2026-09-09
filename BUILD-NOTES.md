@@ -1,3 +1,11 @@
+Mobile scroll-progress line — 9 September 2026
+
+Validation: 36 browser checks passed across widths 375, 390, 430, 700, 701 and 1440px, covering before/during/after Process, reverse scrolling, start and end of page. Tested in Chromium at resized viewports, not on a physical iPhone. Deployment build and JavaScript syntax checks passed.
+
+The page progress indicator is now a 2px vertical line fixed to the right edge at widths up to 700px. It fills downward as the visitor scrolls. The line turns white while the dark Process panel fills the screen, and returns to black as the panel leaves. The same state works when scrolling upward. Desktop retains its horizontal progress line.
+
+Progress shares the existing scroll controller and Process panel state; no additional scroll listeners or layout measurements were added. All prior fixes are included. No animation timing or media files changed.
+
 Mobile navigation top position — 9 September 2026
 
 The mobile navigation now uses the top safe-area inset instead of a 34px gap. It remains fixed while scrolling. No animation scripts, media, menu behavior or desktop navigation styles were changed.
