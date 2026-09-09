@@ -1,3 +1,13 @@
+# Team video alignment — September 9
+
+Both team card stills are lossless WebP exports of their respective videos’ first decoded frame. Their decoded RGB pixels were verified against those frames. Images and videos share the existing crop, position and color filters; each video also uses the matching still as its poster.
+
+The existing entrance zoom now applies to both image and video. Desktop hover keeps the still visible until playback is ready. Pending reset timers are cancelled on re-entry and cleanup. Existing crossfade durations, CSS and video files are unchanged.
+
+Verification: production build and JavaScript syntax pass; focused lifecycle checks cover delayed readiness, leaving before playback starts, rapid re-entry, rejected playback and cleanup. Browser and physical-device playback were not tested for this revision.
+
+---
+
 # Link-preview thumbnail — September 9
 
 Replaced the social-sharing image with the supplied FugazThumbnailFINAL.png, preserving its original bytes and 1800 × 945 dimensions. Open Graph, Twitter and structured-data image URLs share a new content-versioned asset path. The deployment manifest includes the new image.
