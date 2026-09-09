@@ -1,3 +1,28 @@
+Mobile navigation top position — 9 September 2026
+
+The mobile navigation now uses the top safe-area inset instead of a 34px gap. It remains fixed while scrolling. No animation scripts, media, menu behavior or desktop navigation styles were changed.
+
+Verification: fixed position checked at five scroll depths across five mobile viewport sizes; hidden at the 701px desktop breakpoint. Menu opened and closed successfully. Checks used Chromium with resized viewports, not a physical iPhone.
+
+# CSS cascade cleanup — September 9
+
+The page CSS now has 26 priority declarations, down from 337 in FUGAZ-x-links-fixed.zip (92.3% fewer). Removed 308 unnecessary priority flags and 25 redundant declarations, including three repeated priority declarations. Base, component, responsive and interaction styles now have separate files and documented responsibilities.
+
+Two controller-created elements previously forced CSS layout overrides: animated links received an inline display rule, and the footer WhatsApp fill received inline dimensions and border radius. Those static declarations now belong to component classes. Their existing transitions, measurements and event handlers are preserved. Other runtime inline values remain where they control motion.
+
+## Validation
+
+- Compared 75 computed style properties across the template at ten viewport sizes, including 700/701px, 1024/1025px and 1199/1200px boundaries: no differences.
+- Compared the running page, open scan, shortened viewport and closed scan at phone, tablet and desktop sizes. Layout/style differences were limited to six transition-property/timing readings on independently timed logo animations in one desktop sample; animation source definitions are unchanged.
+- Compared 24 menu, portfolio, privacy and scan states at 390px and 1440px widths, including all five scan steps: no differences in the sampled non-motion styles.
+- Compared every animated text word’s computed filter, opacity and transform at 28 scroll positions on phone and desktop, including reverse scrolling: no differences.
+- Source comparison confirms that page-controller changes are limited to the two static-style-to-class substitutions. All other scripts, every CSS keyframe and all media files match the previous release.
+- JavaScript syntax, CSS parsing, production manifest and build checks passed. No scan was submitted.
+
+Checks ran in Chromium with iframe viewports, not on physical phones or Safari. These checks support visual/behavioral preservation within the tested conditions; they do not establish identical performance on every device. The retained renderer is still a design-export runtime. This cleanup is a maintainability improvement, not a claim of human-only authorship.
+
+---
+
 # Team video alignment — September 9
 
 Both team card stills are lossless WebP exports of their respective videos’ first decoded frame. Their decoded RGB pixels were verified against those frames. Images and videos share the existing crop, position and color filters; each video also uses the matching still as its poster.

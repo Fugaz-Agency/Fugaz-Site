@@ -1,0 +1,249 @@
+/* Global defaults and the explicit order of component layers. */
+@layer design-system, page-base, components, responsive;
+@layer page-base {
+  html,body {
+    margin: 0;
+    background: #EFEEEC;
+  }
+  html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  @media (min-width:1025px) {
+    [data-r="ideas-media"] {
+      align-self: stretch;
+      min-height: 176px;
+    }
+
+  }
+  @media (max-width:1024px) {
+    [data-nav-rest="1"] a[data-fl] {
+      min-height: 22px;
+    }
+    [data-fl]::after {
+      content: "";
+      position: absolute;
+      inset: -12px -7px;
+      z-index: 2;
+    }
+
+  }
+  @media (max-width:700px) {
+    [data-r="hero-head"] {
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    [data-team-tile="1"] {
+      will-change: transform;
+    }
+    [data-legal] p,[data-legal] span,[data-legal] a {
+      overflow-wrap: anywhere;
+    }
+    [data-legal="careers"] [data-role-head="1"] > span:nth-child(2) {
+      white-space: nowrap;
+    }
+
+  }
+  @media (hover:none) {
+    a:hover {
+      opacity: 1;
+    }
+
+  }
+  @keyframes fugaz-grain-play {
+    0%,100% {
+      transform: translate3d(0,0,0);
+    }
+    10% {
+      transform: translate3d(-5%,-10%,0);
+    }
+    20% {
+      transform: translate3d(-15%,5%,0);
+    }
+    30% {
+      transform: translate3d(7%,-25%,0);
+    }
+    40% {
+      transform: translate3d(-5%,25%,0);
+    }
+    50% {
+      transform: translate3d(-15%,10%,0);
+    }
+    60% {
+      transform: translate3d(15%,0,0);
+    }
+    70% {
+      transform: translate3d(0,15%,0);
+    }
+    80% {
+      transform: translate3d(3%,35%,0);
+    }
+    90% {
+      transform: translate3d(-10%,10%,0);
+    }
+
+  }
+  .fugaz-grain-live {
+    animation: none;
+    will-change: auto;
+  }
+  .fugaz-grain-live[data-grain-idle] {
+    animation-play-state: paused;
+  }
+  @keyframes fugaz-partner-drift {
+    from {
+      transform: translate3d(0,0,0);
+    }
+    to {
+      transform: translate3d(-33.3333%,0,0);
+    }
+
+  }
+  .fugaz-partner-drift {
+    animation: fugaz-partner-drift 40s linear infinite;
+  }
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+  a:hover {
+    opacity: .6;
+  }
+  input,textarea,button {
+    font-family: inherit;
+  }
+  :focus {
+    outline: none;
+  }
+  :focus-visible {
+    outline: 2px solid #0057FE;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  [data-contact] :focus-visible,[data-r="footer"] :focus-visible,#top :focus-visible,[data-allwork] :focus-visible {
+    outline-color: #FFFFFF;
+  }
+  ::selection {
+    background: #0057FE;
+    color: #FFFFFF;
+    text-shadow: none;
+  }
+  ::-moz-selection {
+    background: #0057FE;
+    color: #FFFFFF;
+    text-shadow: none;
+  }
+  #top ::selection,[data-r="footer"] ::selection,[data-contact] ::selection,[data-pin] ::selection {
+    background: #FFFFFF;
+    color: #0057FE;
+  }
+  [data-lines]::selection,[data-lines] [data-line]::selection,#top [data-lines]::selection,#top [data-lines] [data-line]::selection,[data-r="footer"] [data-lines]::selection,[data-r="footer"] [data-lines] [data-line]::selection,[data-contact] [data-lines]::selection,[data-pin] [data-lines]::selection {
+    background: transparent;
+  }
+  [data-lines] [data-hw]::selection {
+    background: #0057FE;
+    color: #FFFFFF;
+  }
+  #top [data-lines] [data-hw]::selection,[data-r="footer"] [data-lines] [data-hw]::selection,[data-contact] [data-lines] [data-hw]::selection,[data-pin] [data-lines] [data-hw]::selection {
+    background: #FFFFFF;
+    color: #0057FE;
+  }
+  #top ::-moz-selection,[data-r="footer"] ::-moz-selection,[data-contact] ::-moz-selection {
+    background: #FFFFFF;
+    color: #0057FE;
+  }
+  [data-faq-q] [data-hw] {
+    margin-right: -0.06em;
+    padding-right: 0.06em;
+  }
+  [data-brief] input::placeholder,[data-brief] textarea::placeholder {
+    color: rgba(255,255,255,0.58);
+    opacity: 1;
+  }
+  [data-scan-budget] {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  [data-scan-budget]::-webkit-slider-runnable-track {
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(to right,#FFF var(--f,25%),rgba(255,255,255,0.28) var(--f,25%));
+  }
+  [data-scan-budget]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #FFF;
+    border: none;
+    margin-top: -9.5px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.28);
+    cursor: grab;
+    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+  }
+  [data-scan-budget]:active::-webkit-slider-thumb {
+    cursor: grabbing;
+    transform: scale(1.18);
+  }
+  [data-scan-budget]::-moz-range-track {
+    height: 3px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.28);
+  }
+  [data-scan-budget]::-moz-range-progress {
+    height: 3px;
+    border-radius: 3px;
+    background: #FFF;
+  }
+  [data-scan-budget]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #FFF;
+    border: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.28);
+    cursor: grab;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes fugaz-dot-ping {
+      0% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+      75%,100% {
+        transform: scale(3);
+        opacity: 0;
+      }
+
+    }
+    @keyframes fugaz-dot-breathe {
+      0%,100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.62;
+      }
+
+    }
+    [data-live-dot="1"] {
+      animation: fugaz-dot-breathe 2.4s ease-in-out infinite;
+    }
+    [data-live-dot="1"]::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: inherit;
+      animation: fugaz-dot-ping 2.4s cubic-bezier(0.16,1,0.3,1) infinite;
+    }
+
+  }
+  html,a,button,[role="button"],[data-faq-q],[data-faq-row],[data-scan-opt],[data-step-item],[data-wtile],[data-allwork-card],label,summary {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+  button,[role="button"],[data-faq-q] {
+    -webkit-touch-callout: none;
+  }
+
+}

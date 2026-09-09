@@ -1,0 +1,75 @@
+/* Control states and hover feedback. Priority is limited to overrides of
+   runtime motion, disabled cursors and the reduced-motion preference. */
+@media (hover:none) {
+  button:active,a[href]:active,[data-faq-q]:active,[data-work-card]:active {
+    transform: scale(0.975) !important;
+    opacity: 0.86 !important;
+    transition: transform 0.14s cubic-bezier(0.16,1,0.3,1),opacity 0.14s cubic-bezier(0.16,1,0.3,1) !important;
+  }
+
+}
+[data-sent="1"] [data-brief] {
+  display: none !important;
+}
+[data-sent="1"] [data-scan-done] {
+  display: flex !important;
+}
+[data-scan-done] [data-scan-analyse][data-on="1"],[data-scan-done] [data-scan-diag][data-on="1"] {
+  display: flex !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01s !important;
+    transition-duration: 0.01s !important;
+  }
+
+}
+a[href],a[href] *,button,button *,[role="button"],[role="button"] *,label,summary,
+[data-scroll-to],[data-faq-row],[data-faq-q],[data-faq-q] *,[data-proj],[data-allwork-card],[data-allwork-close],[data-allwork-cta],
+[data-scan-opt],[data-scan-opt] *,[data-scan-next],[data-scan-back],[data-brief-send],[data-carfx],
+[data-wa-pop] a,[data-price-card] button,[data-open-contact],[data-open-work],[data-open-wa],[data-open-legal],[data-legal-close],[data-close-contact],
+[data-menu-toggle],[data-menu-toggle] *,[data-menu-link],[data-mdot],[data-step-item],[data-wtile],[data-hanger-toggle],[data-gravity-toggle],[data-scroll-top],[onclick] {
+  cursor: pointer !important;
+}
+[data-team-card] {
+  cursor: default;
+}
+[data-r="work-grid"],[data-r="work-grid"] * {
+  cursor: none !important;
+}
+button:disabled,button:disabled *,[aria-disabled="true"] {
+  cursor: not-allowed !important;
+}
+.fg-legal-close:hover {
+  background: #5A5A5A !important;
+}
+.fg-open-wa--2:hover {
+  opacity: 0.6 !important;
+}
+.fg-close-contact:hover {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  transform: scale(1.08) !important;
+}
+.fg-scan-back:hover {
+  opacity: 1 !important;
+}
+.fg-scan-next:hover {
+  background: #F0EFEC !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.16) !important;
+}
+.fg-brief-send:hover {
+  background: #F0EFEC !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.16) !important;
+}
+[data-close-contact="1"] {
+  position: relative;
+  touch-action: manipulation;
+}
+[data-close-contact="1"]::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+}
