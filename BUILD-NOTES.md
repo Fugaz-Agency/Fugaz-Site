@@ -1,19 +1,29 @@
-# Release checks
+# Validation notes — mobile scan and code cleanup
 
-Prepared from the supplied website export (21).
+## Fixed
 
-PASS: 32 source and build checks, including 2,362 matching template elements, original inline render properties, all 727 will-change occurrences, the original 1450 × rQuick reveal duration, keyframes, easing, blur and scroll travel. The page logic reconstructs exactly from the export plus the scan integration and mechanical resource/name changes.
+The scan overlay lives outside the page root so it is not trapped by transformed ancestors. The resize rebind previously searched only inside that root and replaced the working panel reference with null. In the comparison browser, clicking X after a phone-height resize left the original scan open. The revised reference lookup and close method successfully dismissed it.
 
-PASS: All six converted images decode to the original RGBA pixels. Neither colour profiles nor orientation metadata were present on those source images. Eligible raster assets decreased from 5,392,251 to 4,207,986 bytes. Both remuxed videos retain the original decoded frames.
+The visible X remains 34 × 34px. A transparent pseudo-element expands its click area to 44 × 44px. The additional hit area was exercised 3px outside the visible circle on step five after a simulated keyboard-height resize.
 
-PASS: 70 production files served with HTTP 200 and matching bytes; three vendor files match the export's SHA-384 integrity values. Browser fallback test booted with both local React paths unavailable. Unit checks cover either and both missing dependencies, preserving React-before-ReactDOM execution and integrity checks.
+The HTML now contains two component-host positioning style attributes instead of 2,266 style attributes. 2,264 styles were consolidated into 457 reusable component rules. The main stylesheet dropped from 601 priority overrides to 322 intentional guards; 15 existing hover-state declarations were moved from runtime-generated rules to the stylesheet. Runtime motion values remain inline where required.
 
-PASS: Desktop rendering and original reference inspected. The scan opens, its close button passes click hit-testing, all five steps work, and a locally captured submission contains the expected Dutch fields and selections. The original diagnosis/results sequence completes. No test email was sent.
+The page controller now loads as normal JavaScript, with separate scan and navigation modules. It no longer evaluates the full page controller from an inline script. The retained export renderer still supports its original component evaluation path.
 
-PASS: At a 390 × 844 browser viewport, the scan opens, its close button is hit-testable, and there is no horizontal overflow. Grain opacity is unchanged at 0.6 / 0.5 / 0.34. All rendered images loaded after the final asset repair.
+## Verification
 
-The design-system reference library already contains 13 unresolved asset URLs for dormant component styles; those declarations were preserved. Page assets and stylesheet imports resolve. Animation-sensitive CSS overrides were retained because removing them would risk changing the requested rendering. This is a production cleanup of the export, not a replacement of its rendering architecture or a claim of human-only authorship.
+- Responsive CSS comparisons against the previous release at 390 × 844, 820 × 844, 1440 × 1000 and 375 × 667. Positioning, dimensions, type, color, grid/flex, clipping, opacity, transforms and transition defaults were compared across the template. Differences were limited to the intended X positioning context and the phase of independently running marquee/dot animations.
+- Side-by-side visual review of the mobile hero and open scan.
+- Scan open, option selection, all five steps, close after resizing, expanded X hit area, reopen/reset and Escape dismissal.
+- Mobile menu open/close after separating the navigation module.
+- All 27 Web Animations API call expressions match the previous release after syntax normalization, including keyframes, duration, delay, easing and fill mode.
+- The Web3Forms fetch call is unchanged after syntax normalization. No real submission was sent.
+- All 50 existing asset files match the previous release byte for byte.
+- JavaScript syntax checks and a clean production build succeeded. All 75 approved public files were copied exactly to dist. The final content-versioned release booted in the browser.
+- All page asset references resolve. The supplied design-system registry still contains 12 absent reference-image paths in unused component styles; the page does not instantiate those classes. No new missing asset references were introduced.
 
-Still to check on the deployed site: inbox delivery through the supplied Web3Forms key; scan close behavior, Process edges and photo compositing in real desktop and phone browsers. A controlled frame-rate benchmark across visitor devices and a frame-by-frame GPU comparison were not performed. Startup improvements do not shorten the designed animation durations.
+## Limits
 
-The deployment was prepared and tested locally; no GitHub commit, live deployment, DNS change or external message was made. GitHub upload instructions are in README.md.
+Responsive tests ran in Chromium iframe viewports, not on a physical iPhone or Safari. This is not a guarantee of frame-for-frame performance on every GPU or device. No device-specific frame-rate improvement is claimed. The refactor preserves the animation definitions and the rendering comparisons described above.
+
+The existing scan delivery integration is preserved. Inbox receipt and provider activation require a real submission after deployment. This release has not been deployed to GitHub or Vercel by the assistant.
