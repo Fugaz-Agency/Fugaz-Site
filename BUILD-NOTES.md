@@ -1,3 +1,11 @@
+# Link-preview thumbnail — September 9
+
+Replaced the social-sharing image with the supplied FugazThumbnailFINAL.png, preserving its original bytes and 1800 × 945 dimensions. Open Graph, Twitter and structured-data image URLs share a new content-versioned asset path. The deployment manifest includes the new image.
+
+Verified the production build, metadata references and image identity. All other production files match FUGAZ-animation-restored.zip byte for byte.
+
+---
+
 # Scroll blur correction — September 9
 
 The September 8 validation below missed a scroll-driven CSS reset regression. Matching Web Animations API calls and static computed styles was not sufficient to verify this section, which writes its filters directly while scrolling.
