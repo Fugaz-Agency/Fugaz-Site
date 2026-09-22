@@ -72,12 +72,13 @@
   "site.webmanifest",
   "sitemap.xml",
   "styles/base.6686f93d340f.css",
-  "styles/components.4223404af9b7.css",
+  "styles/components.00f84954ec96.css",
   "styles/interactions.200bc6b4e27d.css",
-  "styles/responsive.d826d12a90b6.css",
+  "styles/responsive.a6f441a4e908.css",
   "support.ce7a5f79e1a5.js",
   "scripts/experience.7e25ebfe0da5.js",
   "assets/fonts/satoshi-700.353a7fbfb447.woff2",
   "assets/fonts/satoshi-400.50dca57f0b77.woff2",
-  "assets/fonts/satoshi-500.af02a72246f5.woff2"
+  "assets/fonts/satoshi-500.af02a72246f5.woff2",
+  "favicon.png"
 ]

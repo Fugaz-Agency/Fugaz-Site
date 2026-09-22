@@ -20,3 +20,23 @@ The cloud browser's policy blocked the local preview. Visual behavior, frame rat
 Unzip and upload the contents of FUGAZ-upload to the existing GitHub repository root, replacing matching files. Vercel runs node deploy.cjs and publishes only the manifest-listed files. The ZIP includes all prior fixes. This is maintained, AI-assisted source code; it is not represented as exclusively human-authored.
 
 Reference audit: the inherited design-system reference styles retain 13 missing bitmap URLs already present in the input release. No new missing asset references were introduced. These original reference styles were not changed by this update.
+
+## Footer social layout update
+
+Removed the bottom “2026 • Fugaz Agency” line. The existing LinkedIn, X and Instagram links are right-aligned above 700px and centred at 700px and below. All link destinations and hover/reveal animation code are preserved. Build and scoped source comparison verified; no visual browser pass is claimed.
+
+## Search favicon and description update
+
+The main raster favicon is now /favicon.png: a 192×192 antialiased export of the original SVG logo. The URL is intentionally stable. Browsers can also use the existing vector SVG. The favicon.ico fallbacks now contain eight independently sized images from 16px to 256px; the homepage no longer advertises the low-resolution ICO as its search icon. Original logo geometry and colours are preserved.
+
+Search, Open Graph, X and structured-data descriptions now read:
+
+You built something real. We make it look that way. Branding, websites and campaign creatives from Fugaz Agency in Amsterdam.
+
+Build, PNG/ICO decoding, dimensions, metadata consistency, deployment manifest and preservation of page body/scripts/styles checked. Google's actual result can only be checked after deployment and recrawling; Google may choose different snippet text. Request indexing for https://fugaz-agency.com/ in Search Console after deploying. Google documents that recrawling can take days to weeks.
+
+Sources: https://developers.google.com/search/docs/appearance/favicon-in-search and https://developers.google.com/search/docs/appearance/snippet
+
+## Footer divider update (supersedes removal above)
+
+Restored 2026 | Fugaz Agency with a 1px-wide, 12px-high divider at 25% black and 12px spacing. Desktop places this label left and social links right. On mobile both rows are centred and stacked. Latest favicon and description changes are retained. Build and scoped file checks passed; no browser visual pass is claimed.
