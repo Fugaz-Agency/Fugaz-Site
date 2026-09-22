@@ -1,0 +1,26 @@
+:root{
+  /* Radii — nothing in this system has a square corner */
+  --radius-panel:29px;      /* every stacked panel, hero included */
+  --radius-card:31.26959228515625px;  /* work cards */
+  --radius-team:31px;       /* team cards and their photos */
+  --radius-logo-pill:9.678118705749512px; /* the header logo capsule */
+  --radius-button:28.12394905090332px;    /* pill buttons */
+  --radius-tile:18.932%;    /* app icon squircle: 58.497 on 309 */
+
+  /* Page frame */
+  --page-width:1440px;
+  --panel-x:15px;           /* panels are inset 15px from the page edge */
+  --panel-width:1411px;
+  --hero-height:987px;
+  --panel-gap:21px;         /* 1022 - (14 + 987) */
+
+  /* Shadow — the only one in the system, and it is almost invisible */
+  --shadow-panel:0px 0px 51.700px 0px rgba(0,0,0,0.03);
+
+  /* Spacing observed in the concept */
+  --header-x:102px;
+  --header-y:73px;
+  --content-x:73px;         /* copy inset inside a white panel */
+  --pad-button:7px 8.789px 8.789px 8.789px;
+  --pad-logo-pill:7.339px;
+}

@@ -1,0 +1,10 @@
+@import './tokens/fonts.css' layer(design-system);
+@import './tokens/colors.css' layer(design-system);
+@import './tokens/typography.css' layer(design-system);
+@import './tokens/layout.css' layer(design-system);
+@import './tokens/motion.css' layer(design-system);
+@import './tokens/base.css' layer(design-system);
+@import './reference/fig-tokens.css' layer(design-system);
+@import './reference/fig-typography.css' layer(design-system);
+@import './reference/fig-assets.css' layer(design-system);
+@import './reference/official/fig-assets.css' layer(design-system);

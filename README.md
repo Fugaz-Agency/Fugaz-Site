@@ -45,3 +45,7 @@ Vendor license notices remain intact. This is a code-maintenance refactor, not a
 The previous refactor left the photo-section text blurred: clearing the runtime filter exposed the CSS entry blur again. The controller now explicitly writes `filter: none` at the clear state. The same reset is explicit in the reduced-motion settlement and the small section labels. Blur amounts, word staggering, scroll thresholds, opacity and movement formulas remain unchanged.
 
 This release retains the mobile scan dismissal repair, extracted CSS and split controllers.
+
+## September 22 update
+
+See RELEASE-SEPTEMBER.md for current behavior and validation limits. Run `node tests/experience.test.cjs` for the availability and intro-readiness regression checks. These tests are excluded from the production deployment.
