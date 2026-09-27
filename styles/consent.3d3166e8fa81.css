@@ -1,0 +1,80 @@
+/* Independent from page reveals and modal layout. */
+.fg-cookies {
+  position: fixed;
+  left: max(24px, env(safe-area-inset-left));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 70;
+  box-sizing: border-box;
+  width: min(410px, calc(100vw - 48px));
+  max-height: calc(100dvh - 140px);
+  overflow-y: auto;
+  padding: 24px;
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 22px;
+  background: #efeeec;
+  color: #000;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .1);
+  font-family: Satoshi, 'Satoshi Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  text-align: left;
+  line-height: 1.45;
+  letter-spacing: -.015em;
+}
+/* The card settles first; its content follows in a soft, staggered reveal.
+   Backwards fill covers delays without retaining a filter after completion. */
+.fg-cookies:not([hidden]) {
+  animation: fg-cookie-enter 900ms cubic-bezier(.22, 1, .36, 1) backwards;
+}
+.fg-cookies:not([hidden]) > * {
+  animation: fg-cookie-content 1100ms cubic-bezier(.25, .1, .25, 1) backwards;
+}
+.fg-cookies:not([hidden]) > .fg-cookies-brand { animation-delay: 120ms; }
+.fg-cookies:not([hidden]) > h2 { animation-delay: 230ms; }
+.fg-cookies:not([hidden]) > p { animation-delay: 340ms; }
+/* Both choices appear together, with identical timing. */
+.fg-cookies:not([hidden]) > .fg-cookies-actions { animation-delay: 460ms; }
+.fg-cookies:not([hidden]) > details { animation-delay: 540ms; }
+@keyframes fg-cookie-enter {
+  from { opacity: 0; transform: translate3d(0, 8px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fg-cookie-content {
+  from { opacity: 0; filter: blur(6px); transform: translate3d(0, 7px, 0); }
+  to { opacity: 1; filter: blur(0); transform: none; }
+}
+.fg-cookies[hidden] { display: none; }
+/* Keyboard users can immediately read and operate a focused banner. */
+.fg-cookies:not([hidden]):focus-within,
+.fg-cookies:not([hidden]):focus-within > * { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .fg-cookies:not([hidden]), .fg-cookies:not([hidden]) > * { animation: none; }
+}
+.fg-cookies-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 19px; font-size: 12px; letter-spacing: .06em; }
+.fg-cookies-brand img { display: block; width: 150px; max-width: 100%; height: auto; }
+.fg-cookies h2 { margin: 0 0 12px; font-size: 25px; line-height: 1.08; font-weight: 500; letter-spacing: -.035em; }
+.fg-cookies p { margin: 0; font-size: 14px; color: #50504e; }
+.fg-cookies-actions { display: flex; gap: 10px; margin-top: 20px; }
+.fg-cookies button {
+  flex: 1;
+  min-height: 46px;
+  padding: 10px 16px;
+  border: 1px solid #000;
+  border-radius: 100px;
+  background: transparent;
+  color: #000;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.fg-cookies button[data-cookie-accept] { background: #000; color: #fff; }
+.fg-cookies button:focus-visible, .fg-cookies summary:focus-visible, .fg-cookie-settings:focus-visible { outline: 2px solid #0055ff; outline-offset: 4px; }
+.fg-cookies details { margin-top: 16px; font-size: 12px; }
+.fg-cookies summary { width: fit-content; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.fg-cookies details p { margin-top: 12px; font-size: 12px; }
+.fg-cookies details a { color: inherit; text-decoration: underline; }
+.fg-cookie-settings { border: 0; padding: 0; background: transparent; color: inherit; font: inherit; text-align: left; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+@media (max-width: 700px) {
+  .fg-cookies { left: max(16px, env(safe-area-inset-left)); bottom: max(16px, env(safe-area-inset-bottom)); width: calc(100vw - 32px); padding: 20px; border-radius: 20px; }
+  .fg-cookies h2 { font-size: 24px; }
+}
