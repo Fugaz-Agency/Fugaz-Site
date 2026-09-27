@@ -16,4 +16,11 @@ for (const file of files) {
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   fs.copyFileSync(path.join(root, file), destination);
 }
+// Optional public project identifier supplied by Vercel at build time.
+const clarityProjectId = process.env.CLARITY_PROJECT_ID;
+if (clarityProjectId) {
+  if (!/^[a-z0-9]+$/i.test(clarityProjectId)) throw new Error('Invalid CLARITY_PROJECT_ID');
+  fs.writeFileSync(path.join(output, 'analytics-config.js'),
+    'window.FugazAnalyticsConfig = Object.freeze(' + JSON.stringify({ clarityProjectId }) + ');\n');
+}
 console.log('Prepared ' + files.length + ' public files.');
